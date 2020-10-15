@@ -10,11 +10,13 @@
     "**/node_modules": true,
     "**/dist": true
   },
-   "cSpell.words": [ 
+   "cSpell.words": [
     "Codelyzer",
     "dasherize",
     "devkit",
-    "wdtk" 
+    "downlevel",
+    "wdtk",
+    "webkinz"
   ],
   "cSpell.ignorePaths": [
     "**/package.json",
