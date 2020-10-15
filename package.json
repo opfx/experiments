@@ -1,0 +1,22 @@
+{
+  "name": "webkinz",
+  "version": "0.0.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "scripts": {
+    "wx": "wx",
+    "start": "wx start",
+    "build": "wx build",
+    "lint": "wx lint",
+    "test": "wx test",
+    "e2e": "wx e2e"
+  },
+  "workspaces": [
+    "projects/*"
+  ],
+  "devDependencies": {
+    "@wdtk/cli": "^0.4.0",
+    "@wdtk/workspace": "^0.4.0",
+    "prettier": "^2.0.5"
+  }
+}
