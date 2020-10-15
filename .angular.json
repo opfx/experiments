@@ -214,6 +214,113 @@
           }
         }
       }
+    },
+    "cash-cow": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/cash-cow",
+      "sourceRoot": "projects/cash-cow/src",
+      "prefix": "wx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cash-cow",
+            "index": "projects/cash-cow/src/index.html",
+            "main": "projects/cash-cow/src/main.ts",
+            "polyfills": "projects/cash-cow/src/polyfills.ts",
+            "tsConfig": "projects/cash-cow/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/cash-cow/src/favicon.ico", "projects/cash-cow/src/assets"],
+            "styles": ["projects/cash-cow/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cash-cow/src/environments/environment.ts",
+                  "with": "projects/cash-cow/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "cash-cow:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "cash-cow:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cash-cow:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cash-cow/tsconfig.app.json",
+              "projects/cash-cow/tsconfig.spec.json",
+              "projects/cash-cow/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@wdtk/jest:jest",
+          "options": {
+            "jestConfig": "projects/cash-cow/jest.config.js",
+            "tsConfig": "projects/cash-cow/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "projects/cash-cow/src/test-setup.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@wdtk/cypress:cypress",
+          "options": {
+            "cypressConfig": "projects/cash-cow/cypress.json",
+            "tsConfig": "projects/cash-cow/e2e/tsconfig.json",
+            "devServerTarget": "cash-cow:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cash-cow:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "newProjectRoot": "projects",
