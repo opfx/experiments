@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 
+import { RuntimeModule } from '@webkinz/runtime';
+
 import { ContentComponent } from './content.component';
 
-const routes: Route[] = [{ path: '', component: ContentComponent }];
+const routes: Route[] = [
+  {
+    path: '',
+    component: ContentComponent,
+    children: [{ path: 'cash-cow', loadChildren: () => import('@webkinz/cash-cow').then((m) => m.CashCowModule) }],
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RuntimeModule, RouterModule.forChild(routes)],
+  declarations: [ContentComponent],
 })
 export class ContentModule {
   constructor() {

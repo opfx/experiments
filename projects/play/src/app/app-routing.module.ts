@@ -17,8 +17,6 @@ const routes: Routes = [
     canLoad: [ContentGuard],
     canActivate: [ContentGuard],
   },
-
-  { path: 'cash-cow', loadChildren: () => import('@webkinz/cash-cow').then((m) => m.CashCowModule) },
 ];
 
 @NgModule({
