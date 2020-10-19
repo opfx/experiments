@@ -11,7 +11,7 @@ import { SampleService } from './../sample.service';
 export class HomeComponent {
   constructor(private router: Router, private sample: SampleService) {}
 
-  private play(): void {
+  public play(): void {
     this.sample.authenticated = true;
     this.router.navigate(['/content'], { skipLocationChange: true });
   }

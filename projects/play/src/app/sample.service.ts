@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { Injectable } from '@angular/core';
-
 @Injectable({ providedIn: 'root' })
 export class SampleService {
   private mAuthenticated = false;

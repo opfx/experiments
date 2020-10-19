@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
   template: `
     <p><button (click)="cashCow()">Cash Cow</button></p>
     <p><button (click)="wshop()">WShop</button></p>
-    <router-outlet></router-outlet>
   `,
   styles: [],
 })
@@ -13,5 +12,8 @@ export class ContentComponent {
   constructor(private router: Router) {}
   public cashCow(): void {
     this.router.navigate(['/cash-cow']);
+  }
+  public wshop(): void {
+    // this.router.navigate(['/cash-cow']);
   }
 }
