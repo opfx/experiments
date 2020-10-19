@@ -321,6 +321,113 @@
           }
         }
       }
+    },
+    "kinzpost": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/kinzpost",
+      "sourceRoot": "projects/kinzpost/src",
+      "prefix": "wx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/kinzpost",
+            "index": "projects/kinzpost/src/index.html",
+            "main": "projects/kinzpost/src/main.ts",
+            "polyfills": "projects/kinzpost/src/polyfills.ts",
+            "tsConfig": "projects/kinzpost/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/kinzpost/src/favicon.ico", "projects/kinzpost/src/assets"],
+            "styles": ["projects/kinzpost/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/kinzpost/src/environments/environment.ts",
+                  "with": "projects/kinzpost/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "kinzpost:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kinzpost:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kinzpost:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kinzpost/tsconfig.app.json",
+              "projects/kinzpost/tsconfig.spec.json",
+              "projects/kinzpost/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@wdtk/jest:jest",
+          "options": {
+            "jestConfig": "projects/kinzpost/jest.config.js",
+            "tsConfig": "projects/kinzpost/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "projects/kinzpost/src/test-setup.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@wdtk/cypress:cypress",
+          "options": {
+            "cypressConfig": "projects/kinzpost/cypress.json",
+            "tsConfig": "projects/kinzpost/e2e/tsconfig.json",
+            "devServerTarget": "kinzpost:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kinzpost:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "newProjectRoot": "projects",

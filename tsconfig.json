@@ -18,7 +18,8 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@webkinz/runtime": ["projects/runtime/src/public-api.ts"],
-      "@webkinz/cash-cow": ["projects/cash-cow/src/public-api.ts"]
+      "@webkinz/cash-cow": ["projects/cash-cow/src/public-api.ts"],
+      "@webkinz/kinzpost": ["projects/kinzpost/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {

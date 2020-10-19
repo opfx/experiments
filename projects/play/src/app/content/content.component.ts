@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
   selector: 'wx-content',
   template: `
     <p><button (click)="cashCow()">Cash Cow</button></p>
-    <p><button (click)="wshop()">WShop</button></p>
+    <p><button (click)="kinzpost()">Kinzpost</button></p>
     <router-outlet></router-outlet>
   `,
   styles: [],
@@ -23,7 +23,7 @@ export class ContentComponent implements OnInit, OnDestroy {
   public cashCow(): void {
     this.router.navigate(['content/cash-cow']);
   }
-  public wshop(): void {
-    // this.router.navigate(['/cash-cow']);
+  public kinzpost(): void {
+    this.router.navigate(['content/kinzpost']);
   }
 }
