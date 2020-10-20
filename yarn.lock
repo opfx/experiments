@@ -2635,12 +2635,14 @@ __metadata:
     "@stencil/core": ^1.17.3
     "@stencil/sass": ^1.3.2
     clean-css-cli: ^4.3.0
-    sass: ^1.26.10
+    sass: 1.26.10
     stylelint: ^13.7.2
     stylelint-order: ^4.1.0
     tslint: ~6.1.0
     tslint-ionic-rules: ^0.0.21
     tslint-react: ^5.0.0
+  peerDependencies:
+    typescript: "*"
   languageName: unknown
   linkType: soft
 
@@ -5683,7 +5685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-abstract@npm:^1.17.0-next.1, es-abstract@npm:^1.17.2, es-abstract@npm:^1.17.5":
+"es-abstract@npm:^1.17.0-next.1, es-abstract@npm:^1.17.2":
   version: 1.17.7
   resolution: "es-abstract@npm:1.17.7"
   dependencies:
@@ -12545,7 +12547,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.23.0, sass@npm:^1.26.10":
+"sass@npm:^1.23.0":
   version: 1.27.0
   resolution: "sass@npm:1.27.0"
   dependencies:
@@ -13338,22 +13340,22 @@ fsevents@^1.2.7:
   linkType: hard
 
 "string.prototype.trimend@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "string.prototype.trimend@npm:1.0.1"
+  version: 1.0.2
+  resolution: "string.prototype.trimend@npm:1.0.2"
   dependencies:
     define-properties: ^1.1.3
-    es-abstract: ^1.17.5
-  checksum: 93046463de6a3b4ae27d0622ae8795239c8d372b1be1a60122fce591bf7578b719becf00bf04326642a868bc6185f35901119b61a246509dd0dc0666b2a803ed
+    es-abstract: ^1.18.0-next.1
+  checksum: 6e89c1fc6a8ec5c1e609be0ee27a2b87f8f750086876a9981510da39f36713f2acea814134fc1b84a7d10479b10234562b68263130102d4bc8a471f037f9a14e
   languageName: node
   linkType: hard
 
 "string.prototype.trimstart@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "string.prototype.trimstart@npm:1.0.1"
+  version: 1.0.2
+  resolution: "string.prototype.trimstart@npm:1.0.2"
   dependencies:
     define-properties: ^1.1.3
-    es-abstract: ^1.17.5
-  checksum: 20c4a940f1ba65b0aa5abf0c319dceba4fbf04d24553583b0b82eba2711815d1e40663ce36175ed06475701dbe797cac81be1ec1dc4bb4416b2077e8b0409036
+    es-abstract: ^1.18.0-next.1
+  checksum: 9b94804eb9568a2072f3d034ed816bcaacbac7799c3780bf3dc1debd174ec826cbf285f9a08422c4ff9cf2574654c21e5d5c16b78ff6209a3a72579a3712a75f
   languageName: node
   linkType: hard
 
