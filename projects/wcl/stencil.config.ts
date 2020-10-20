@@ -9,9 +9,9 @@ export const config: Config = {
     {
       type: 'angular',
       componentCorePackage: '@webkinz/wcl',
-      directivesProxyFile: './../runtime/src/lib/components/proxies.ts',
-      directivesUtilsFile: './../runtime/src/lib/components/proxies-utils.ts',
-      directivesArrayFile: './../runtime/src/lib/components/proxies-list.ts',
+      directivesProxyFile: './../runtime/src/lib/wcl/components/proxies.ts',
+      directivesUtilsFile: './../runtime/src/lib/wcl/components/proxies-utils.ts',
+      directivesArrayFile: './../runtime/src/lib/wcl/components/proxies-list.ts',
     },
     {
       type: 'dist',

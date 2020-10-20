@@ -1,5 +1,33 @@
 export type Mode = 'ios' | 'md';
 
+export interface WxConfig {
+  /**
+   * When it's set to `false`, disables all animation and transition across the app.
+   * Can be useful to make stencil smoother in slow devices, when animations can't run smoothly.
+   */
+  animated?: boolean;
+  /**
+   * The mode determines which platform styles to use for the whole application.
+   */
+  mode?: Mode;
+
+  // INTERNAL configs
+  persistConfig?: boolean;
+  _forceStatusbarPadding?: boolean;
+  _testing?: boolean;
+  _zoneGate?: (h: () => any) => any;
+}
+
+export interface WxGlobal {
+  config?: WxConfig;
+  asyncQueue?: boolean;
+}
+
+export interface WxWindow extends Window {
+  wx: WxGlobal;
+  __zone_symbol_requestAnimationFrame?: (ts: FrameRequestCallback) => number;
+}
+
 // prettier-ignore
 export type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark';
 export type Color = PredefinedColors | string;

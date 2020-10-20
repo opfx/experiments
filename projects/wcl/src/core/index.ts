@@ -1,11 +1,10 @@
 import { getMode, setMode } from '@stencil/core';
 
 import { Mode } from '../api';
+import { isPlatform, setupPlatforms } from '../api';
 
 import { config, configFromSession, configFromURL, saveConfig } from './config';
-import { isPlatform, setupPlatforms } from './platform';
 
-export * from './platform';
 export * from './config';
 
 declare const Context: any;
