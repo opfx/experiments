@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   template: `
     <p><button (click)="cashCow()">Cash Cow</button></p>
     <p><button (click)="kinzpost()">Kinzpost</button></p>
-    <router-outlet></router-outlet>
+    <wx-router-outlet></wx-router-outlet>
   `,
   styles: [],
 })

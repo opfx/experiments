@@ -2137,12 +2137,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stencil/core@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@stencil/core@npm:2.0.3"
+"@stencil/core@npm:^1.17.3":
+  version: 1.17.3
+  resolution: "@stencil/core@npm:1.17.3"
+  dependencies:
+    typescript: 3.9.7
   bin:
     stencil: bin/stencil
-  checksum: 5043bcf9aa1d11f711e6fa17371522d512a3e2aa541b101d47a6301950f82f00cff2e078304d01a3e07466fa1ffcb050a0f603496e23b4c81e9bddd360ce8dfd
+  checksum: 154cf0c939d1dddb4e353563e0352f6dc418b3f128d0726626ffac923ddc779110830e64f9390c7321f7347d01f79c036f6bd1058531b788cdd044814a1bb103
   languageName: node
   linkType: hard
 
@@ -2766,7 +2768,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@webkinz/wcl@workspace:projects/wcl"
   dependencies:
-    "@stencil/core": ^2.0.3
+    "@stencil/core": ^1.17.3
     "@stencil/sass": ^1.3.2
     clean-css-cli: ^4.3.0
     sass: 1.26.11
@@ -14515,6 +14517,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+typescript@3.9.7:
+  version: 3.9.7
+  resolution: "typescript@npm:3.9.7"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10848a9c35fd8c70a8792b8bd9485317534bcd58768793d3b7d9c7486e9fd30cf345f83fa2a324e0bf6088bc8a4d8d061d58fda38b18c2ff187cf01fbbff6267
+  languageName: node
+  linkType: hard
+
 typescript@4.0.2:
   version: 4.0.2
   resolution: "typescript@npm:4.0.2"
@@ -14522,6 +14534,16 @@ typescript@4.0.2:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: cc0e7806eee7997a1b4b2990badacc4a8d089893ed0a377f35c9658e2ac392503cb340d0187203ed82e36e427dda94b0fb7107e44a71cca99efac86be26e16ee
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@3.9.7#builtin<compat/typescript>":
+  version: 3.9.7
+  resolution: "typescript@patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5bf698"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: f0d3d9c987860c7c458229ab6dd7e3d322405db36b70abccba610b5efd9f9451e4e67a3fc7983c0d3741033c1f1a8d7aa859a1510caa8f20fad762fc39648bfa
   languageName: node
   linkType: hard
 
