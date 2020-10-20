@@ -16,7 +16,12 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [{ src: './../css', dest: './../../../runtime/css', warn: true }],
+      copy: [
+        // need to inject the css into runtime from this target because
+        // the angular output target does not support copy
+        { src: './../css', dest: './../../../runtime/css', warn: true },
+        { src: './theme', dest: './../../../runtime/theme', warn: true },
+      ],
     },
     // {
     //   type: 'docs-readme',
