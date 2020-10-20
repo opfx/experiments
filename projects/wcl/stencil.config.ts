@@ -16,6 +16,7 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [{ src: './../css', dest: './../../../runtime/css', warn: true }],
     },
     // {
     //   type: 'docs-readme',
@@ -23,6 +24,7 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [{ src: './css', dest: './../www/css', warn: true }],
     },
   ],
 };
