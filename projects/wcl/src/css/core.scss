@@ -1,0 +1,25 @@
+@import './../theme/globals';
+
+// View Container Structure
+// ---------------------------------------------------------
+.wx-view {
+    @include position(0, 0, 0, 0);
+  
+    display: flex;
+    position: absolute;
+  
+    flex-direction: column;
+    justify-content: space-between;
+  
+    contain: layout size style;
+    overflow: hidden;
+    z-index: $z-index-view-container;
+  }
+  
+  .wx-view-hidden {
+    display: none !important;
+  }
+  
+  .wx-view-invisible {
+    opacity: 0;
+  }
