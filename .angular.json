@@ -428,6 +428,43 @@
           }
         }
       }
+    },
+    "wcl": {
+      "projectType": "library",
+      "root": "projects/wcl",
+      "sourceRoot": "projects/wcl/src",
+      "prefix": "wx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/wcl/tsconfig.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@wdtk/jest:jest",
+          "options": {
+            "jestConfig": "projects/play/jest.config.js",
+            "tsConfig": "projects/play/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "projects/play/src/test-setup.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@wdtk/cypress:cypress",
+          "options": {
+            "cypressConfig": "projects/play/cypress.json",
+            "tsConfig": "projects/play/e2e/tsconfig.json",
+            "devServerTarget": "play:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "play:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "newProjectRoot": "projects",
