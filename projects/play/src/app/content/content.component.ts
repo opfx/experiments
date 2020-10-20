@@ -3,9 +3,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'wx-content',
   template: `
-    <p><button (click)="cashCow()">Cash Cow</button></p>
-    <p><button (click)="kinzpost()">Kinzpost</button></p>
-    <wx-router-outlet></wx-router-outlet>
+    <div style="z-index:100">
+      <p><button (click)="cashCow()">Cash Cow</button></p>
+      <p><button (click)="kinzpost()">Kinzpost</button></p>
+    </div>
+
+    <wx-router-outlet style="z-index:-1"></wx-router-outlet>
   `,
   styles: [],
 })
