@@ -24,6 +24,7 @@
   ],
   "settings": {
     // "terminal.integrated.cwd": "./../../",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.eol": "\n",
     "files.exclude": {
       "**/node_modules": true,
