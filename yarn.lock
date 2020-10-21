@@ -2593,6 +2593,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@webkinz/cash-cow@workspace:projects/cash-cow"
   dependencies:
+    jest: "*"
     tslib: ^2.0.0
   peerDependencies:
     "@angular/common": ^10.1.3
@@ -2604,6 +2605,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@webkinz/kinzpost@workspace:projects/kinzpost"
   dependencies:
+    jest: "*"
     tslib: ^2.0.0
   peerDependencies:
     "@angular/common": ^10.1.3
@@ -2614,6 +2616,8 @@ __metadata:
 "@webkinz/play@workspace:projects/play":
   version: 0.0.0-use.local
   resolution: "@webkinz/play@workspace:projects/play"
+  dependencies:
+    jest: "*"
   languageName: unknown
   linkType: soft
 
@@ -2621,6 +2625,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@webkinz/runtime@workspace:projects/runtime"
   dependencies:
+    jest: "*"
     tslib: ^2.0.0
   peerDependencies:
     "@angular/common": ^10.1.3
@@ -8592,7 +8597,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest@npm:^26.4.2":
+"jest@npm:*, jest@npm:^26.4.2":
   version: 26.6.0
   resolution: "jest@npm:26.6.0"
   dependencies:

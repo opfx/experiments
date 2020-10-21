@@ -1,11 +1,17 @@
 {
-  "peerDependencies": {
-    "@angular/common": "^10.1.3",
-    "@angular/core": "^10.1.3"
-  },
   "name": "@webkinz/cash-cow",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "yarn jest"
+  },
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "version": "0.0.1"
+  "devDependencies": {
+    "jest": "*"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.1.3",
+    "@angular/core": "^10.1.3"
+  }
 }

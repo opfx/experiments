@@ -24,7 +24,9 @@
     "css.build": "yarn run css.sass && yarn run css.minify",
     "css.sass": "sass src/css:./css",
     "css.minify": "cleancss -O2 -o ./css/wcl.bundle.css ./css/wcl.bundle.css",
-    "clean": "npx rimraf www dist css loader"
+    "clean": "npx rimraf www dist css loader",
+    "test": "stencil test --spec",
+    "e2e": "stencil test --e2e"
   },
   "devDependencies": {
     "@stencil/core": "^1.17.3",
