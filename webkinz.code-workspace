@@ -37,7 +37,8 @@
       "**/test-setup.ts":true
     },
     "cSpell.words": [],
-    "jest.pathToJest": "yarn test"
+    "jest.pathToJest": "yarn test",
+    "editor.formatOnSave": true
   },
   "launch": {
     "configurations": [],
