@@ -32,4 +32,9 @@ export const config: Config = {
       copy: [{ src: './css', dest: './../www/css', warn: true }],
     },
   ],
+  devServer: {
+    reloadStrategy: 'pageReload',
+    openBrowser: false,
+    logRequests: true,
+  },
 };
