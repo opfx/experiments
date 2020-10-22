@@ -74,3 +74,60 @@
 .button-native::-moz-focus-inner {
   border: 0;
 }
+
+/* yellow */
+.yellow {
+  position: relative;
+  cursor: pointer;
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 1px 2px 3px rgba(0, 0, 0, 0.6);
+  /* box-shadow:  0 1px 5px rgba(0, 0, 0, 0.3), 1px 3px 0px rgba(0, 0, 60, 0.2);*/
+  background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
+    linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
+  border: 2px solid #00003c;
+
+  outline: none;
+}
+
+.yellow:hover {
+  transition: 0.1s ease-out;
+  /* transform: translateY(0.05rem); */
+  /* filter: brightness(1.4); */
+  transform: translateY(-0.025rem);
+  background: linear-gradient(to top, #ffff66, #ffe066, #ffc066) content-box,
+    linear-gradient(to top, #ffc066, #ffe066, #ffff66) border-box;
+}
+
+.yellow:active {
+  transition: 0.2s ease-out;
+  transform: translateY(0.1rem);
+}
+
+.regular {
+  height: 45px;
+  width: 45px;
+  border-radius: 45px;
+
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+
+.super-size {
+  height: 98px;
+  width: 98px;
+  border-radius: 98px;
+
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 9px;
+}
+
+/** icons position */
+.icon-position {
+  position: relative;
+  left: -5px;
+  top: -5px;
+}

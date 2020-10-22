@@ -3,6 +3,7 @@ import { Component, ComponentInterface, Host, Prop, h } from '@stencil/core';
 import { Color } from '../../api';
 import { getWxMode } from '../../core';
 import { createColorClasses } from '../../util';
+
 @Component({
   tag: 'wx-button',
   styleUrls: {
@@ -15,6 +16,18 @@ export class ButtonComponent implements ComponentInterface {
   @Prop() mode = getWxMode(this);
   @Prop() color?: Color;
 
+  /*
+    <Host
+    ...
+    <span class="button-outer">ample</span>
+        <span class="button-inner">
+          sample
+          {/* <button class="button-native">
+            <slot></slot>
+          </button> * /}
+        </span>
+    </Host>
+   */
   render() {
     return (
       <Host
@@ -22,13 +35,9 @@ export class ButtonComponent implements ComponentInterface {
           [this.mode]: true,
         })}
       >
-        <span class="button-outer">ample</span>
-        <span class="button-inner">
-          sample
-          {/* <button class="button-native">
-            <slot></slot>
-          </button> */}
-        </span>
+        <button class="yellow regular">
+          <img src="assets/icon/menu/icon-arcade.svg" class="icon-position"></img>
+        </button>
       </Host>
     );
   }
