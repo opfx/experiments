@@ -1,0 +1,112 @@
+@import '../../theme/globals.scss';
+
+// Default values
+// ---------------------------------------------------------
+
+/// @prop - Margin top of the button
+$button-margin-top: 4px;
+
+/// @prop - Margin end of the button
+$button-margin-end: 2px !default;
+
+/// @prop - Margin bottom of the button
+$button-margin-bottom: 4px !default;
+
+/// @prop - Margin start of the button
+$button-margin-start: 2px !default;
+
+/// @prop - Padding top of the button
+$button-padding-top: 0 !default;
+
+/// @prop - Padding end of the button
+$button-padding-end: 1.1em !default;
+
+/// @prop - Padding bottom of the button
+$button-padding-bottom: 0 !default;
+
+/// @prop - Padding start of the button
+$button-padding-start: 1.1em !default;
+
+/// @prop - Height of the button
+$button-height: 43px !default;
+
+/// @prop - Border radius of the button
+$button-border-radius: 10px !default;
+
+/// @prop - Font size of the button text
+$button-font-size: 22px !default;
+
+/// @prop - Font weight of the button text
+$button-font-weight: 700 !default;
+
+/// @prop - Capitalization of the button text
+$button-text-transform: none !default;
+
+$button-letter-spacing: 0.06em;
+
+/// @prop - Box shadow of the button
+$button-box-shadow: 1px 3px 1px 1px rgba(0, 0, 0, 0.2) !default;
+
+/// @prop - Box shadow of the activated button
+$button-box-shadow-activated: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12) !default;
+
+// Round Button
+// --------------------------------------------------
+
+/// @prop - Padding top of the round button
+$button-round-padding-top: 0 !default;
+
+/// @prop - Padding end of the round button
+$button-round-padding-end: 24px !default;
+
+/// @prop - Padding bottom of the round button
+$button-round-padding-bottom: $button-round-padding-top !default;
+
+/// @prop - Padding start of the round button
+$button-round-padding-start: $button-round-padding-end !default;
+
+/// @prop - Border radius of the round button
+$button-round-border-radius: 120px !default;
+
+// Large Button
+// --------------------------------------------------
+
+/// @prop - Padding top of the large button
+$button-large-padding-top: 0 !default;
+
+/// @prop - Padding end of the large button
+$button-large-padding-end: 1em !default;
+
+/// @prop - Padding bottom of the large button
+$button-large-padding-bottom: $button-large-padding-top !default;
+
+/// @prop - Padding start of the large button
+$button-large-padding-start: $button-large-padding-end !default;
+
+/// @prop - Height of the large button
+$button-large-height: 2.8em !default;
+
+/// @prop - Font size of the large button
+$button-large-font-size: 20px !default;
+
+// Material Design Small Button
+// --------------------------------------------------
+
+/// @prop - Padding top of the small button
+$button-small-padding-top: 0 !default;
+
+/// @prop - Padding end of the small button
+$button-small-padding-end: 0.9em !default;
+
+/// @prop - Padding bottom of the small button
+$button-small-padding-bottom: $button-small-padding-top !default;
+
+/// @prop - Padding start of the small button
+$button-small-padding-start: $button-small-padding-end !default;
+
+/// @prop - Height of the small button
+$button-small-height: 2.1em !default;
+
+/// @prop - Font size of the small button
+$button-small-font-size: 13px !default;

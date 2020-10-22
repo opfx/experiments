@@ -5,9 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AnimationBuilder } from "./api";
+import { AnimationBuilder, Color } from "./api";
 import { SwipeGestureHandler } from "./util/gesture";
 export namespace Components {
+    interface WxButton {
+        "color"?: Color;
+        "mode": "ios" | "md";
+    }
     interface WxRouterOutlet {
         /**
           * If `true`, the router-outlet will animate the transition of components.
@@ -40,6 +44,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLWxButtonElement extends Components.WxButton, HTMLStencilElement {
+    }
+    var HTMLWxButtonElement: {
+        prototype: HTMLWxButtonElement;
+        new (): HTMLWxButtonElement;
+    };
     interface HTMLWxRouterOutletElement extends Components.WxRouterOutlet, HTMLStencilElement {
     }
     var HTMLWxRouterOutletElement: {
@@ -53,11 +63,16 @@ declare global {
         new (): HTMLWxSampleElement;
     };
     interface HTMLElementTagNameMap {
+        "wx-button": HTMLWxButtonElement;
         "wx-router-outlet": HTMLWxRouterOutletElement;
         "wx-sample": HTMLWxSampleElement;
     }
 }
 declare namespace LocalJSX {
+    interface WxButton {
+        "color"?: Color;
+        "mode"?: "ios" | "md";
+    }
     interface WxRouterOutlet {
         /**
           * If `true`, the router-outlet will animate the transition of components.
@@ -91,6 +106,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "wx-button": WxButton;
         "wx-router-outlet": WxRouterOutlet;
         "wx-sample": WxSample;
     }
@@ -99,6 +115,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "wx-button": LocalJSX.WxButton & JSXBase.HTMLAttributes<HTMLWxButtonElement>;
             "wx-router-outlet": LocalJSX.WxRouterOutlet & JSXBase.HTMLAttributes<HTMLWxRouterOutletElement>;
             "wx-sample": LocalJSX.WxSample & JSXBase.HTMLAttributes<HTMLWxSampleElement>;
         }

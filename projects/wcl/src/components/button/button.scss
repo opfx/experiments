@@ -1,1 +1,76 @@
-@import "../../theme/globals";
+@import 'button.vars';
+
+:host {
+  --overflow: hidden;
+  --ripple-color: currentColor;
+  --border-style: initial;
+  --border-width: initial;
+  --border-color: initial;
+  //   --border-radius: #{$button-border-radius};
+  --border-radius: 0;
+
+  --padding-top: #{$button-padding-top};
+  --padding-bottom: #{$button-padding-bottom};
+  --padding-start: #{$button-padding-start};
+  --padding-end: #{$button-padding-end};
+  --box-shadow: none;
+
+  // experimental
+  --height: 40px;
+}
+
+:host {
+  display: inline-block;
+  // @include margin-horizontal(10px);
+  // overflow: hidden;
+  color: var(--color);
+
+  //   font-family: $font-family-base;
+  font-kerning: none;
+
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+  width: auto;
+
+  user-select: none;
+  vertical-align: top;
+
+  vertical-align: top; // the better option for most scenarios
+  vertical-align: -webkit-baseline-middle; // the best for those that support it
+  pointer-events: auto;
+}
+
+.button-inner {
+  display: flex;
+  position: relative;
+
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.button-native {
+  margin: 0px;
+  display: block;
+
+  border-width: 0px;
+  border-style: initial;
+  border-color: white;
+
+  outline: none;
+
+  z-index: 0;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+.button-native::-moz-focus-inner {
+  border: 0;
+}

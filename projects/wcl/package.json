@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "yarn run css.build && stencil build --docs",
-    "start": "stencil build --dev --watch --serve",
+    "start": "yarn run css.build && stencil build --dev --watch --serve",
     "lint": "yarn run lint.ts && yarn run lint.sass",
     "lint.ts": "tslint --project .",
     "lint.sass": "stylelint 'src/**/*.scss'",
