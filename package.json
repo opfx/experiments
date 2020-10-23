@@ -10,8 +10,7 @@
     "lint": "wx lint",
     "test": "wx test",
     "e2e": "wx e2e",
-    "build:wcl": "cd ./projects/wcl && yarn build",
-    "postinstall": "yarn run build:wcl"
+    "postinstall": "wx build wcl"
   },
   "dependencies": {
     "@angular/animations": "^10.1.3",

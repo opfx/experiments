@@ -435,6 +435,13 @@
       "sourceRoot": "projects/wcl/src",
       "prefix": "wx",
       "architect": {
+        "build": {
+          "builder": "@wdtk/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "projects/wcl"
+          }
+        },
         "serve": {
           "builder": "@wdtk/workspace:run-commands",
           "options": {
