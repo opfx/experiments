@@ -1,0 +1,10 @@
+:host {
+    background-color: red;
+}
+
+:host(.wx-view) {
+    top:100px;
+    bottom:100px;
+    right:100px;
+    left:100px;
+}
