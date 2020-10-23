@@ -5,12 +5,24 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AnimationBuilder, Color } from "./api";
+import { AnimationBuilder, Color, Size } from "./api";
 import { SwipeGestureHandler } from "./util/gesture";
 export namespace Components {
     interface WxButton {
+        /**
+          * The type of button.
+         */
+        "buttonType": string;
         "color"?: Color;
+        /**
+          * If `true`, the user cannot interact with the button.
+         */
+        "disabled": boolean;
         "mode": "ios" | "md";
+        /**
+          * The button size.
+         */
+        "size": Size;
     }
     interface WxRouterOutlet {
         /**
@@ -70,8 +82,20 @@ declare global {
 }
 declare namespace LocalJSX {
     interface WxButton {
+        /**
+          * The type of button.
+         */
+        "buttonType"?: string;
         "color"?: Color;
+        /**
+          * If `true`, the user cannot interact with the button.
+         */
+        "disabled"?: boolean;
         "mode"?: "ios" | "md";
+        /**
+          * The button size.
+         */
+        "size"?: Size;
     }
     interface WxRouterOutlet {
         /**

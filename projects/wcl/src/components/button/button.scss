@@ -57,9 +57,16 @@
 }
 
 .button-native {
+  @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
   margin: 0px;
-  display: block;
 
+  display: block;
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  // border: 2px solid #00003c;
   border-width: 0px;
   border-style: initial;
   border-color: white;
@@ -103,10 +110,26 @@
   transform: translateY(0.1rem);
 }
 
+// Size
+// -----------------------------------------------------------------------------------
+
+:host(.button-large) {
+  height: 98px;
+  width: 98px;
+  border-radius: 98px;
+
+  // padding-left: 7px;
+  // padding-right: 7px;
+  // padding-top: 5px;
+  // padding-bottom: 9px;
+  background-color: lavender;
+}
+
 .regular {
-  height: 45px;
-  width: 45px;
-  border-radius: 45px;
+  // height: 45px;
+  // width: 45px;
+  // border-radius: 45px;
+  border-radius: 98px;
 
   padding-left: 4px;
   padding-right: 4px;
