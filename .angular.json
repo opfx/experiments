@@ -435,33 +435,32 @@
       "sourceRoot": "projects/wcl/src",
       "prefix": "wx",
       "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+        "serve": {
+          "builder": "@wdtk/workspace:run-commands",
           "options": {
-            "tsConfig": ["projects/wcl/tsconfig.json"],
-            "exclude": ["**/node_modules/**"]
+            "command": "yarn start",
+            "cwd": "projects/wcl"
+          }
+        },
+        "lint": {
+          "builder": "@wdtk/workspace:run-commands",
+          "options": {
+            "command": "yarn lint",
+            "cwd": "projects/wcl"
           }
         },
         "test": {
-          "builder": "@wdtk/jest:jest",
+          "builder": "@wdtk/workspace:run-commands",
           "options": {
-            "jestConfig": "projects/play/jest.config.js",
-            "tsConfig": "projects/play/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "projects/play/src/test-setup.ts"
+            "command": "yarn test",
+            "cwd": "projects/wcl"
           }
         },
         "e2e": {
-          "builder": "@wdtk/cypress:cypress",
+          "builder": "@wdtk/workspace:run-commands",
           "options": {
-            "cypressConfig": "projects/play/cypress.json",
-            "tsConfig": "projects/play/e2e/tsconfig.json",
-            "devServerTarget": "play:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "play:serve:production"
-            }
+            "command": "yarn e2e",
+            "cwd": "projects/wcl"
           }
         }
       }
