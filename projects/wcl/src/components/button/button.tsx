@@ -59,7 +59,10 @@ export class ButtonComponent implements ComponentInterface {
         })}
       >
         <TagType class="button-native yellow regular">
-          <img src="assets/icon/menu/icon-arcade.svg" class="icon-position"></img>
+          <slot name="icon-only"></slot>
+          <slot name="start"></slot>
+          <slot></slot>
+          <slot name="end"></slot>
         </TagType>
       </Host>
     );
