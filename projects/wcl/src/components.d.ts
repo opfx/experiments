@@ -20,6 +20,10 @@ export namespace Components {
         "disabled": boolean;
         "mode": "ios" | "md";
         /**
+          * The button shape.
+         */
+        "shape": string;
+        /**
           * The button size.
          */
         "size": Size;
@@ -92,6 +96,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         "mode"?: "ios" | "md";
+        /**
+          * The button shape.
+         */
+        "shape"?: string;
         /**
           * The button size.
          */

@@ -29,6 +29,11 @@ export class ButtonComponent implements ComponentInterface {
   @Prop({ reflect: true }) disabled = false;
 
   /**
+   * The button shape.
+   */
+  @Prop({ reflect: true }) shape = 'round'; // shape?: 'round';
+
+  /**
    * The button size.
    */
   @Prop({ reflect: true }) size: Size = 'default';
@@ -46,7 +51,8 @@ export class ButtonComponent implements ComponentInterface {
     </Host>
    */
   render() {
-    const { buttonType, mode, size } = this;
+    const { buttonType, mode, size, shape } = this;
+    console.log('button shape: ' + shape);
     //FIX ME
     // const TagType = href === undefined ? 'button' : ('a' as any);
     const TagType = 'button';
@@ -56,9 +62,10 @@ export class ButtonComponent implements ComponentInterface {
         class={createColorClasses(this.color, {
           [mode]: true,
           [`${buttonType}-${size}`]: true,
+          [`${buttonType}-${shape}`]: shape !== undefined,
         })}
       >
-        <TagType class="button-native yellow regular">
+        <TagType class="button-native yellow">
           <slot name="icon-only"></slot>
           <slot name="start"></slot>
           <slot></slot>

@@ -1,5 +1,17 @@
+@use "sass:math";
 @import 'button.vars';
 
+// Variables
+// -----------------------------------------------------------------------------------
+$large-diameter: 98px;
+$big-diameter: 56px;
+$regular-diameter: 45px;
+$small-diameter: 30px;
+$border-size: 2px;
+$max-border-radius: 200px;
+
+// Host
+// -----------------------------------------------------------------------------------
 :host {
   --overflow: hidden;
   --ripple-color: currentColor;
@@ -57,7 +69,12 @@
 }
 
 .button-native {
-  @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+  // @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+  @include padding(
+    var(--padding-inner-grad-top),
+    var(--padding-inner-grad-horizontal),
+    var(--padding-inner-grad-bottom)
+  );
   margin: 0px;
 
   display: block;
@@ -65,6 +82,8 @@
 
   width: 100%;
   height: 100%;
+
+  border-radius: var(--max-border-radius); //  200px; //
 
   // border: 2px solid #00003c;
   border-width: 0px;
@@ -91,7 +110,7 @@
   /* box-shadow:  0 1px 5px rgba(0, 0, 0, 0.3), 1px 3px 0px rgba(0, 0, 60, 0.2);*/
   background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
     linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
-  border: 2px solid #00003c;
+  border: $border-size solid #00003c;
 
   outline: none;
 }
@@ -112,21 +131,23 @@
 
 // Size
 // -----------------------------------------------------------------------------------
-$large-diameter: 98px;
-$big-diameter: 56px;
-$regular-diameter: 45px;
-$small-diameter: 30px;
 
 // Round buttons relative size:
 // For 72 x 72 face + border:
 //    shadow 72 x 72 moved (dx: 2, dy: 6)
 //    face-outer-gradient: 64 x 64 - centered, padding: 3px - all 3px
 //    face-inner-gradient: 52 x 52 - moved slightly up from center, padding: 8px 10px 12px - top | horizontal | bottom
+// For 98 x 98px Web TTD button: padding: 5px 7px 9px;
 @mixin set-size($diameter: 98px, $width_factor: 1) {
   // @debug 'diameter: #{$diameter}';
   height: $diameter;
   width: $diameter * $width_factor;
   border-radius: $diameter;
+
+  $padding-factor: $diameter/ 98px;
+  --padding-inner-grad-top: #{math.floor(5 * $padding-factor)}px;
+  --padding-inner-grad-bottom: #{math.floor(9 * $padding-factor)}px;
+  --padding-inner-grad-horizontal: #{math.floor(7 * $padding-factor)}px;
 }
 
 :host(.button-large) {
@@ -145,61 +166,20 @@ $small-diameter: 30px;
 }
 
 :host(.button-regular) {
-  height: 45px;
-  width: 45px;
-  border-radius: 45px;
+  @include set-size($regular-diameter);
   background-color: lavender;
 }
 
 :host(.button-regular-long) {
-  height: 45px;
-  width: 90px;
-  border-radius: 45px;
+  @include set-size($regular-diameter, 2);
   background-color: lavender;
 }
 
 :host(.button-small) {
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
+  @include set-size($small-diameter);
   background-color: lavender;
 }
 
-.regular {
-  // height: 45px;
-  // width: 45px;
-  // border-radius: 45px;
-  border-radius: 98px;
-
-  /*padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 3px;
-  padding-bottom: 5px; */
-  padding: 3px 4px 5px;
-}
-
-.super-size {
-  height: 98px;
-  width: 98px;
-  border-radius: 98px;
-
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 5px;
-  padding-bottom: 9px;
-}
-
-/** icons position */
-.icon-position {
-  position: relative;
-  left: -5px;
-  top: -5px;
-}
-
-.icon-position-large {
-  position: relative;
-  left: -10px;
-  top: -10px;
-  width: 98px;
-  height: 98px;
+:host(.button-round) {
+  --max-border-radius: #{$max-border-radius}; // works // 200px; - works // $max-border-radius; - doesn't work
 }
