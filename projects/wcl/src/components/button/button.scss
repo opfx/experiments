@@ -112,16 +112,56 @@
 
 // Size
 // -----------------------------------------------------------------------------------
+$large-diameter: 98px;
+$big-diameter: 56px;
+$regular-diameter: 45px;
+$small-diameter: 30px;
+
+// Round buttons relative size:
+// For 72 x 72 face + border:
+//    shadow 72 x 72 moved (dx: 2, dy: 6)
+//    face-outer-gradient: 64 x 64 - centered, padding: 3px - all 3px
+//    face-inner-gradient: 52 x 52 - moved slightly up from center, padding: 8px 10px 12px - top | horizontal | bottom
+@mixin set-size($diameter: 98px, $width_factor: 1) {
+  // @debug 'diameter: #{$diameter}';
+  height: $diameter;
+  width: $diameter * $width_factor;
+  border-radius: $diameter;
+}
 
 :host(.button-large) {
-  height: 98px;
-  width: 98px;
-  border-radius: 98px;
+  @include set-size($large-diameter);
+  background-color: lavender;
+}
 
-  // padding-left: 7px;
-  // padding-right: 7px;
-  // padding-top: 5px;
-  // padding-bottom: 9px;
+:host(.button-big) {
+  @include set-size($big-diameter);
+  background-color: lavender;
+}
+
+:host(.button-big-long) {
+  @include set-size($big-diameter, 2);
+  background-color: lavender;
+}
+
+:host(.button-regular) {
+  height: 45px;
+  width: 45px;
+  border-radius: 45px;
+  background-color: lavender;
+}
+
+:host(.button-regular-long) {
+  height: 45px;
+  width: 90px;
+  border-radius: 45px;
+  background-color: lavender;
+}
+
+:host(.button-small) {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
   background-color: lavender;
 }
 
@@ -131,10 +171,11 @@
   // border-radius: 45px;
   border-radius: 98px;
 
-  padding-left: 4px;
+  /*padding-left: 4px;
   padding-right: 4px;
   padding-top: 3px;
-  padding-bottom: 5px;
+  padding-bottom: 5px; */
+  padding: 3px 4px 5px;
 }
 
 .super-size {
@@ -153,4 +194,12 @@
   position: relative;
   left: -5px;
   top: -5px;
+}
+
+.icon-position-large {
+  position: relative;
+  left: -10px;
+  top: -10px;
+  width: 98px;
+  height: 98px;
 }
