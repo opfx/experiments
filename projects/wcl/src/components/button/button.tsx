@@ -4,6 +4,7 @@ import { Color, Size } from '../../api';
 import { getWxMode } from '../../core';
 import { createColorClasses } from '../../util';
 
+// See https://stenciljs.com/docs/properties
 @Component({
   tag: 'wx-button',
   styleUrls: {
@@ -22,6 +23,8 @@ export class ButtonComponent implements ComponentInterface {
 
   @Prop() mode = getWxMode(this);
   @Prop() color?: Color;
+  // @Prop({ mutable: true }) gradientname: string; // 'yellow', 'blue'; // could not set gradientType - wk-button comes with all-lower-case for camel-case
+  @Prop({ mutable: true }) gradientname = 'yellow';
 
   /**
    * If `true`, the user cannot interact with the button.
@@ -51,9 +54,9 @@ export class ButtonComponent implements ComponentInterface {
     </Host>
    */
   render() {
-    const { buttonType, mode, size, shape } = this;
-    console.log('button shape: ' + shape);
-    //FIX ME
+    const { buttonType, gradientname, mode, size, shape } = this;
+    console.log('button gradientname: ' + gradientname);
+    // FIX ME
     // const TagType = href === undefined ? 'button' : ('a' as any);
     const TagType = 'button';
     return (
@@ -63,9 +66,10 @@ export class ButtonComponent implements ComponentInterface {
           [mode]: true,
           [`${buttonType}-${size}`]: true,
           [`${buttonType}-${shape}`]: shape !== undefined,
+          [`${buttonType}-${gradientname}`]: gradientname !== undefined,
         })}
       >
-        <TagType class="button-native yellow">
+        <TagType class="button-native">
           <slot name="icon-only"></slot>
           <slot name="start"></slot>
           <slot></slot>

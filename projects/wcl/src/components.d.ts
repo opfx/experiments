@@ -18,6 +18,7 @@ export namespace Components {
           * If `true`, the user cannot interact with the button.
          */
         "disabled": boolean;
+        "gradientname": string;
         "mode": "ios" | "md";
         /**
           * The button shape.
@@ -95,6 +96,7 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the button.
          */
         "disabled"?: boolean;
+        "gradientname"?: string;
         "mode"?: "ios" | "md";
         /**
           * The button shape.
