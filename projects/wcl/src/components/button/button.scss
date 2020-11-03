@@ -11,26 +11,65 @@ $border-size: 2px;
 $max-border-radius: 200px !default;
 
 $border-color: #00003c;
-$gradient-name: #ffffff; // 'yellow' !default;
+$gradient-name: #ffffff; // 'yellow'; // #ffffff; !default;
+$background-blue: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
+  linear-gradient(to top, #00a4ff, #00e6ff) border-box;
 
 // --- Color ---
 @mixin set-gradient-color($gradient-name, $gradient-base-color: white) {
-  @if --gradient-name == 'blue' {
+  @if $gradient-name == 'blue' {
     background: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
       linear-gradient(to top, #00a4ff, #00e6ff) border-box;
-  } @else if --gradient-name == 'purple' {
+  } @else if $gradient-name == 'purple' {
     background: linear-gradient(to top, #dc99ff, #d990ff, #d178ff, #c450ff, #b219ff, #bb31ff) content-box,
       linear-gradient(to top, #bb31ff, #d788ff) border-box;
-  } @else if --gradient-name == 'light-purple' {
+  } @else if $gradient-name == 'light-purple' {
     background: linear-gradient(to top, #eeccff, #dc99ff, #c655ff) content-box,
       linear-gradient(to top, #c655ff, #dc99ff, #eeccff) border-box;
-  } @else if --gradient-name == 'green' {
-  } @else if --gradient-name == 'yellow' {
+  } @else if $gradient-name == 'green' {
+  } @else if $gradient-name == 'yellow' {
     // if $gradient-base-color != white {
     // } @else {
     // $gradient-name == 'yellow' OR default
     background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
       linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
+  }
+}
+
+/*
+@mixin set-color($gradient-name) {
+  color: #0080ff;
+}*/
+
+/*
+@mixin set-color($gradient-name, $color) {
+  @debug '$gradient-name:' $gradient-name;
+  @if $gradient-name == 'blue' {
+    color: $color; //  #0080ff;
+  } @else {
+    // if { $gradient-name == 'yellow' {
+    color: #ff8000;
+  }
+  // color: $color;
+}*/
+
+/*
+@mixin set-color($gradient-name, $color) {
+  @if $color == #0080ff {
+    color: #0080ff;
+  } @else {
+    // if { $gradient-name == 'yellow' {
+    color: #ff8000;
+  }
+}*/
+
+@mixin set-color($gradient-name, $color, $color-num) {
+  @if $color-num == 1 {
+    color: #0080ff;
+  } @else if $color-num == 0 {
+    color: #ff8000;
+  } @else {
+    color: #000000;
   }
 }
 
@@ -131,8 +170,11 @@ $gradient-name: #ffffff; // 'yellow' !default;
 }*/
 
 .button-native {
-  @include set-gradient-color(var(--gradient-name));
+  // @include set-gradient-color(var(--gradient-name0));
+  // @include set-gradient-color($gradient-name);
+  // @include set-gradient-color(var(--gradient-name0));
   // background: initial;
+  background: var(--background);
 
   @include set-border;
   @include set-shadow;
@@ -159,7 +201,9 @@ $gradient-name: #ffffff; // 'yellow' !default;
   // border-color: white;
 
   // color: --text-color; // currentColor;
-  color: currentColor;
+  // color: var(--color0); // currentColor;
+  // @include set-color(var(--gradient-name0));
+  @include set-color(var(--gradient-name0), var(--color0), var(--color-num));
 
   outline: none;
 
@@ -167,11 +211,23 @@ $gradient-name: #ffffff; // 'yellow' !default;
   box-sizing: border-box;
   appearance: none;
 
+  outline: none;
   cursor: pointer;
 }
 
 .button-native::-moz-focus-inner {
   border: 0;
+}
+
+.button-native:hover {
+  transition: 0.1s ease-out;
+  transform: translateY(-0.025rem);
+  filter: brightness(1.075);
+}
+
+.button-native:active {
+  transition: 0.2s ease-out;
+  transform: translateY(0.1rem);
 }
 
 /* yellow * /
@@ -245,21 +301,35 @@ $gradient-name: #ffffff; // 'yellow' !default;
 // Color
 // -----------------------------------------------------------------------------------
 :host(.button-yellow) {
-  --gradient-name: 'yellow';
+  --gradient-name0: 'yellow';
+  --color0: #ff8000;
+  --color-num: 0;
+  --background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
+    linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
+  // $gradient-name: 'yellow';
   // @include set-gradient-color('yellow');
 }
 
 :host(.button-blue) {
-  --gradient-name: 'blue';
+  --gradient-name0: 'blue';
+  --color0: #0080ff;
+  --color-num: 1;
+  --background: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
+    linear-gradient(to top, #00a4ff, #00e6ff) border-box;
+  // $gradient-name: 'blue';
   // @include set-gradient-color('blue');
 }
 
 :host(.button-purple) {
   --gradient-name: 'purple';
+  --background: linear-gradient(to top, #dc99ff, #d990ff, #d178ff, #c450ff, #b219ff, #bb31ff) content-box,
+    linear-gradient(to top, #bb31ff, #d788ff) border-box;
   // @include set-gradient-color('purple');
 }
 
 :host(.button-light-purple) {
   --gradient-name: 'light-purple';
+  --background: linear-gradient(to top, #eeccff, #dc99ff, #c655ff) content-box,
+    linear-gradient(to top, #c655ff, #dc99ff, #eeccff) border-box;
   // @include set-gradient-color('light-purple');
 }
