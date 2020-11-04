@@ -40,3 +40,15 @@ svg {
 :host(.icon-large) {
   font-size: 32px !important;
 }
+
+/* Icon Colors
+ * -------------------------------------------------
+ */
+
+:host(.wx-color) {
+  color: var(--wx-color-base) !important;
+}
+
+:host(.wx-color-primary) {
+  --wx-color-base: var(--wx-color-primary, #3880ff);
+}
