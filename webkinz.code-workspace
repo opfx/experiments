@@ -28,7 +28,7 @@
     {
       "name": "Docs",
       "path": "doc"
-    },
+    }
   ],
   "settings": {
     // "terminal.integrated.cwd": "./../../",
@@ -46,6 +46,7 @@
     },
     "cSpell.words": [],
     "jest.pathToJest": "yarn test",
+    "jest.disabledWorkspaceFolders": ["Docs"],
     "editor.formatOnSave": true
   },
   "launch": {
