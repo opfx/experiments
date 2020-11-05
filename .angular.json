@@ -471,6 +471,113 @@
           }
         }
       }
+    },
+    "arcade": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/arcade",
+      "sourceRoot": "projects/arcade/src",
+      "prefix": "wx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/arcade",
+            "index": "projects/arcade/src/index.html",
+            "main": "projects/arcade/src/main.ts",
+            "polyfills": "projects/arcade/src/polyfills.ts",
+            "tsConfig": "projects/arcade/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/arcade/src/favicon.ico", "projects/arcade/src/assets"],
+            "styles": ["projects/arcade/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/arcade/src/environments/environment.ts",
+                  "with": "projects/arcade/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "arcade:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "arcade:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "arcade:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/arcade/tsconfig.app.json",
+              "projects/arcade/tsconfig.spec.json",
+              "projects/arcade/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@wdtk/jest:jest",
+          "options": {
+            "jestConfig": "projects/arcade/jest.config.js",
+            "tsConfig": "projects/arcade/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "projects/arcade/src/test-setup.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@wdtk/cypress:cypress",
+          "options": {
+            "cypressConfig": "projects/arcade/cypress.json",
+            "tsConfig": "projects/arcade/e2e/tsconfig.json",
+            "devServerTarget": "arcade:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "arcade:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "newProjectRoot": "projects",

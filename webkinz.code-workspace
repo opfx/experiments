@@ -5,9 +5,10 @@
       "path": "projects/play"
     },
     {
-      "name": "Cash Cow (game)",
-      "path": "projects/cash-cow"
+      "name": "Arcade ",
+      "path": "projects/arcade"
     },
+
     {
       "name": "Kinzpost ",
       "path": "projects/kinzpost"
@@ -17,10 +18,13 @@
       "path": "projects/runtime"
     },
     {
+      "name": "Cash Cow (game)",
+      "path": "projects/cash-cow"
+    },
+    {
       "name": "Webkinz Component Library",
       "path": "projects/wcl"
-    },
-    
+    }
   ],
   "settings": {
     // "terminal.integrated.cwd": "./../../",
@@ -28,13 +32,13 @@
     "files.eol": "\n",
     "files.exclude": {
       "**/node_modules": true,
-      "**/.vscode":true,
-      "**/tsconfig.*":true,
-      "**/tslint.json" : true,
-      "**/jest.*":true,
-      "**/cypress.json":true,
-      "**/.*rc":true,
-      "**/test-setup.ts":true
+      "**/.vscode": false,
+      "**/tsconfig.*": true,
+      "**/tslint.json": true,
+      "**/jest.*": true,
+      "**/cypress.json": true,
+      "**/.*rc": true,
+      "**/test-setup.ts": true
     },
     "cSpell.words": [],
     "jest.pathToJest": "yarn test",

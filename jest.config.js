@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/projects/runtime',
     '<rootDir>/projects/cash-cow',
     '<rootDir>/projects/kinzpost',
+    '<rootDir>/projects/arcade',
   ],
 };
