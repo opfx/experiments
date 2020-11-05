@@ -1,0 +1,200 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="40px" height="38px" viewBox="0 0 40 38">
+<title>Arcade</title>
+<defs>
+<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="17.6375" y1="7.125" x2="20.662499999999998" y2="9.075" spreadMethod="pad">
+<stop  offset="0%" stop-color="#4C77EF"/>
+
+<stop  offset="18.03921568627451%" stop-color="#6490FF"/>
+
+<stop  offset="100%" stop-color="#1641CC"/>
+</linearGradient>
+
+<linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="3.4875" y1="13.225" x2="11.8125" y2="16.275" spreadMethod="pad">
+<stop  offset="0%" stop-color="#4C77EF"/>
+
+<stop  offset="18.03921568627451%" stop-color="#6490FF"/>
+
+<stop  offset="100%" stop-color="#1641CC"/>
+</linearGradient>
+
+<linearGradient id="Gradient_3" gradientUnits="userSpaceOnUse" x1="20.6" y1="19.712500000000002" x2="29.5" y2="20.4875" spreadMethod="pad">
+<stop  offset="0%" stop-color="#1641CC"/>
+
+<stop  offset="56.470588235294116%" stop-color="#6490FF"/>
+
+<stop  offset="100%" stop-color="#3A69FF"/>
+</linearGradient>
+
+<radialGradient id="Gradient_4" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="4.8083261120685235" fx="0" fy="0" gradientTransform="matrix( 0.7071067811865476, 0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 8.85,3.5) " spreadMethod="pad">
+<stop  offset="9.803921568627452%" stop-color="#FFFFFF"/>
+
+<stop  offset="29.80392156862745%" stop-color="#FFFF00"/>
+
+<stop  offset="100%" stop-color="#FFAA00"/>
+</radialGradient>
+
+<g id="Icons_my_arcade_copy_0_Layer0_0_FILL">
+<path fill="#00003C" stroke="none" d="
+M 31.95 16.25
+L 31.95 14.95
+Q 32.2 12.5 30.35 10.35 28.55 8.2 25.45 7.35 24.2 7 22.8 7 22.25 4.95 20.05 4.15 19.45 4 18.85 4 17.5 4 16.5 4.75
+L 14.8 3.75
+Q 14.4 2.1 13.05 1.05 11.7 0 10 0 8 0 6.6 1.35 5.15 2.65 5 4.6 3 6.15 3 8.45
+L 3 8.65 2.9 8.85
+Q 1.1 12.55 0.55 14.25 -0.4 17.1 0.25 18.9 0.75 20.45 2.45 21.25 3.45 21.75 4.6 21.75 6.15 21.75 7.7 20.75 8.65 20.15 10.05 18.8
+L 11.4 17.6
+Q 13.55 18.25 15.1 18.85 17.05 19.6 18.95 20.55
+L 19.5 22.9
+Q 20.35 26.25 21.1 27.55 22.4 29.8 24.85 29.95
+L 25.2 30
+Q 28.25 30 29.6 27.05 30.45 25.25 31.3 19.85
+L 31.95 16.25 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_1_FILL">
+<path fill="url(#Gradient_1)" stroke="none" d="
+M 20.9 8.6
+Q 21.15 7.8 20.7 7.1 20.3 6.35 19.45 6.1 18.65 5.85 17.95 6.2 17.25 6.55 17.05 7.35 16.85 8.15 17.25 8.85 17.65 9.6 18.5 9.85 19.3 10.1 20 9.75 20.7 9.4 20.9 8.6 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_2_FILL">
+<path fill="url(#Gradient_2)" stroke="none" d="
+M 5.8 7.35
+Q 2.6 14.4 2.5 14.6 1.2 18.5 3.3 19.45 5.3 20.4 7.7 18.25 10.65 15.65 11.2 15.55
+L 12.2 15.75
+Q 13.65 16.15 15.8 17 19.3 18.35 20.6 19.2 21.3 21.5 22.2 25.25 23.1 27.85 24.95 27.95 27.3 28.1 28.3 24.85 28.3 24.75 30 15.85
+L 5.8 7.35 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_3_FILL">
+<path fill="url(#Gradient_3)" stroke="none" d="
+M 17.7 11.55
+L 15.8 17
+Q 19.3 18.35 20.6 19.2 21.3 21.5 22.2 25.25 23.1 27.85 24.95 27.95 27.3 28.1 28.3 24.85 28.3 24.75 30 15.85
+L 17.7 11.55 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_4_FILL">
+<path fill="#457AFF" stroke="none" d="
+M 23.1 14.95
+Q 25.1 12.85 25.05 9.65 23.95 9.55 21.7 8.9 19.8 8.4 18.65 7.95 16.65 7.3 14.05 5.6 13 4.9 11.65 4.95
+L 10.45 5.15 11.05 12.8 21.15 16.35
+Q 22.15 15.95 23.1 14.95 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_5_FILL">
+<path fill="#1641CC" stroke="none" d="
+M 13.5 12
+Q 14.95 10.95 15 9.5 15 8.05 13.55 7 12.05 6 10 6 7.95 5.95 6.45 7 5 8 5 9.45 4.95 10.9 6.45 11.95 7.85 12.95 9.95 13 12 13 13.5 12 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_6_FILL">
+<path fill="#6490FF" stroke="none" d="
+M 13.5 11
+Q 14.95 9.95 15 8.5 15 7.05 13.55 6 12.05 5 10 5 7.95 4.95 6.45 6 5 7 5 8.45 4.95 9.9 6.45 10.95 7.85 11.95 9.95 12 12 12 13.5 11 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_7_FILL">
+<path fill="#1641CC" stroke="none" d="
+M 27.5 18.6
+Q 29.5 17.8 29.9 16.05 30.3 14.35 28.85 12.65 27.4 10.95 24.95 10.25 22.45 9.6 20.45 10.4 18.45 11.15 18.05 12.9 17.65 14.6 19.1 16.35 20.55 18 23 18.7 25.5 19.35 27.5 18.6 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_8_FILL">
+<path fill="#6490FF" stroke="none" d="
+M 27.5 17.6
+Q 29.5 16.8 29.9 15.05 30.3 13.35 28.85 11.65 27.4 9.95 24.95 9.25 22.45 8.6 20.45 9.4 18.45 10.15 18.05 11.9 17.65 13.6 19.1 15.35 20.55 17 23 17.7 25.5 18.35 27.5 17.6 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_9_FILL">
+<path fill="#FF7600" stroke="none" d="
+M 9.95 10
+Q 10.8 10 11.4 9.6 12 9.2 12 8.65
+L 12 6 8 6 8 8.65
+Q 8 9.2 8.55 9.6 9.15 10 9.95 10 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_10_FILL">
+<path fill="url(#Gradient_4)" stroke="none" d="
+M 13 5
+Q 13 3.75 12.1 2.85 11.25 2 10 2 8.75 2 7.85 2.85 7 3.75 7 5 7 6.25 7.85 7.1 8.75 8 10 8 11.25 8 12.1 7.1 13 6.25 13 5 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_11_FILL">
+<path fill="#FF73FF" stroke="none" d="
+M 24 11.5
+Q 24 10.85 23.4 10.45 22.85 10 22 10 21.15 10 20.55 10.45 20 10.85 20 11.5 20 12.1 20.55 12.55 21.15 13 22 13 22.8 13 23.4 12.55 24 12.1 24 11.5 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_12_FILL">
+<path fill="#FFAA00" stroke="none" d="
+M 29 13.5
+Q 29 12.85 28.4 12.45 27.85 12 27 12 26.15 12 25.55 12.45 25 12.85 25 13.5 25 14.1 25.55 14.55 26.15 15 27 15 27.8 15 28.4 14.55 29 14.1 29 13.5 Z"/>
+</g>
+
+<g id="Icons_my_arcade_copy_0_Layer0_13_FILL">
+<path fill="#00FF00" stroke="none" d="
+M 25 14.45
+Q 25 13.85 24.4 13.45 23.85 13 23 13 22.15 13 21.55 13.45 21 13.85 21 14.45 21 15.1 21.55 15.55 22.15 16 23 16 23.85 16 24.4 15.55 25 15.1 25 14.45 Z"/>
+</g>
+</defs>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_0_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_1_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_2_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_3_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_4_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_5_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_6_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_7_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_8_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_9_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_10_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_11_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_12_FILL"/>
+</g>
+
+<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
+<use xlink:href="#Icons_my_arcade_copy_0_Layer0_13_FILL"/>
+</g>
+</g>
+</svg>

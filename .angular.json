@@ -21,7 +21,20 @@
             "polyfills": "projects/play/src/polyfills.ts",
             "tsConfig": "projects/play/tsconfig.app.json",
             "aot": true,
-            "assets": ["projects/play/src/favicon.ico", "projects/play/src/assets"],
+            "assets": [
+              "projects/play/src/favicon.ico",
+              "projects/play/src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@webkinz/arcade/src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@webkinz/kinzpost/src/assets",
+                "output": "assets"
+              }
+            ],
             "styles": ["projects/play/src/styles.scss"],
             "scripts": []
           },
