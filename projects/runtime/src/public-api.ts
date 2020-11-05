@@ -5,3 +5,4 @@
 export * from './lib/runtime.service';
 export * from './lib/runtime.component';
 export * from './lib/runtime.module';
+export * from './lib/core';
