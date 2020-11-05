@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArcadeComponent } from './arcade.component';
+import { ArcadeActivity } from './arcade.activity';
 
 describe('ArcadeComponent', () => {
-  let component: ArcadeComponent;
-  let fixture: ComponentFixture<ArcadeComponent>;
+  let component: ArcadeActivity;
+  let fixture: ComponentFixture<ArcadeActivity>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ArcadeComponent],
+      declarations: [ArcadeActivity],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArcadeComponent);
+    fixture = TestBed.createComponent(ArcadeActivity);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
