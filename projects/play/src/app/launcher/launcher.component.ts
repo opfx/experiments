@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { ActivityInfo } from '@webkinz/runtime';
+import { Activity, ActivityInfo } from '@webkinz/runtime';
+import { Intent } from '@webkinz/runtime';
 
 @Component({
   selector: 'wx-launcher',
@@ -16,7 +17,7 @@ import { ActivityInfo } from '@webkinz/runtime';
   `,
   styleUrls: [`./launcher.component.scss`],
 })
-export class LauncherComponent implements OnInit, OnDestroy {
+export class LauncherComponent extends Activity {
   public activities$: Observable<ActivityInfo[]>;
 
   @HostBinding('class.hidden') isHidden = true;
@@ -26,9 +27,7 @@ export class LauncherComponent implements OnInit, OnDestroy {
     this.isHidden = hidden;
   }
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
+  onCreate(): void {
     console.log('launcher init');
     this.activities$ = of([
       { name: 'arcade', label: 'Arcade' },
@@ -36,11 +35,13 @@ export class LauncherComponent implements OnInit, OnDestroy {
     ]);
   }
 
-  ngOnDestroy(): void {
+  onDestroy(): void {
     console.log('launcher destroy');
   }
 
   launch(activity): void {
-    console.log(`launching activity ${activity.name}`);
+    const intent = new Intent(Intent.ACTION.DEFAULT, `content://${activity.name}`);
+    this.startActivity(intent);
+    this.isHidden = true;
   }
 }
