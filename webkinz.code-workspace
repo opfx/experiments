@@ -24,7 +24,11 @@
     {
       "name": "Webkinz Component Library",
       "path": "projects/wcl"
-    }
+    },
+    {
+      "name": "Docs",
+      "path": "doc"
+    },
   ],
   "settings": {
     // "terminal.integrated.cwd": "./../../",
