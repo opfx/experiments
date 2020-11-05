@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 
-import { KinzpostComponent } from './kinzpost.component';
+import { KinzpostActivity } from './kinzpost.activity';
 
 import { RuntimeModule } from '@webkinz/runtime';
 
-const routes: Route[] = [{ path: '', component: KinzpostComponent }];
+const routes: Route[] = [{ path: '', component: KinzpostActivity }];
 
 @NgModule({
-  declarations: [KinzpostComponent],
+  declarations: [KinzpostActivity],
   imports: [RuntimeModule, RouterModule.forChild(routes)],
-  exports: [KinzpostComponent],
+  exports: [KinzpostActivity],
 })
 export class KinzpostModule {}

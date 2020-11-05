@@ -3,5 +3,5 @@
  */
 
 export * from './lib/kinzpost.service';
-export * from './lib/kinzpost.component';
+// export * from './lib/kinzpost.activity';
 export * from './lib/kinzpost.module';

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KinzpostComponent } from './kinzpost.component';
+import { KinzpostActivity } from './kinzpost.component';
 
 describe('KinzpostComponent', () => {
-  let component: KinzpostComponent;
-  let fixture: ComponentFixture<KinzpostComponent>;
+  let component: KinzpostActivity;
+  let fixture: ComponentFixture<KinzpostActivity>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [KinzpostComponent],
+      declarations: [KinzpostActivity],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(KinzpostComponent);
+    fixture = TestBed.createComponent(KinzpostActivity);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
