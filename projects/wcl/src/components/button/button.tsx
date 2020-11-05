@@ -55,7 +55,7 @@ export class ButtonComponent implements ComponentInterface {
    */
   render() {
     const { buttonType, gradientname, mode, size, shape } = this;
-    console.log('button gradientname: ' + gradientname);
+    // console.log('button gradientname: ' + gradientname);
     // FIX ME
     // const TagType = href === undefined ? 'button' : ('a' as any);
     const TagType = 'button';

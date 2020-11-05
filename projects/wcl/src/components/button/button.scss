@@ -1,133 +1,44 @@
 @use "sass:math";
 @import 'button.vars';
 
-// Variables
+// Button
 // -----------------------------------------------------------------------------------
-$large-diameter: 98px;
-$big-diameter: 56px;
-$regular-diameter: 45px;
-$small-diameter: 30px;
-$border-size: 2px;
-$max-border-radius: 200px !default;
 
-$border-color: #00003c;
-$gradient-name: #ffffff; // 'yellow'; // #ffffff; !default;
-$background-blue: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
-  linear-gradient(to top, #00a4ff, #00e6ff) border-box;
-
-// --- Color ---
-@mixin set-gradient-color($gradient-name, $gradient-base-color: white) {
-  @if $gradient-name == 'blue' {
-    background: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
-      linear-gradient(to top, #00a4ff, #00e6ff) border-box;
-  } @else if $gradient-name == 'purple' {
-    background: linear-gradient(to top, #dc99ff, #d990ff, #d178ff, #c450ff, #b219ff, #bb31ff) content-box,
-      linear-gradient(to top, #bb31ff, #d788ff) border-box;
-  } @else if $gradient-name == 'light-purple' {
-    background: linear-gradient(to top, #eeccff, #dc99ff, #c655ff) content-box,
-      linear-gradient(to top, #c655ff, #dc99ff, #eeccff) border-box;
-  } @else if $gradient-name == 'green' {
-  } @else if $gradient-name == 'yellow' {
-    // if $gradient-base-color != white {
-    // } @else {
-    // $gradient-name == 'yellow' OR default
-    background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
-      linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
-  }
-}
-
-/*
-@mixin set-color($gradient-name) {
-  color: #0080ff;
-}*/
-
-/*
-@mixin set-color($gradient-name, $color) {
-  @debug '$gradient-name:' $gradient-name;
-  @if $gradient-name == 'blue' {
-    color: $color; //  #0080ff;
-  } @else {
-    // if { $gradient-name == 'yellow' {
-    color: #ff8000;
-  }
-  // color: $color;
-}*/
-
-/*
-@mixin set-color($gradient-name, $color) {
-  @if $color == #0080ff {
-    color: #0080ff;
-  } @else {
-    // if { $gradient-name == 'yellow' {
-    color: #ff8000;
-  }
-}*/
-
-@mixin set-color($gradient-name, $color, $color-num) {
-  @if $color-num == 1 {
-    color: #0080ff;
-  } @else if $color-num == 0 {
-    color: #ff8000;
-  } @else {
-    color: #000000;
-  }
-}
-
-@mixin set-gradient-color-hover($gradient-name: 'yellow', $gradient-base-color: white) {
-  @if $gradient-name == 'yellow' {
-    background: linear-gradient(to top, #ffff66, #ffe066, #ffc066) content-box,
-      linear-gradient(to top, #ffc066, #ffe066, #ffff66) border-box;
-  }
-}
-
-@mixin set-border() {
-  // $border-size: 2, $border-color: #00003c
-  border: $border-size solid $border-color;
-}
-
-@mixin set-shadow() {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 1px 2px 3px rgba(0, 0, 0, 0.6);
-  /* box-shadow:  0 1px 5px rgba(0, 0, 0, 0.3), 1px 3px 0px rgba(0, 0, 60, 0.2);*/
-}
-
-// --- Size & Padding ---
-// Round buttons relative size:
-// For 72 x 72 face + border:
-//    shadow 72 x 72 moved (dx: 2, dy: 6)
-//    face-outer-gradient: 64 x 64 - centered, padding: 3px - all 3px
-//    face-inner-gradient: 52 x 52 - moved slightly up from center, padding: 8px 10px 12px - top | horizontal | bottom
-// For 98 x 98px Web TTD button: padding: 5px 7px 9px;
-@mixin set-size($diameter: 98px, $width_factor: 1) {
-  // @debug 'diameter: #{$diameter}';
-  height: $diameter;
-  width: $diameter * $width_factor;
-  border-radius: $diameter;
-
-  $padding-factor: $diameter/ 98px;
-  --padding-inner-grad-top: #{math.floor(5 * $padding-factor)}px;
-  --padding-inner-grad-bottom: #{math.floor(9 * $padding-factor)}px;
-  --padding-inner-grad-horizontal: #{math.floor(7 * $padding-factor)}px;
-}
-
-// Host
-// -----------------------------------------------------------------------------------
 :host {
+  /**
+   * @prop --background: Background of the button
+   *
+   * @prop --border-radius: Border radius of the button
+   * @prop --border-width: Border width of the button
+   * @prop --border-style: Border style of the button
+   * @prop --border-color: Border color of the button
+   *
+   * @prop --box-shadow: Shadow of the button 
+   */
   --overflow: hidden;
   --ripple-color: currentColor;
-  --border-style: initial;
-  --border-width: initial;
-  --border-color: initial;
-  //   --border-radius: #{$button-border-radius};
-  --border-radius: 0;
+  --border-style: #{$border-style}; // initial;
+  --border-width: #{$border-width}; // initial;
+  --border-color: #{$border-color}; // initial;
+  --border: #{$border-width} #{$border-style} #{$border-color};
+  --border-radius: #{$border-radius}; // --border-radius: #{$button-border-radius};
+  --box-shadow: #{$box-shadow};
 
   --padding-top: #{$button-padding-top};
   --padding-bottom: #{$button-padding-bottom};
   --padding-start: #{$button-padding-start};
   --padding-end: #{$button-padding-end};
-  --box-shadow: none;
+  --padding: #{$padding-default};
 
   // experimental
-  --height: 40px;
+  --height: #{$height-default};
+  --width: #{$height-default};
+
+  --font-family: #{$font-family};
+  --font-size: #{$font-size};
+  --color: #{$color};
+  // --color: color;
+  --outline-color: #{$outline-color};
 }
 
 :host {
@@ -170,21 +81,14 @@ $background-blue: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
 }*/
 
 .button-native {
-  // @include set-gradient-color(var(--gradient-name0));
-  // @include set-gradient-color($gradient-name);
-  // @include set-gradient-color(var(--gradient-name0));
-  // background: initial;
   background: var(--background);
-
-  @include set-border;
-  @include set-shadow;
+  border-radius: var(--border-radius);
+  border: var(--border-width) var(--border-style) var(--border-color); // var(--border);
+  box-shadow: var(--box-shadow);
+  outline: none;
 
   // @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
-  @include padding(
-    var(--padding-inner-grad-top),
-    var(--padding-inner-grad-horizontal),
-    var(--padding-inner-grad-bottom)
-  );
+  padding: var(--padding);
   margin: 0px;
 
   display: block;
@@ -193,25 +97,19 @@ $background-blue: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
   width: 100%;
   height: 100%;
 
-  border-radius: var(--max-border-radius); //  200px; //
-
-  // border: 2px solid #00003c;
-  // border-width: 0px;
-  // border-style: initial;
-  // border-color: white;
-
-  // color: --text-color; // currentColor;
-  // color: var(--color0); // currentColor;
-  // @include set-color(var(--gradient-name0));
-  @include set-color(var(--gradient-name0), var(--color0), var(--color-num));
-
-  outline: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  // color: currentColor;
+  color: var(--color);
+  @if var(--outline-color) != none {
+    text-shadow: 0px 3px 3px var(--outline-color), 0px -2px 3px var(--outline-color), -2px 0px 3px var(--outline-color),
+      2px 0px 3px var(--outline-color);
+  }
 
   z-index: 0;
   box-sizing: border-box;
   appearance: none;
 
-  outline: none;
   cursor: pointer;
 }
 
@@ -230,106 +128,81 @@ $background-blue: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
   transform: translateY(0.1rem);
 }
 
-/* yellow * /
-.yellow {
-  /* background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
-  linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box; * /
-  @include set-gradient-color;
-  position: relative;
-  cursor: pointer;
-
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 1px 2px 3px rgba(0, 0, 0, 0.6);
-  /* box-shadow:  0 1px 5px rgba(0, 0, 0, 0.3), 1px 3px 0px rgba(0, 0, 60, 0.2);* /
-
-  border: $border-size solid #00003c;
-
-  outline: none;
-}
-
-.yellow:hover {
-  transition: 0.1s ease-out;
-  /* transform: translateY(0.05rem); * /
-  transform: translateY(-0.025rem);
-
-  /* filter: brightness(1.4); */
-/*background: linear-gradient(to top, #ffff66, #ffe066, #ffc066) content-box,
-    linear-gradient(to top, #ffc066, #ffe066, #ffff66) border-box; * /
-  @include set-gradient-color-hover;
-}
-
-.yellow:active {
-  transition: 0.2s ease-out;
-  transform: translateY(0.1rem);
-}*/
-
 // Size
 // -----------------------------------------------------------------------------------
+:host(.button-x-large) {
+  --padding: #{$padding-x-large};
+
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-x-large};
+  --width: #{$height-x-large};
+  width: var(--width);
+  height: var(--height);
+
+  // background-color: lavender;
+}
+
 :host(.button-large) {
-  @include set-size($large-diameter);
-  background-color: lavender;
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-large};
+  --width: #{$height-large};
+  width: var(--width);
+  height: var(--height);
 }
 
-:host(.button-big) {
-  @include set-size($big-diameter);
-  background-color: lavender;
-}
-
-:host(.button-big-long) {
-  @include set-size($big-diameter, 2);
-  background-color: lavender;
-}
-
-:host(.button-regular) {
-  @include set-size($regular-diameter);
-  background-color: lavender;
-}
-
-:host(.button-regular-long) {
-  @include set-size($regular-diameter, 2);
-  background-color: lavender;
+:host(.button-default) {
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-default};
+  --width: #{$height-default};
+  width: var(--width);
+  height: var(--height);
 }
 
 :host(.button-small) {
-  @include set-size($small-diameter);
-  background-color: lavender;
+  --padding: #{$padding-small};
+
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-small};
+  --width: #{$height-small};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-x-small) {
+  --padding: #{$padding-x-small};
+
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-x-small};
+  --width: #{$height-x-small};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-default-long-size) {
+  --width: #{$default-custom-width};
+  --height: #{$default-custom-height};
+  width: var(--width);
+  height: var(--height);
 }
 
 :host(.button-round) {
-  --max-border-radius: #{$max-border-radius}; // works // 200px; - works // $max-border-radius; - doesn't work
+  --border-radius: #{$border-radius}; // works // 200px; - works // $border-radius; - doesn't work
 }
 
 // Color
 // -----------------------------------------------------------------------------------
 :host(.button-yellow) {
-  --gradient-name0: 'yellow';
-  --color0: #ff8000;
-  --color-num: 0;
-  --background: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
-    linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
-  // $gradient-name: 'yellow';
-  // @include set-gradient-color('yellow');
+  --background: #{$background-orange};
 }
 
 :host(.button-blue) {
-  --gradient-name0: 'blue';
-  --color0: #0080ff;
-  --color-num: 1;
-  --background: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
-    linear-gradient(to top, #00a4ff, #00e6ff) border-box;
-  // $gradient-name: 'blue';
-  // @include set-gradient-color('blue');
+  --background: #{$background-blue};
 }
 
 :host(.button-purple) {
-  --gradient-name: 'purple';
-  --background: linear-gradient(to top, #dc99ff, #d990ff, #d178ff, #c450ff, #b219ff, #bb31ff) content-box,
-    linear-gradient(to top, #bb31ff, #d788ff) border-box;
-  // @include set-gradient-color('purple');
+  --background: #{$background-purple};
 }
 
 :host(.button-light-purple) {
-  --gradient-name: 'light-purple';
-  --background: linear-gradient(to top, #eeccff, #dc99ff, #c655ff) content-box,
-    linear-gradient(to top, #c655ff, #dc99ff, #eeccff) border-box;
-  // @include set-gradient-color('light-purple');
+  --background: #{$background-light-purple};
 }
