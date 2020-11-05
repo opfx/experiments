@@ -13,6 +13,7 @@ const routes: Route[] = [
     component: ContentComponent,
     children: [
       { path: 'cash-cow', loadChildren: () => import('@webkinz/cash-cow').then((m) => m.CashCowModule) },
+      { path: 'arcade', loadChildren: () => import('@webkinz/arcade').then((m) => m.ArcadeModule) },
       { path: 'kinzpost', loadChildren: () => import('@webkinz/kinzpost').then((m) => m.KinzpostModule) },
     ],
   },
