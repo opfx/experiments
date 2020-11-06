@@ -36,7 +36,7 @@
     "files.eol": "\n",
     "files.exclude": {
       "**/node_modules": true,
-      "**/.vscode": false,
+      "**/.vscode": true,
       "**/tsconfig.*": true,
       "**/tslint.json": true,
       "**/jest.*": true,
@@ -44,7 +44,7 @@
       "**/.*rc": true,
       "**/test-setup.ts": true
     },
-    "cSpell.words": [],
+    "cSpell.words": ["Kinzpost", "webkinz"],
     "jest.pathToJest": "yarn test",
     "jest.disabledWorkspaceFolders": ["Docs"],
     "editor.formatOnSave": true
