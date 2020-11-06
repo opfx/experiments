@@ -1,6 +1,66 @@
 @import '../../theme/globals.scss';
 
-// Default values
+// Default webkinz values
+// ---------------------------------------------------------
+
+/// @prop - Button-gradient
+$background-orange: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
+  linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box; // padding-box;
+
+/* not used for now - used filter   
+$background-orange-hover: linear-gradient(to top, #ffff66, #ffe066, #ffc066) content-box,
+linear-gradient(to top, #ffc066, #ffe066, #ffff66) border-box;
+*/
+
+$background-blue: linear-gradient(to top, #00e6ff, #00a4ff) content-box,
+  linear-gradient(to top, #00a4ff, #00e6ff) border-box;
+
+$background-purple: linear-gradient(to top, #dc99ff, #d990ff, #d178ff, #c450ff, #b219ff, #bb31ff) content-box,
+  linear-gradient(to top, #bb31ff, #d788ff) border-box;
+
+$background-light-purple: linear-gradient(to top, #eeccff, #dc99ff, #c655ff) content-box,
+  linear-gradient(to top, #c655ff, #dc99ff, #eeccff) border-box;
+
+/// @prop border-color
+$border-color: #00003c;
+
+/// @prop $border-size
+$border-width: 2px;
+
+/// @prop $border-style
+$border-style: solid;
+
+/// @prop $box-shadow
+$box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 1px 2px 3px rgba(0, 0, 0, 0.6);
+// box-shadow:  0 1px 5px rgba(0, 0, 0, 0.3), 1px 3px 0px rgba(0, 0, 60, 0.2);
+// box-shadow: 0px 3px 0px rgba(0, 0, 70, 0.5);
+
+/// @prop height-*
+$height-x-large: 98px; // 6.5em; //
+$height-large: 64px;
+$height-default: 56px; // 3.6em; //
+$height-small: 44px; // 3em; //
+$height-x-small: 30px; // 2em; //
+$border-radius: 200px !default;
+
+/// @prop padding-*
+// @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+$padding-x-large: 3px 5px 6px 5px;
+$padding-default: 3px 4px 5px 4px;
+$padding-small: 3px 3px 5px 3px;
+$padding-x-small: 1px 2px 3px 2px;
+
+/// @prop size for custom-size button
+$default-custom-width: 82px;
+$default-custom-height: 44px;
+
+/// @prop
+$font-family: 'webkinz-med';
+$font-size: 24px !default;
+$color: #003051 !default;
+$outline-color: none !default;
+
+// Default values (copied from button.md.vars.scss)
 // ---------------------------------------------------------
 
 /// @prop - Margin top of the button
