@@ -26,6 +26,11 @@
               "projects/play/src/assets",
               {
                 "glob": "**/*",
+                "input": "node_modules/@webkinz/runtime/src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
                 "input": "node_modules/@webkinz/arcade/src/assets",
                 "output": "assets"
               },
