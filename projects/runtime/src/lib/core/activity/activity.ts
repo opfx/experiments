@@ -35,6 +35,22 @@ export class Activity implements OnInit, OnDestroy {
     this.destroy();
   }
 
+  public wxViewWillEnter(): void {
+    console.log(`will enter`);
+  }
+
+  public wxViewDidEnter(): void {
+    console.log(`did enter`);
+  }
+
+  public wxViewWillLeave(): void {
+    console.log(`will leave`);
+  }
+
+  public wxViewDidLeave(): void {
+    console.log('did leave');
+  }
+
   private create(): void {
     this.onCreate();
   }
