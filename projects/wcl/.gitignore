@@ -6,6 +6,7 @@
 /tmp
 /out-tsc
 /www
+**/readme.md
 # dependencies
 /node_modules
 
