@@ -21,6 +21,7 @@ export const config: Config = {
         // the angular output target does not support copy
         { src: './../css', dest: './../../../runtime/css', warn: true },
         { src: './theme', dest: './../../../runtime/theme', warn: true },
+        { src: './assets', dest: './../../../runtime/src/assets', warn: true },
       ],
     },
     // {
