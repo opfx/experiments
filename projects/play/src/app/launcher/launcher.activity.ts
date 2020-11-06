@@ -15,9 +15,9 @@ import { Intent } from '@webkinz/runtime';
       {{ activity.name }}
     </button>
   `,
-  styleUrls: [`./launcher.component.scss`],
+  styleUrls: [`./launcher.activity.scss`],
 })
-export class LauncherComponent extends Activity {
+export class LauncherActivity extends Activity {
   public activities$: Observable<ActivityInfo[]>;
 
   @HostBinding('class.hidden') isHidden = true;
@@ -27,7 +27,7 @@ export class LauncherComponent extends Activity {
     this.isHidden = hidden;
   }
 
-  onCreate(): void {
+  protected onCreate(): void {
     console.log('launcher init');
     this.activities$ = of([
       { name: 'arcade', label: 'Arcade' },
@@ -35,11 +35,19 @@ export class LauncherComponent extends Activity {
     ]);
   }
 
-  onDestroy(): void {
+  protected onDestroy(): void {
     console.log('launcher destroy');
   }
 
-  launch(activity): void {
+  public show(flag): void {
+    console.log(`showing`);
+  }
+
+  public toggle(): void {
+    this.isHidden = !this.isHidden;
+  }
+
+  public launch(activity): void {
     const intent = new Intent(Intent.ACTION.DEFAULT, `content://${activity.name}`);
     this.startActivity(intent);
     this.isHidden = true;

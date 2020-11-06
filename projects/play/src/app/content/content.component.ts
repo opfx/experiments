@@ -1,25 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
+import { LauncherActivity } from './../launcher';
 @Component({
   selector: 'wx-content',
   template: `
-    <!--
-    <div style="z-index:100">
-      <p><button (click)="cashCow()">Cash Cow</button></p>
-      <p><button (click)="kinzpost()">Kinzpost</button></p>
-    </div>
--->
     <wx-router-outlet style="z-index:-1"></wx-router-outlet>
-    <wx-launcher [hidden]="hideLauncher"></wx-launcher>
-    <div style="z-index:1000; position:absolute; right:0px; bottom:0px;">
-      <button (click)="cashCow()">Start</button>
+    <wx-launcher></wx-launcher>
+    <div style="z-index:1000; position:absolute; right:0px; bottom:0px; background:yellow;">
+      <button (click)="toggleLauncher()">Start</button>
     </div>
   `,
   styles: [],
 })
 export class ContentComponent implements OnInit, OnDestroy {
-  hideLauncher = true;
-  constructor(private router: Router) {}
+  @ViewChild(LauncherActivity) launcher: LauncherActivity;
+
+  constructor() {}
 
   ngOnInit(): void {
     console.log('content init');
@@ -29,12 +25,7 @@ export class ContentComponent implements OnInit, OnDestroy {
     console.log('content destroy');
   }
 
-  public cashCow(): void {
-    // this.router.navigate(['content/cash-cow']);
-    console.log('starting');
-    this.hideLauncher = !this.hideLauncher;
-  }
-  public kinzpost(): void {
-    this.router.navigate(['content/kinzpost']);
+  public toggleLauncher(): void {
+    this.launcher.toggle();
   }
 }

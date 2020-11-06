@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 
 import { RuntimeModule } from '@webkinz/runtime';
 
-import { LauncherComponent } from './launcher.component';
+import { LauncherActivity } from './launcher.activity';
 
 @NgModule({
   imports: [RuntimeModule],
-  declarations: [LauncherComponent],
-  exports: [LauncherComponent],
+  declarations: [LauncherActivity],
+  exports: [LauncherActivity],
 })
 export class LauncherModule {}
