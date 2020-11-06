@@ -21,7 +21,9 @@ export class Activity implements OnInit, OnDestroy {
     this.activityManager.startActivity(this, intent);
   }
 
-  public finish(): void {}
+  public finish(): void {
+    this.activityManager.finishActivity(this);
+  }
 
   // //////////////////////////////////////////////////////
   // Lifecycle

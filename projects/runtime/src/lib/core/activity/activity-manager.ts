@@ -33,4 +33,9 @@ export class ActivityManager {
         break;
     }
   }
+
+  public finishActivity(activity: Activity): void {
+    console.log(`finishing activity`);
+    this.mNavCtrl.pop();
+  }
 }
