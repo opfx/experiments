@@ -168,7 +168,7 @@ const validateSvgContent = (svgContent: string) => {
   const svgElm = div.firstElementChild;
   if (svgElm && svgElm.nodeName.toLowerCase() === 'svg') {
     const svgClass = svgElm.getAttribute('class') || '';
-    svgElm.setAttribute('class', (svgClass + ' s-ion-icon').trim());
+    svgElm.setAttribute('class', (svgClass + 'wx-icon').trim());
 
     // root element must be an svg
     // lets double check we've got valid elements
