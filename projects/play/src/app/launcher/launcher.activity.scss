@@ -6,25 +6,12 @@ $launcher-translucent-filter: saturate(100%) blur(20px) !default;
 
 :host {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  @include position(0px, 0px, 0px, 0px);
 }
 
 :host(.hidden) {
   display: none;
 }
-
-// .backdrop {
-//   position: absolute;
-//   top: 0px;
-//   right: 0px;
-//   bottom: 0px;
-//   left: 0px;
-//   background: $launcher-background-color;
-//   z-index: 1001;
-// }
 
 .backdrop {
   position: absolute;
