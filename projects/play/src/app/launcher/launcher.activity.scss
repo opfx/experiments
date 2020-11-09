@@ -1,12 +1,42 @@
-:host {
-  display: grid;
-  height: 100vh;
+$launcher-background-alpha: 0.4 !default;
+$launcher-background-color: rgba(0, 0, 0, $launcher-background-alpha);
+$launcher-translucent-filter: saturate(100%) blur(20px) !default;
 
-  grid-template-columns: repeat(5, 100px);
-  grid-template-rows: repeat(5, 100px);
-  grid-gap: 20px;
+:host {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 :host(.hidden) {
   display: none;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: $launcher-background-color;
+  z-index: 1001;
+}
+
+.tilegrid {
+  display: grid;
+  height: 100vh;
+
+  position: fixed;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 100px);
+  grid-gap: 20px;
+  z-index: 1002;
+}
+
+@supports (backdrop-filter: blur(0)) {
+  .backdrop {
+    backdrop-filter: $launcher-translucent-filter;
+  }
 }
