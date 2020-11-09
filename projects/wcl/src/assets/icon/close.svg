@@ -1,116 +1,78 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40">
-<Title>Close</Title>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512">
 <defs>
-<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="19.1" y1="2.8874999999999993" x2="19.1" y2="33.212500000000006" spreadMethod="pad">
+<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="2.55" y1="-134.25" x2="2.55" y2="121.75" spreadMethod="pad">
 <stop  offset="0%" stop-color="#FFAA00"/>
 
 <stop  offset="100%" stop-color="#FF5F00"/>
 </linearGradient>
 
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_0_FILL">
+<g id="shadow">
 <path fill="#000000" stroke="none" d="
-M 37.65 24.6
-L 33 20 37.75 15.5
-Q 38.65 14.6 38.25 13.35
-L 36.5 8.75
-Q 36.45 8.55 36 8
-L 28.5 0.6
-Q 27.85 0.05 27.1 0.05 26.3 0.05 25.75 0.6
-L 19.4 6.6 13.3 0.55
-Q 12.75 0 11.9 0 11.05 0 10.5 0.5
-L 2.8 7.85
-Q 1.8 8.75 2.3 10
-L 4.05 14.65
-Q 4.2 15.05 4.5 15.35
-L 7.3 18.1 0.6 24.4
-Q -0.3 25.35 0.1 26.6
-L 1.85 31.2
-Q 2.05 31.65 2.35 31.9
-L 9.8 39.3
-Q 10.4 39.9 11.25 39.9 11.95 39.9 12.6 39.35
-L 20.85 31.5 28.85 39.4
-Q 29.45 40 30.25 40 31.05 40 31.6 39.45
-L 39.35 32.1
-Q 40.35 31.2 39.85 29.95
-L 38.1 25.3
-Q 37.95 24.9 37.65 24.6 Z"/>
+M 70.55 -157.45
+Q 64.15 -157.45 59.35 -153.45
+L 5.75 -102.25 -46.25 -153.45
+Q -50.25 -158.25 -57.45 -158.25 -64.65 -158.25 -69.45 -154.25
+L -134.25 -91.85
+Q -143.05 -84.65 -139.05 -73.45
+L -123.85 -34.25
+Q -123.05 -31.05 -120.65 -28.65
+L -96.65 -5.45 -153.45 48.15
+Q -160.65 56.15 -157.45 66.55
+L -142.25 104.95
+Q -140.65 108.95 -138.25 111.35
+L -75.85 173.75
+Q -70.25 178.55 -63.05 178.55 -57.45 178.55 -51.85 173.75
+L 17.75 107.35 85.75 174.55
+Q 90.55 179.35 96.95 179.35 104.15 179.35 108.95 174.55
+L 173.75 112.95
+Q 182.55 104.95 178.55 94.55
+L 163.35 55.35
+Q 162.55 52.15 159.35 49.75
+L 120.15 10.55 160.15 -27.05
+Q 168.15 -35.05 164.95 -45.45
+L 149.75 -84.65
+Q 149.75 -86.25 145.75 -91.05
+L 82.55 -153.45
+Q 76.95 -157.45 70.55 -157.45 Z"/>
 </g>
 
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_1_FILL">
-<path fill="#C82B00" stroke="none" d="
-M 11.65 16.7
-L 4.15 9.3 5.9 13.9 13.4 21.3 11.65 16.7 Z"/>
-</g>
-
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_2_FILL">
+<g id="sides">
 <path fill="#961E00" stroke="none" d="
-M 34.6 9.45
-L 26.85 16.8 28.6 21.4 36.35 14.05 34.6 9.45 Z"/>
-</g>
+M 82.55 123.35
+L 96.95 162.55 162.55 100.95 148.15 61.75 82.55 123.35
+M -78.25 122.55
+L -63.05 161.75 18.55 84.15 3.35 44.95 -78.25 122.55
+M 148.95 -39.85
+L 133.75 -78.25 68.15 -16.65 83.35 22.55 148.95 -39.85 Z"/>
 
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_3_FILL">
-<path fill="#961E00" stroke="none" d="
-M 19.15 24.1
-L 9.5 33.3 11.25 37.9 20.9 28.75 19.15 24.1 Z"/>
-</g>
-
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_4_FILL">
 <path fill="#C82B00" stroke="none" d="
-M 9.5 33.3
-L 2 25.85 3.75 30.5 11.25 37.9 9.5 33.3 Z"/>
+M 3.35 44.95
+L 18.55 84.15 96.95 162.55 82.55 123.35 3.35 44.95
+M -63.05 161.75
+L -78.25 122.55 -141.45 60.15 -126.25 99.35 -63.05 161.75
+M -123.05 -79.85
+L -108.65 -40.65 -45.45 21.75 -59.85 -17.45 -123.05 -79.85 Z"/>
 </g>
 
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_5_FILL">
-<path fill="#C82B00" stroke="none" d="
-M 28.5 33.35
-L 19.15 24.1 20.9 28.75 30.25 38 28.5 33.35 Z"/>
-</g>
-
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_6_FILL">
-<path fill="#961E00" stroke="none" d="
-M 36.25 26.05
-L 28.5 33.35 30.25 38 38 30.65 36.25 26.05 Z"/>
-</g>
-
-<g id="ART_closeBtnIcon_0_Layer0_0_MEMBER_7_FILL">
+<g id="face">
 <path fill="url(#Gradient_1)" stroke="none" d="
-M 34.6 9.45
-L 27.1 2.05 19.4 9.4 11.9 2 4.15 9.3 11.65 16.7 2 25.85 9.5 33.3 19.15 24.1 28.5 33.35 36.25 26.05 26.85 16.8 34.6 9.45 Z"/>
+M 68.15 -16.65
+L 133.75 -78.25 70.55 -140.65 5.75 -79.05 -57.45 -141.45 -123.05 -79.85 -59.85 -17.45 -141.45 60.15 -78.25 122.55 3.35 44.95 82.55 123.35 148.15 61.75 68.15 -16.65 Z"/>
 </g>
 </defs>
 
+<g transform="matrix( 1, 0, 0, 1, 245.35,245.45) ">
 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_0_FILL"/>
+<use xlink:href="#shadow"/>
 </g>
 
 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_1_FILL"/>
+<use xlink:href="#sides"/>
 </g>
 
 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_2_FILL"/>
-</g>
-
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_3_FILL"/>
-</g>
-
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_4_FILL"/>
-</g>
-
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_5_FILL"/>
-</g>
-
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_6_FILL"/>
-</g>
-
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#ART_closeBtnIcon_0_Layer0_0_MEMBER_7_FILL"/>
+<use xlink:href="#face"/>
 </g>
 </g>
 </svg>

@@ -1,8 +1,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512">
-<title>Arcade</title>
 <defs>
-<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="17.6375" y1="7.125" x2="20.662499999999998" y2="9.075" spreadMethod="pad">
+<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="56.05" y1="211.5625" x2="189.25" y2="260.3375" spreadMethod="pad">
 <stop  offset="0%" stop-color="#4C77EF"/>
 
 <stop  offset="18.03921568627451%" stop-color="#6490FF"/>
@@ -10,15 +9,7 @@
 <stop  offset="100%" stop-color="#1641CC"/>
 </linearGradient>
 
-<linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="3.4875" y1="13.225" x2="11.8125" y2="16.275" spreadMethod="pad">
-<stop  offset="0%" stop-color="#4C77EF"/>
-
-<stop  offset="18.03921568627451%" stop-color="#6490FF"/>
-
-<stop  offset="100%" stop-color="#1641CC"/>
-</linearGradient>
-
-<linearGradient id="Gradient_3" gradientUnits="userSpaceOnUse" x1="20.6" y1="19.712500000000002" x2="29.5" y2="20.4875" spreadMethod="pad">
+<linearGradient id="Gradient_2" gradientUnits="userSpaceOnUse" x1="329.85" y1="315.3625" x2="472.25" y2="327.7375" spreadMethod="pad">
 <stop  offset="0%" stop-color="#1641CC"/>
 
 <stop  offset="56.470588235294116%" stop-color="#6490FF"/>
@@ -26,7 +17,15 @@
 <stop  offset="100%" stop-color="#3A69FF"/>
 </linearGradient>
 
-<radialGradient id="Gradient_4" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="4.8083261120685235" fx="0" fy="0" gradientTransform="matrix( 0.7071067811865476, 0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 8.85,3.5) " spreadMethod="pad">
+<linearGradient id="Gradient_3" gradientUnits="userSpaceOnUse" x1="282.45" y1="113.9625" x2="330.84999999999997" y2="145.13750000000002" spreadMethod="pad">
+<stop  offset="0%" stop-color="#4C77EF"/>
+
+<stop  offset="18.03921568627451%" stop-color="#6490FF"/>
+
+<stop  offset="100%" stop-color="#1641CC"/>
+</linearGradient>
+
+<radialGradient id="Gradient_4" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="76.92437946613545" fx="0" fy="0" gradientTransform="matrix( 0.7071880251429081, 0.7070255278944837, 0.7071880251429081, -0.7070255278944837, 141.85,55.95) " spreadMethod="pad">
 <stop  offset="9.803921568627452%" stop-color="#FFFFFF"/>
 
 <stop  offset="29.80392156862745%" stop-color="#FFFF00"/>
@@ -34,167 +33,166 @@
 <stop  offset="100%" stop-color="#FFAA00"/>
 </radialGradient>
 
-<g id="Icons_my_arcade_copy_0_Layer0_0_FILL">
+<g id="Layer0_0_FILL">
 <path fill="#00003C" stroke="none" d="
-M 31.95 16.25
-L 31.95 14.95
-Q 32.2 12.5 30.35 10.35 28.55 8.2 25.45 7.35 24.2 7 22.8 7 22.25 4.95 20.05 4.15 19.45 4 18.85 4 17.5 4 16.5 4.75
-L 14.8 3.75
-Q 14.4 2.1 13.05 1.05 11.7 0 10 0 8 0 6.6 1.35 5.15 2.65 5 4.6 3 6.15 3 8.45
-L 3 8.65 2.9 8.85
-Q 1.1 12.55 0.55 14.25 -0.4 17.1 0.25 18.9 0.75 20.45 2.45 21.25 3.45 21.75 4.6 21.75 6.15 21.75 7.7 20.75 8.65 20.15 10.05 18.8
-L 11.4 17.6
-Q 13.55 18.25 15.1 18.85 17.05 19.6 18.95 20.55
-L 19.5 22.9
-Q 20.35 26.25 21.1 27.55 22.4 29.8 24.85 29.95
-L 25.2 30
-Q 28.25 30 29.6 27.05 30.45 25.25 31.3 19.85
-L 31.95 16.25 Z"/>
+M 485.9 165.6
+Q 457.1 131.2 407.5 117.6 387.5 112 365.1 112 356.3 79.2 321.05 66.4 311.45 64 301.85 64 280.25 64 264.25 76
+L 237.05 60
+Q 230.65 33.6 209.05 16.8 187.45 0 160.25 0 128.25 0 105.85 21.6 82.65 42.4 80.25 73.6 48.25 98.4 48.25 135.2
+L 48.25 138.4 46.65 141.6
+Q 17.85 200.8 9.05 228 -6.15 273.6 4.25 302.4 12.25 327.2 39.45 340 55.45 348 73.85 348 98.65 348 123.45 332 138.65 322.4 161.05 300.8
+L 182.65 281.6
+Q 217.05 292 241.85 301.6 273.05 313.6 303.45 328.8
+L 312.25 366.4
+Q 325.85 420 337.9 440.8 358.7 476.8 397.9 479.2
+L 403.5 480
+Q 452.3 480 473.9 432.8 487.5 404 501.1 317.6
+L 511.5 260 511.5 239.2
+Q 515.5 200 485.9 165.6 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_1_FILL">
+<g id="Layer0_1_FILL">
 <path fill="url(#Gradient_1)" stroke="none" d="
-M 20.9 8.6
-Q 21.15 7.8 20.7 7.1 20.3 6.35 19.45 6.1 18.65 5.85 17.95 6.2 17.25 6.55 17.05 7.35 16.85 8.15 17.25 8.85 17.65 9.6 18.5 9.85 19.3 10.1 20 9.75 20.7 9.4 20.9 8.6 Z"/>
+M 40.25 233.6
+Q 19.45 296 53.05 311.2 85.05 326.4 123.45 292 170.65 250.4 179.45 248.8
+L 195.45 252
+Q 218.65 258.4 253.05 272 309.05 293.6 329.9 307.2 341.1 344 355.5 404 369.9 445.6 399.5 447.2 437.1 449.6 453.1 397.6 453.1 396 480.3 253.6
+L 93.05 117.6
+Q 41.85 230.4 40.25 233.6 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_2_FILL">
+<g id="Layer0_2_FILL">
 <path fill="url(#Gradient_2)" stroke="none" d="
-M 5.8 7.35
-Q 2.6 14.4 2.5 14.6 1.2 18.5 3.3 19.45 5.3 20.4 7.7 18.25 10.65 15.65 11.2 15.55
-L 12.2 15.75
-Q 13.65 16.15 15.8 17 19.3 18.35 20.6 19.2 21.3 21.5 22.2 25.25 23.1 27.85 24.95 27.95 27.3 28.1 28.3 24.85 28.3 24.75 30 15.85
-L 5.8 7.35 Z"/>
+M 283.45 184.8
+L 253.05 272
+Q 309.05 293.6 329.9 307.2 341.1 344 355.5 404 369.9 445.6 399.5 447.2 437.1 449.6 453.1 397.6 453.1 396 480.3 253.6
+L 283.45 184.8 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_3_FILL">
+<g id="Layer0_3_FILL">
 <path fill="url(#Gradient_3)" stroke="none" d="
-M 17.7 11.55
-L 15.8 17
-Q 19.3 18.35 20.6 19.2 21.3 21.5 22.2 25.25 23.1 27.85 24.95 27.95 27.3 28.1 28.3 24.85 28.3 24.75 30 15.85
-L 17.7 11.55 Z"/>
+M 334.7 137.6
+Q 338.7 124.8 331.5 113.6 325.05 101.6 311.45 97.6 298.65 93.6 287.45 99.2 276.25 104.8 273.05 117.6 269.85 130.4 276.25 141.6 282.65 153.6 296.25 157.6 309.05 161.6 320.25 156 331.5 150.4 334.7 137.6 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_4_FILL">
+<g id="Layer0_4_FILL">
 <path fill="#457AFF" stroke="none" d="
-M 23.1 14.95
-Q 25.1 12.85 25.05 9.65 23.95 9.55 21.7 8.9 19.8 8.4 18.65 7.95 16.65 7.3 14.05 5.6 13 4.9 11.65 4.95
-L 10.45 5.15 11.05 12.8 21.15 16.35
-Q 22.15 15.95 23.1 14.95 Z"/>
+M 401.1 154.4
+Q 383.5 152.8 347.5 142.4 317.05 134.4 298.65 127.2 266.65 116.8 225.05 89.6 208.25 78.4 186.65 79.2
+L 167.45 82.4 177.05 204.8 338.7 261.6
+Q 354.7 255.2 369.9 239.2 401.9 205.6 401.1 154.4 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_5_FILL">
+<g id="Layer0_5_FILL">
 <path fill="#1641CC" stroke="none" d="
-M 13.5 12
-Q 14.95 10.95 15 9.5 15 8.05 13.55 7 12.05 6 10 6 7.95 5.95 6.45 7 5 8 5 9.45 4.95 10.9 6.45 11.95 7.85 12.95 9.95 13 12 13 13.5 12 Z"/>
+M 399.5 164
+Q 359.5 153.6 327.45 166.4 295.45 178.4 289.05 206.4 282.65 233.6 305.85 261.6 329.1 288 368.3 299.2 408.3 309.6 440.3 297.6 472.3 284.8 478.7 256.8 485.1 229.6 461.9 202.4 438.7 175.2 399.5 164 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_6_FILL">
+<g id="Layer0_6_FILL">
 <path fill="#6490FF" stroke="none" d="
-M 13.5 11
-Q 14.95 9.95 15 8.5 15 7.05 13.55 6 12.05 5 10 5 7.95 4.95 6.45 6 5 7 5 8.45 4.95 9.9 6.45 10.95 7.85 11.95 9.95 12 12 12 13.5 11 Z"/>
+M 399.5 148
+Q 359.5 137.6 327.45 150.4 295.45 162.4 289.05 190.4 282.65 217.6 305.85 245.6 329.1 272 368.3 283.2 408.3 293.6 440.3 281.6 472.3 268.8 478.7 240.8 485.1 213.6 461.9 186.4 438.7 159.2 399.5 148 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_7_FILL">
-<path fill="#1641CC" stroke="none" d="
-M 27.5 18.6
-Q 29.5 17.8 29.9 16.05 30.3 14.35 28.85 12.65 27.4 10.95 24.95 10.25 22.45 9.6 20.45 10.4 18.45 11.15 18.05 12.9 17.65 14.6 19.1 16.35 20.55 18 23 18.7 25.5 19.35 27.5 18.6 Z"/>
-</g>
-
-<g id="Icons_my_arcade_copy_0_Layer0_8_FILL">
-<path fill="#6490FF" stroke="none" d="
-M 27.5 17.6
-Q 29.5 16.8 29.9 15.05 30.3 13.35 28.85 11.65 27.4 9.95 24.95 9.25 22.45 8.6 20.45 9.4 18.45 10.15 18.05 11.9 17.65 13.6 19.1 15.35 20.55 17 23 17.7 25.5 18.35 27.5 17.6 Z"/>
-</g>
-
-<g id="Icons_my_arcade_copy_0_Layer0_9_FILL">
-<path fill="#FF7600" stroke="none" d="
-M 9.95 10
-Q 10.8 10 11.4 9.6 12 9.2 12 8.65
-L 12 6 8 6 8 8.65
-Q 8 9.2 8.55 9.6 9.15 10 9.95 10 Z"/>
-</g>
-
-<g id="Icons_my_arcade_copy_0_Layer0_10_FILL">
-<path fill="url(#Gradient_4)" stroke="none" d="
-M 13 5
-Q 13 3.75 12.1 2.85 11.25 2 10 2 8.75 2 7.85 2.85 7 3.75 7 5 7 6.25 7.85 7.1 8.75 8 10 8 11.25 8 12.1 7.1 13 6.25 13 5 Z"/>
-</g>
-
-<g id="Icons_my_arcade_copy_0_Layer0_11_FILL">
+<g id="Layer0_7_FILL">
 <path fill="#FF73FF" stroke="none" d="
-M 24 11.5
-Q 24 10.85 23.4 10.45 22.85 10 22 10 21.15 10 20.55 10.45 20 10.85 20 11.5 20 12.1 20.55 12.55 21.15 13 22 13 22.8 13 23.4 12.55 24 12.1 24 11.5 Z"/>
+M 352.3 160
+Q 338.7 160 329.1 167.2 320.25 173.6 320.25 184 320.25 193.6 329.1 200.8 338.7 208 352.3 208 365.1 208 374.7 200.8 384.3 193.6 384.3 184 384.3 173.6 374.7 167.2 365.9 160 352.3 160 Z"/>
 </g>
 
-<g id="Icons_my_arcade_copy_0_Layer0_12_FILL">
-<path fill="#FFAA00" stroke="none" d="
-M 29 13.5
-Q 29 12.85 28.4 12.45 27.85 12 27 12 26.15 12 25.55 12.45 25 12.85 25 13.5 25 14.1 25.55 14.55 26.15 15 27 15 27.8 15 28.4 14.55 29 14.1 29 13.5 Z"/>
-</g>
-
-<g id="Icons_my_arcade_copy_0_Layer0_13_FILL">
+<g id="Layer0_8_FILL">
 <path fill="#00FF00" stroke="none" d="
-M 25 14.45
-Q 25 13.85 24.4 13.45 23.85 13 23 13 22.15 13 21.55 13.45 21 13.85 21 14.45 21 15.1 21.55 15.55 22.15 16 23 16 23.85 16 24.4 15.55 25 15.1 25 14.45 Z"/>
+M 400.3 231.2
+Q 400.3 221.6 390.7 215.2 381.9 208 368.3 208 354.7 208 345.1 215.2 336.3 221.6 336.3 231.2 336.3 241.6 345.1 248.8 354.7 256 368.3 256 381.9 256 390.7 248.8 400.3 241.6 400.3 231.2 Z"/>
+</g>
+
+<g id="Layer0_9_FILL">
+<path fill="#FFAA00" stroke="none" d="
+M 464.3 216
+Q 464.3 205.6 454.7 199.2 445.9 192 432.3 192 418.7 192 409.1 199.2 400.3 205.6 400.3 216 400.3 225.6 409.1 232.8 418.7 240 432.3 240 445.1 240 454.7 232.8 464.3 225.6 464.3 216 Z"/>
+</g>
+
+<g id="Layer0_10_FILL">
+<path fill="#1641CC" stroke="none" d="
+M 216.25 192
+Q 239.45 175.2 240.25 152 240.25 128.8 217.05 112 193.05 96 160.25 96 127.45 95.2 103.45 112 80.25 128 80.25 151.2 79.45 174.4 103.45 191.2 125.85 207.2 159.45 208 192.25 208 216.25 192 Z"/>
+</g>
+
+<g id="Layer0_11_FILL">
+<path fill="#6490FF" stroke="none" d="
+M 216.25 176
+Q 239.45 159.2 240.25 136 240.25 112.8 217.05 96 193.05 80 160.25 80 127.45 79.2 103.45 96 80.25 112 80.25 135.2 79.45 158.4 103.45 175.2 125.85 191.2 159.45 192 192.25 192 216.25 176 Z"/>
+</g>
+
+<g id="Layer0_12_FILL">
+<path fill="#FF7600" stroke="none" d="
+M 182.65 153.6
+Q 192.25 147.2 192.25 138.4
+L 192.25 96 128.25 96 128.25 138.4
+Q 128.25 147.2 137.05 153.6 146.65 160 159.45 160 173.05 160 182.65 153.6 Z"/>
+</g>
+
+<g id="Layer0_13_FILL">
+<path fill="url(#Gradient_4)" stroke="none" d="
+M 208.25 80
+Q 208.25 60 193.85 45.6 180.25 32 160.25 32 140.25 32 125.85 45.6 112.25 60 112.25 80 112.25 100 125.85 113.6 140.25 128 160.25 128 180.25 128 193.85 113.6 208.25 100 208.25 80 Z"/>
 </g>
 </defs>
 
-<g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_0_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_0_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_1_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_1_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_2_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_2_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_3_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_3_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_4_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_4_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_5_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_5_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_6_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_6_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_7_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_7_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_8_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_8_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_9_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_9_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_10_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_10_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_11_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_11_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_12_FILL"/>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_12_FILL"/>
 </g>
 
-<g transform="matrix( 1.25, 0, 0, 1.25, 0,0) ">
-<use xlink:href="#Icons_my_arcade_copy_0_Layer0_13_FILL"/>
-</g>
+<g transform="matrix( 1, 0, 0, 1, 0,16) ">
+<use xlink:href="#Layer0_13_FILL"/>
 </g>
 </svg>
