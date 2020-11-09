@@ -1,3 +1,5 @@
+@import './../../theme/globals';
+
 $launcher-background-alpha: 0.4 !default;
 $launcher-background-color: rgba(0, 0, 0, $launcher-background-alpha);
 $launcher-translucent-filter: saturate(100%) blur(20px) !default;
@@ -14,12 +16,19 @@ $launcher-translucent-filter: saturate(100%) blur(20px) !default;
   display: none;
 }
 
+// .backdrop {
+//   position: absolute;
+//   top: 0px;
+//   right: 0px;
+//   bottom: 0px;
+//   left: 0px;
+//   background: $launcher-background-color;
+//   z-index: 1001;
+// }
+
 .backdrop {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  @include position(0px, 0px, 0px, 0px);
   background: $launcher-background-color;
   z-index: 1001;
 }
