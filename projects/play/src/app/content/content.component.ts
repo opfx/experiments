@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { LauncherActivity } from './../launcher';
 @Component({
   selector: 'wx-content',
@@ -8,23 +8,19 @@ import { LauncherActivity } from './../launcher';
     <wx-launcher></wx-launcher>
     <div style="z-index:1000; position:absolute; right:0px; bottom:0px; background:yellow;">
       <button (click)="toggleLauncher()">Start</button>
+      <button (click)="goHome()">Home</button>
     </div>
   `,
   styles: [],
 })
-export class ContentComponent implements OnInit, OnDestroy {
+export class ContentComponent {
   @ViewChild(LauncherActivity) launcher: LauncherActivity;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    console.log('content init');
+  public goHome(): void {
+    this.router.navigate(['/home']);
   }
-
-  ngOnDestroy(): void {
-    console.log('content destroy');
-  }
-
   public toggleLauncher(): void {
     this.launcher.toggle();
   }

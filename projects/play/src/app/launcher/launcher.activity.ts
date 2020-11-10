@@ -2,7 +2,7 @@ import { Component, HostBinding } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { Activity, ActivityInfo } from '@webkinz/runtime';
 import { Intent } from '@webkinz/runtime';
@@ -28,10 +28,24 @@ export class LauncherActivity extends Activity {
     console.log('launcher init');
     const filterIntent = new Intent();
     // this.activities$ = this.manager.queryActivities(filterIntent).pipe(filter());
-    this.activities$ = of([
-      { name: 'arcade', label: 'Arcade' },
-      { name: 'kinzpost', label: 'Kinzpost' },
-    ]);
+    // this.activities$ = of([
+    //   { name: 'arcade', label: 'Arcade' },
+    //   { name: 'kinzpost', label: 'Kinzpost' },
+    // ]);
+    this.activities$ = this.manager.getActivities().pipe(
+      map((ai: ActivityInfo[]) => {
+        const filter = (activityInfo: ActivityInfo) => {
+          const intentFlt = (activityInfo as any).intentFilter;
+          if (!intentFlt.category || !intentFlt.category.includes('LAUNCHER')) {
+            return false;
+          }
+
+          return true;
+        };
+        const result = ai.filter(filter);
+        return result;
+      })
+    );
   }
 
   protected onDestroy(): void {

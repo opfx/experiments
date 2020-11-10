@@ -9,20 +9,33 @@ import { ActivityManager } from './activity-manager';
 
 @Component({ selector: 'wx-activity', template: `` })
 export class Activity implements OnInit, OnDestroy {
-  private activityManager: ActivityManager;
+  private mActivityManager: ActivityManager;
 
   protected readonly destroyed = new Subject<void>();
 
   constructor(injector: Injector) {
-    this.activityManager = injector.get<ActivityManager>(ActivityManager);
+    this.mActivityManager = injector.get<ActivityManager>(ActivityManager);
   }
 
+  // //////////////////////////////////////////////////////
+  // Properties
+
+  /**
+   * Returns the ActivityManager associated with this activity.
+   */
+  get manager(): ActivityManager {
+    return this.mActivityManager;
+  }
+
+  // //////////////////////////////////////////////////////
+  // API
+
   public startActivity(intent: Intent): void {
-    this.activityManager.startActivity(this, intent);
+    this.mActivityManager.startActivity(this, intent);
   }
 
   public finish(): void {
-    this.activityManager.finishActivity(this);
+    this.mActivityManager.finishActivity(this);
   }
 
   // //////////////////////////////////////////////////////
