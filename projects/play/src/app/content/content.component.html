@@ -1,0 +1,35 @@
+<wx-router-outlet style="z-index: -1"></wx-router-outlet>
+<wx-launcher></wx-launcher>
+<div style="z-index: 1000; position: absolute; right: 0px; bottom: 0px">
+  <!-- <button (click)="toggleLauncher()">Start</button> -->
+
+  <div style="position: relative">
+    <img src="assets/start-button/start-button-background.svg" width="160px" />
+
+    <!-- start -->
+    <wx-button size="x-large" style="position: absolute; top: 55px; left: 60px" (click)="toggleLauncher()">
+      <wx-icon name="assets/start-button/icon/start.svg" slot="icon-only"></wx-icon>
+    </wx-button>
+
+    <!-- minimize -->
+    <!-- ToDo: replace div with wx-button: I should add clear or transparent type in wx-button  -->
+    <div style="position: absolute; top: 8px; left: 110px">
+      <img src="assets/start-button/icon/minimize.svg" width="48px" />
+    </div>
+
+    <!-- home -->
+    <wx-button size="small" style="position: absolute; top: 5px; left: 45px" (click)="launchHome()">
+      <wx-icon name="assets/house/icon/house.svg" slot="icon-only"></wx-icon>
+    </wx-button>
+
+    <!-- arcade -->
+    <wx-button size="small" style="position: absolute; top: 48px; left: 4px" (click)="launchArcade()">
+      <wx-icon name="assets/arcade/icon/arcade.svg" slot="icon-only"></wx-icon>
+    </wx-button>
+
+    <!-- w-shop -->
+    <wx-button size="small" style="position: absolute; top: 110px; left: 5px" (click)="launchWShop()">
+      <!-- <wx-icon name="assets/wshop/icon/wshop.svg" slot="icon-only"></wx-icon> -->
+    </wx-button>
+  </div>
+</div>
