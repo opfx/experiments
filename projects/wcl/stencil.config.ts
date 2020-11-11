@@ -30,7 +30,8 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-      copy: [{ src: './css', dest: './../www/css', warn: true }],
+      // the source css should be the css build directory not the source css directory
+      copy: [{ src: './../css', dest: './../www/css', warn: true }],
     },
   ],
   devServer: {
