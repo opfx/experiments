@@ -1,0 +1,5 @@
+@import './../../theme/globals';
+
+$backdrop-color: var(--wx-backdrop-color, #000) !default;
+$backdrop-opacity: var(--wx-backdrop-opacity, 0.1) !default;
+$backdrop-z-index: 2 !default;
