@@ -1,12 +1,41 @@
 @import './../../theme/globals';
 
+$toolbar-z-index: 10;
+$toolbar-background-z-index: -1;
+
+$toolbar-order: (
+  slot-start: 0,
+  slot-end: 6,
+  slot-primary: 5,
+  slot-secondary: 4,
+);
+
 :host {
-    --border-width : 0;
-    --border-style:solid;
-    --opacity:1
-    display: block;
-    position:relative;
-    width: 100%;
+  --border-width: 0;
+  --border-style: solid;
+  --opacity: 1;
+  display: block;
+  position: relative;
+  width: 100%;
+  contain: content;
+  box-sizing: border-box;
+}
+
+.toolbar-container {
+  display: flex;
+  position: relative;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  min-height: var(--min-height);
+  contain: content;
+  overflow: hidden;
+
+  z-index: $toolbar-z-index;
 }
 
 .toolbar-background {
@@ -23,6 +52,35 @@
 
   contain: strict;
   opacity: var(--opacity);
-  //   z-index:$toolbar-background-z-index;
   pointer-events: none;
+
+  z-index: $toolbar-background-z-index;
+}
+
+/** Toolbar slot placement
+ * --------------------------------------------------------
+ */
+
+::slotted([slot='start']) {
+  order: map-get($toolbar-order, slot-start);
+}
+
+::slotted([slot='end']) {
+  order: map-get($toolbar-order, slot-end);
+  text-align: end;
+}
+
+::slotted([slot='primary']) {
+  order: map-get($toolbar-order, slot-primary);
+}
+::slotted([slot='secondary']) {
+  order: map-get($toolbar-order, slot-secondary);
+}
+
+::slotted(.buttons-start-slot) {
+  @include margin-horizontal(20px, null);
+}
+
+::slotted(.buttons-end-slot) {
+  @include margin-horizontal(null, 20px);
 }

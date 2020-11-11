@@ -1,9 +1,12 @@
 @import './../../theme/globals';
 
+$buttons-z-index: 99;
+
 :host {
   display: flex;
   align-items: center;
   transform: translateZ(0);
+  z-index: $buttons-z-index;
 }
 
 ::slotted(*) wx-button {
