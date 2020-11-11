@@ -1,0 +1,28 @@
+@import './../../theme/globals';
+
+:host {
+    --border-width : 0;
+    --border-style:solid;
+    --opacity:1
+    display: block;
+    position:relative;
+    width: 100%;
+}
+
+.toolbar-background {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+
+  transform: translateZ(0);
+
+  border-width: var(--border-width);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+
+  background: var(--background);
+
+  contain: strict;
+  opacity: var(--opacity);
+  //   z-index:$toolbar-background-z-index;
+  pointer-events: none;
+}
