@@ -7,7 +7,7 @@ import { getWxMode } from './../../core';
   styleUrl: './backdrop.scss',
   shadow: true,
 })
-export class BackdropComponent implements ComponentInterface {
+export class Backdrop implements ComponentInterface {
   /**
    * If `true` the backdrop will be visible.
    */
