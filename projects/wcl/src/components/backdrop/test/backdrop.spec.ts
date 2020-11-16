@@ -1,12 +1,12 @@
 import { newSpecPage, SpecPage } from '@stencil/core/testing';
 
-import { BackdropComponent } from './../backdrop';
+import { Backdrop } from './../backdrop';
 
 describe('button', () => {
   const renderPage = async (html: string, supportsShadowDom = false): Promise<SpecPage> => {
     return await newSpecPage({
       html,
-      components: [BackdropComponent],
+      components: [Backdrop],
       supportsShadowDom,
     });
   };
