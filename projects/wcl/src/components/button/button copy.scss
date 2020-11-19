@@ -1,29 +1,51 @@
 @import './button.vars';
 
 :host {
-  --font-size: 24px;
-  --padding-top: 2px;
-  --padding-bottom: 4px;
-  --padding-start: 2px;
-  --padding-end: 4px;
-  --height: calc(var(--font-size) * 1.41 + var(--padding-top) + var(--padding-bottom));
-  --border-radius: calc(var(--height) / 2);
-  --background: #{current-color(base)};
+  // --padding-top: 5px;
+  // --padding-bottom: 5px;
+  // --padding-start: 5px;
+  // --padding-end: 5px;
 }
+
 :host {
-  display: inline-block;
+  --border-color: initial;
+  --border-radius: 40px;
+  --border-style: initial;
+  --border-width: initial;
 
-  font-size: var(--font-size);
-
-  text-align: center;
-
-  vertical-align: top;
-  vertical-align: -webkit-baseline-middle;
-
-  width: auto;
-  height: var(--height);
+  --box-shadow: none;
+  --overflow: hidden;
 
   background: rgb(0, 255, 76); //FIXME remove
+  color: var(--color);
+
+  display: inline-block;
+
+  // FIXME the height needs to be tweaked so that round, icon only buttons
+  // while having the same height as other buttons should look circular
+  height: 36px;
+  // height: unset;
+  width: auto;
+
+  //   font-family:$font-family-base; // FIXME fill see button.scss
+  font-size: 14px;
+  font-weight: 500;
+  font-kerning: none;
+
+  @include margin(4px, 2px, 4px, 2px);
+
+  letter-spacing: 0.06em;
+
+  pointer-events: none;
+
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+
+  user-select: none;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle;
 }
 
 /* Button Fills
@@ -34,9 +56,15 @@
 }
 
 :host(.button-solid) {
+  --background: #{wx-color(primary, base)};
+  --color: #{wx-color(primary, contrast)};
 }
 
 :host(.button-outline) {
+  --background: transparent;
+  --border-color: red;
+  --border-style: solid;
+  --border-width: 2px;
 }
 
 /* Button Expansion
@@ -66,9 +94,7 @@
  * -------------------------------------------------
  */
 :host(.button-round) {
-}
-:host(.button-round.button-has-icon-only) {
-  width: var(--height);
+  --border-radius: 64px;
 }
 
 /* Button Colors
@@ -79,9 +105,11 @@
  * -------------------------------------------------
  */
 :host(.button-x-large) {
+  font-size: 40px;
 }
 
 :host(.button-large) {
+  font-size: 40px;
 }
 
 :host(.button-small) {
@@ -108,9 +136,12 @@
  */
 
 ::slotted(wx-icon) {
+  font-size: 1.4em;
+  pointer-events: none;
 }
 
 ::slotted(wx-icon[slot='start']) {
+  @include margin(0, 0.3em, 0, -0.3em);
 }
 
 ::slotted(wx-icon[slot='end']) {
@@ -118,6 +149,7 @@
 }
 
 ::slotted(wx-icon[slot='icon-only']) {
+  font-size: 3.6em;
 }
 
 /* Button Classes
@@ -128,7 +160,7 @@
   @include border-radius(var(--border-radius));
   @include font-smoothing();
   @include margin(0);
-  @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+  @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start)); //FIXME
   @include text-inherit();
 
   display: block;
