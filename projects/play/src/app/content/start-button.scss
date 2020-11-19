@@ -1,0 +1,42 @@
+/** added height: 160px - otherwise white line under start button's blue background */
+.start {
+  z-index: 1000;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  // background: yellow;
+  height: 160px;
+
+  overflow: hidden;
+  transition: bottom 1s ease-out;
+}
+
+.maximize {
+  z-index: 1000;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.minimize {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+
+  // background: url(/assets/start-button/icon/minimize.svg);
+  // background-size: 48px 48px;
+
+  cursor: pointer;
+}
+
+.minimize:hover {
+  transition: 0.1s ease-out;
+  /* transform: translateY(0.05rem); */
+  filter: brightness(1.4);
+  transform: translateY(-0.01rem);
+}
+
+.minimize:active {
+  transition: 0.2s ease-out;
+  transform: translateY(0.1rem);
+}

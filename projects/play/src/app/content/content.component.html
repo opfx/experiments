@@ -1,35 +1,66 @@
+<script>
+  var coll = document.getElementsByClassName('start');
+  var i;
+  console.log('[js in content.component.html], coll: ' + coll);
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener('click', function () {
+      // this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.bottom === 0) {
+        content.style.bottom = -160 + 'px';
+      }
+    });
+  }
+</script>
+
 <wx-router-outlet style="z-index: -1"></wx-router-outlet>
+
 <wx-launcher></wx-launcher>
-<div style="z-index: 1000; position: absolute; right: 0px; bottom: 0px">
+
+<!-- start & start-maximize -->
+<div class="maximize">
+  <wx-button (click)="collapseStart()">maximize</wx-button>
+</div>
+<div class="start">
   <!-- <button (click)="toggleLauncher()">Start</button> -->
 
-  <div style="position: relative">
-    <img src="assets/start-button/start-button-background.svg" width="160px" />
+  <img src="assets/background/start-button-background.svg" width="160px" />
+  <!-- <object type="image/svg+xml" data="assets/start-button/start-button-background.svg" width="160px"></object> -->
 
-    <!-- start -->
-    <wx-button size="x-large" style="position: absolute; top: 55px; left: 60px" (click)="toggleLauncher()">
-      <wx-icon name="assets/start-button/icon/start.svg" slot="icon-only"></wx-icon>
-    </wx-button>
+  <!-- minimize -->
+  <!-- ToDo: replace div with wx-button: I should add clear or transparent type in wx-button  -->
+  <a class="minimize" (click)="collapseStart()">
+    <img src="assets/icon/start-button-minimize.svg" width="48px" />
+  </a>
 
-    <!-- minimize -->
-    <!-- ToDo: replace div with wx-button: I should add clear or transparent type in wx-button  -->
-    <div style="position: absolute; top: 8px; left: 110px">
-      <img src="assets/start-button/icon/minimize.svg" width="48px" />
-    </div>
+  <wx-button
+    color="secondary"
+    size="x-large"
+    style="position: absolute; bottom: 8px; right: 2px; --font-size: 64px"
+    (click)="toggleLauncher()"
+  >
+    <wx-icon name="start" slot="icon-only" width="84px"></wx-icon>
+  </wx-button>
 
-    <!-- home -->
-    <wx-button size="small" style="position: absolute; top: 5px; left: 45px" (click)="launchHome()">
-      <wx-icon name="assets/house/icon/house.svg" slot="icon-only"></wx-icon>
-    </wx-button>
+  <!-- home -->
+  <wx-button color="secondary" size="small" style="position: absolute; top: 5px; left: 45px" (click)="goHome()">
+    <wx-icon src="assets/icon/house.svg" slot="icon-only"></wx-icon>
+  </wx-button>
 
-    <!-- arcade -->
-    <wx-button size="small" style="position: absolute; top: 48px; left: 4px" (click)="launchArcade()">
-      <wx-icon name="assets/arcade/icon/arcade.svg" slot="icon-only"></wx-icon>
-    </wx-button>
+  <!-- arcade -->
+  <wx-button color="secondary" size="small" style="position: absolute; top: 48px; left: 4px" (click)="goArcade()">
+    <wx-icon
+      size="large"
+      src="assets/icon/arcade.svg"
+      slot="icon-only"
+      style="position: relative; left: -5px; top: -5px"
+    ></wx-icon>
+  </wx-button>
 
-    <!-- w-shop -->
-    <wx-button size="small" style="position: absolute; top: 110px; left: 5px" (click)="launchWShop()">
-      <!-- <wx-icon name="assets/wshop/icon/wshop.svg" slot="icon-only"></wx-icon> -->
-    </wx-button>
-  </div>
+  <!-- w-shop -->
+  <wx-button color="secondary" size="small" style="position: absolute; top: 110px; left: 5px" (click)="goWShop()">
+    <!-- <wx-icon name="assets/icon/wshop.svg" slot="icon-only"></wx-icon> -->
+    WShop
+  </wx-button>
 </div>

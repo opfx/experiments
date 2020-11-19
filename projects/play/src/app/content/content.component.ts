@@ -1,18 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { LauncherActivity } from './../launcher';
+
 @Component({
   selector: 'wx-content',
   templateUrl: './content.component.html',
-  styles: [],
+  styleUrls: ['./start-button.scss'],
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit, OnDestroy {
   @ViewChild(LauncherActivity) launcher: LauncherActivity;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     console.log('content init');
+  }
+
+  ngOnDestroy(): void {
   }
 
   public goHome(): void {
@@ -22,23 +25,30 @@ export class ContentComponent {
     this.launcher.toggle();
   }
 
-  public launchHome(): void {
-    console.log('content.launchHome()');
-  }
-
-  public launchArcade(): void {
+  public goArcade(): void {
     console.log('content.launchArcade()');
   }
 
-  public launchWShop(): void {
+  public goWShop(): void {
     console.log('content.launchWShop()');
   }
 
-  public minimize(): void {
+  public collapseStart(): void {
     console.log('content.minimize()');
-  }
 
-  public maximize(): void {
-    console.log('content.maximize()');
+    // coll - collapsible, see https://www.w3schools.com/howto/howto_js_collapsible.asp
+    const coll = document.getElementsByClassName('start');
+    let content: HTMLElement;
+
+    for (let i = 0; i < coll.length; i++) {
+      content = coll[i] as HTMLElement;
+      console.log('[content], coll: ' + content + ', ' + content.style + ', ' + content.style.length);
+      if (content.style.bottom) {
+        content.style.bottom = null;
+      } else {
+        content.style.bottom = -160 + 'px';
+        console.log('content.minimize() 2');
+      }
+    }
   }
 }
