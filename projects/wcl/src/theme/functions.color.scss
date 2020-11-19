@@ -1,0 +1,62 @@
+/**
+ * Gets the specific color's css variable from the name and variation. Alpha/rgb are optional.
+ * 
+ * Example usage :
+ *
+ * wx-color(primary, base) => var(--wx-color-primary, #3880ff)
+ * wx-color(secondary, contrast) => var(--wx-color-secondary-contrast)
+ * wx-color(primary, base, 0.5) => rgba(var(--wx-color-primary-rgb, 56, 128, 255), 0.5)
+ */
+@function color($name, $variation, $alpha: null, $rgb: null) {
+  $values: map-get($colors, $name);
+  $value: map-get($values, $variation);
+  $variable: --wx-color-#{$name}-#{$variation};
+
+  @if ($variation == base) {
+    $variable: --wx-color-#{$name};
+  }
+
+  @if ($alpha) {
+    $value: color-to-rgb($value);
+    @return rgba(var(#{$variable}-rgb, $value), $alpha);
+  }
+
+  @if ($rgb) {
+    $value: color-to-rgb($value);
+    $variable: #{$variable}-rgb;
+  }
+
+  @return var(#{$variable}, $value);
+}
+
+@function current-color($variation, $alpha: null) {
+  @if ($alpha==null) {
+    @return var(--wx-color-#{$variation});
+    // @return red;
+  } @else {
+    @return rgba(var(--wx-color-#{$variation}-rgb), #{$alpha});
+  }
+}
+
+/**
+ * Converts a color to a comma separated rgb.
+ */
+@function color-ro-rgb($color) {
+  @return #{red($color)}, #{green($color)}, #{blue($color)};
+}
+
+@mixin generate-color($color-name) {
+  $value: map-get($colors, $color-name);
+
+  $base: map-get($value, base);
+  $contrast: map-get($value, contrast);
+  // $shade: map-get($value, shade);
+  // $tint: map-get($value, tint);
+
+  --wx-color-base: var(--wx-color-#{$color-name}, #{$base}) !important;
+  // --wx-color-base-rgb: var(--wx-color-#{$color-name}-rgb, #{color-to-rgb($base)}) !important;
+  --wx-color-contrast: var(--wx-color-#{$color-name}-contrast, #{$contrast}) !important;
+  // --wx-color-contrast-rgb: var(--wx-color-#{$color-name}-contrast-rgb, #{color-to-rgb($contrast)}) !important;
+  // --wx-color-shade: var(--wx-color-#{$color-name}-shade, #{$shade}) !important;
+  // --wx-color-tint: var(--wx-color-#{$color-name}-tint, #{$tint}) !important;
+}

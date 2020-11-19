@@ -1,11 +1,8 @@
+@import './functions.color';
+
 @import './mixins';
 
-// colors:
-//   primary yellow color consists of three colors:
-//     (hue: 30°, sat: 100%, br: 100%), (h:45°, s:100%, b:100%), (h:60°, s:100%, b:100%)
-//
-//   border (same color in different notation): 0x00003C, (h:240°, s:100%, b:24%), (r:0, g:0, b:60)
-//   shadow has same color as border + alpha = 30% (0.3)
+@import './defaults.scss';
 
 // z-index
 // --------------------------------------------------

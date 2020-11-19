@@ -1,0 +1,16 @@
+// $primary: #3880ff !default;
+$primary: linear-gradient(to top, #ffff00, #ffc100, #ff8000);
+$primary-gradient: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
+  linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
+$secondary: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
+  linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
+$colors: (
+  primary: (
+    base: $primary,
+    contrast: #fff,
+  ),
+  secondary: (
+    base: $secondary,
+    contrast: #fff,
+  ),
+);
