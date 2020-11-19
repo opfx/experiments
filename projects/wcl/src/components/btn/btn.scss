@@ -1,0 +1,208 @@
+@use "sass:math";
+@import 'button.vars';
+
+// Button
+// -----------------------------------------------------------------------------------
+
+:host {
+  /**
+   * @prop --background: Background of the button
+   *
+   * @prop --border-radius: Border radius of the button
+   * @prop --border-width: Border width of the button
+   * @prop --border-style: Border style of the button
+   * @prop --border-color: Border color of the button
+   *
+   * @prop --box-shadow: Shadow of the button 
+   */
+  --overflow: hidden;
+  --ripple-color: currentColor;
+  --border-style: #{$border-style}; // initial;
+  --border-width: #{$border-width}; // initial;
+  --border-color: #{$border-color}; // initial;
+  --border: #{$border-width} #{$border-style} #{$border-color};
+  --border-radius: #{$border-radius}; // --border-radius: #{$button-border-radius};
+  --box-shadow: #{$box-shadow};
+
+  --padding-top: #{$button-padding-top};
+  --padding-bottom: #{$button-padding-bottom};
+  --padding-start: #{$button-padding-start};
+  --padding-end: #{$button-padding-end};
+  --padding: #{$padding-default};
+
+  // experimental
+  --height: #{$height-default};
+  --width: #{$height-default};
+
+  --font-family: #{$font-family};
+  --font-size: #{$font-size};
+  --color: #{$color};
+  // --color: color;
+  --outline-color: #{$outline-color};
+}
+
+:host {
+  display: inline-block;
+  // @include margin-horizontal(10px);
+  // overflow: hidden;
+
+  // color: white; // var(--color);
+  // --text-color: var(--color);
+
+  //   font-family: $font-family-base;
+  font-kerning: none;
+
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+  width: auto;
+
+  user-select: none;
+  vertical-align: top;
+
+  vertical-align: top; // the better option for most scenarios
+  vertical-align: -webkit-baseline-middle; // the best for those that support it
+  pointer-events: auto;
+}
+
+/*.button-inner {
+  display: flex;
+  position: relative;
+
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}*/
+
+.button-native {
+  background: var(--background);
+  border-radius: var(--border-radius);
+  border: var(--border-width) var(--border-style) var(--border-color); // var(--border);
+  box-shadow: var(--box-shadow);
+  outline: none;
+
+  // @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+  padding: var(--padding);
+  margin: 0px;
+
+  display: block;
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  // color: currentColor;
+  color: var(--color);
+  @if var(--outline-color) != none {
+    text-shadow: 0px 3px 3px var(--outline-color), 0px -2px 3px var(--outline-color), -2px 0px 3px var(--outline-color),
+      2px 0px 3px var(--outline-color);
+  }
+
+  z-index: 0;
+  box-sizing: border-box;
+  appearance: none;
+
+  cursor: pointer;
+}
+
+.button-native::-moz-focus-inner {
+  border: 0;
+}
+
+.button-native:hover {
+  transition: 0.1s ease-out;
+  transform: translateY(-0.025rem);
+  filter: brightness(1.075);
+}
+
+.button-native:active {
+  transition: 0.2s ease-out;
+  transform: translateY(0.1rem);
+}
+
+// Size
+// -----------------------------------------------------------------------------------
+:host(.button-x-large) {
+  --padding: #{$padding-x-large};
+
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-x-large};
+  --width: #{$height-x-large};
+  width: var(--width);
+  height: var(--height);
+
+  --font-size: 72px;
+}
+
+:host(.button-large) {
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-large};
+  --width: #{$height-large};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-default) {
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-default};
+  --width: #{$height-default};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-small) {
+  --padding: #{$padding-small};
+
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-small};
+  --width: #{$height-small};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-x-small) {
+  --padding: #{$padding-x-small};
+
+  // allow to customize width, height in html with style="--height:44px; --width:100px;"
+  --height: #{$height-x-small};
+  --width: #{$height-x-small};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-default-long-size) {
+  --width: #{$default-custom-width};
+  --height: #{$default-custom-height};
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.button-round) {
+  --border-radius: #{$border-radius}; // works // 200px; - works // $border-radius; - doesn't work
+}
+
+// Color
+// -----------------------------------------------------------------------------------
+:host(.button-yellow) {
+  --background: #{$background-orange};
+}
+
+:host(.button-blue) {
+  --background: #{$background-blue};
+}
+
+:host(.button-purple) {
+  --background: #{$background-purple};
+}
+
+:host(.button-light-purple) {
+  --background: #{$background-light-purple};
+}
