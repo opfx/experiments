@@ -17,7 +17,7 @@ $toolbar-order: (
   display: block;
   position: relative;
   width: 100%;
-  contain: content;
+  contain: layout;
   box-sizing: border-box;
 }
 
@@ -32,8 +32,7 @@ $toolbar-order: (
   width: 100%;
 
   min-height: var(--min-height);
-  contain: content;
-  overflow: hidden;
+  contain: inherit;
 
   z-index: $toolbar-z-index;
 }
