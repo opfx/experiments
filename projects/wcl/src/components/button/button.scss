@@ -1,17 +1,26 @@
 @import './button.vars';
 
 :host {
-  --height: 36px; // FIXME should be variable??
+  --height: 50px; // FIXME should be variable??
 
   --bevel-top: 3px;
   --bevel-end: 3px;
   --bevel-bottom: 3px;
   --bevel-start: 3px;
-  --border-color: initial;
-  --border-radius: 4px; //#{$button-border-radius};
-  --border-style: initial;
-  --border-width: initial;
 
+  --bevel-top: calc(var(--height) * 0.06);
+  --bevel-end: calc(var(--height) * 0.085);
+  --bevel-bottom: calc(var(--height) * 0.11);
+  --bevel-start: calc(var(--height) * 0.085);
+
+  // --border-color: initial;
+  --border-color: #00003c;
+  --border-radius: 8px; //#{$button-border-radius};
+  // --border-style: initial;
+  --border-style: solid;
+  // --border-width: initial;
+  // --border-width: calc(var(--height) * 0.055);
+  --border-width: 3px;
   --box-shadow: none;
 
   --font-size: 14px;
@@ -22,7 +31,7 @@
   @include margin(4px, 2px, 4px, 2px);
   display: inline-block;
   width: auto;
-  height: 36px;
+  height: var(--height);
 
   color: var(--color);
 
@@ -48,7 +57,7 @@
   white-space: nowrap;
 }
 :host {
-  background: rgb(0, 255, 76); //FIXME remove
+  // background: rgb(0, 255, 76); //FIXME remove
   --padding-start: 1.1em;
   --padding-end: 1.1em;
 }
@@ -62,7 +71,7 @@
 
 :host(.button-solid) {
   --background: #{color(primary, base)};
-  --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 1px 2px 3px rgba(0, 0, 0, 0.6);
   --color: #{color(primary, contrast)};
 }
 
@@ -120,9 +129,11 @@
  * -------------------------------------------------
  */
 :host(.button-x-large) {
+  --height: 110px;
 }
 
 :host(.button-large) {
+  --height: 42px;
 }
 
 :host(.button-small) {
