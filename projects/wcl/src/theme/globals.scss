@@ -4,6 +4,8 @@
 
 @import './defaults.scss';
 
+$font-family: var(--wx-font-family, inherit) !default;
+
 // z-index
 // --------------------------------------------------
 // grouped by elements that would be siblings

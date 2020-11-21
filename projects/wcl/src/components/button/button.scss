@@ -1,29 +1,56 @@
 @import './button.vars';
 
 :host {
-  --font-size: 24px;
-  --padding-top: 2px;
-  --padding-bottom: 4px;
-  --padding-start: 2px;
-  --padding-end: 4px;
-  --height: calc(var(--font-size) * 1.41 + var(--padding-top) + var(--padding-bottom));
-  --border-radius: calc(var(--height) / 2);
-  --background: #{current-color(base)};
+  --height: 36px; // FIXME should be variable??
+
+  --bevel-top: 3px;
+  --bevel-end: 3px;
+  --bevel-bottom: 3px;
+  --bevel-start: 3px;
+  --border-color: initial;
+  --border-radius: 4px; //#{$button-border-radius};
+  --border-style: initial;
+  --border-width: initial;
+
+  --box-shadow: none;
+
+  --font-size: 14px;
+
+  --overflow: hidden;
 }
 :host {
+  @include margin(4px, 2px, 4px, 2px);
   display: inline-block;
+  width: auto;
+  height: 36px;
 
+  color: var(--color);
+
+  font-family: $font-family;
   font-size: var(--font-size);
+  font-kerning: none;
+  font-weight: $button-font-weight;
+
+  letter-spacing: $button-letter-spacing;
+
+  pointer-events: none;
 
   text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: $button-text-transform;
+
+  user-select: none;
 
   vertical-align: top;
   vertical-align: -webkit-baseline-middle;
 
-  width: auto;
-  height: var(--height);
-
+  white-space: nowrap;
+}
+:host {
   background: rgb(0, 255, 76); //FIXME remove
+  --padding-start: 1.1em;
+  --padding-end: 1.1em;
 }
 
 /* Button Fills
@@ -34,6 +61,9 @@
 }
 
 :host(.button-solid) {
+  --background: #{color(primary, base)};
+  --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --color: #{color(primary, contrast)};
 }
 
 :host(.button-outline) {
@@ -66,8 +96,19 @@
  * -------------------------------------------------
  */
 :host(.button-round) {
+  --border-radius: 64px; //FIXME should be computed somehow
+  --padding-start: 26px; //FIXME should be computed somehow
+  --padding-end: 26px; //FIXME should be computed somehow
+  --padding-top: 0px; //FIXME should be computed somehow
+  --padding-bottom: 0px; //FIXME should be computed somehow
 }
 :host(.button-round.button-has-icon-only) {
+  // for round, icon-only buttons we need to cancel any padding
+  // except the padding required by the bevel
+  --padding-start: var(--bevel-start);
+  --padding-end: var(--bevel-end);
+  --padding-top: var(--bevel-top);
+  --padding-bottom: var(--bevel-bottom);
   width: var(--height);
 }
 
@@ -128,7 +169,7 @@
   @include border-radius(var(--border-radius));
   @include font-smoothing();
   @include margin(0);
-  @include padding(var(--padding-top), var(--padding-end), var(--padding-bottom), var(--padding-start));
+  @include padding(var(--bevel-top), var(--bevel-end), var(--bevel-bottom), var(--bevel-start));
   @include text-inherit();
 
   display: block;
@@ -168,6 +209,15 @@
 }
 
 .button-inner {
+  // compute the required padding by subtracting the bevel
+  // from the expected padding (the bevel creates padding in the native button)
+  @include padding(
+    calc(var(--padding-top) - var(--bevel-top, 0px)),
+    calc(var(--padding-end) - var(--bevel-end, 0px)),
+    calc(var(--padding-bottom) - var(--bevel-bottom, 0px)),
+    calc(var(--padding-start) - var(--bevel-start, 0px))
+  );
+
   display: flex;
   position: relative;
 
@@ -175,7 +225,7 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
   height: 100%;
   z-index: 1;
 }

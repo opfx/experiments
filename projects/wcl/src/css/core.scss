@@ -1,5 +1,9 @@
 @import './../theme/globals';
 
+html {
+  --wx-font-family: var(--wx-default-font, 'Helvetica Neue');
+}
+
 @each $color-name, $value in $colors {
   .wx-color-#{$color-name} {
     @include generate-color($color-name);
