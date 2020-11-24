@@ -14,7 +14,16 @@
   }
 </script>
 
-<wx-router-outlet style="z-index: -1"></wx-router-outlet>
+<!-- background-color: linear-gradient(#2bd5ff, #169ccc, #005e95); -->
+<wx-router-outlet
+  style="
+    z-index: -1;
+    background: url('assets/background/paws.svg');
+    background-color: #2bd5ff;
+    background-repeat: repeat;
+  "
+>
+</wx-router-outlet>
 <wx-toolbar>
   <wx-buttons slot="start">
     <wx-button shape="round" fill="solid"></wx-button>
