@@ -1,0 +1,46 @@
+:host {
+  --size: 150px;
+}
+:host {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: var(--size);
+  width: var(--size);
+  cursor: grab;
+  background-position: bottom right;
+  background-size: contain;
+  background-image: url('/assets/background/start-button-background.svg');
+}
+
+::slotted(wx-button) {
+  --height: 100px;
+  position: absolute;
+  bottom: 0px;
+  left: 45px;
+}
+
+::slotted(wx-button[slot]) {
+  --height: 36px;
+}
+
+::slotted(wx-button[slot='minimize']) {
+  bottom: 100px;
+  left: 105px;
+}
+
+::slotted(wx-button[slot='top']) {
+  bottom: 100px;
+
+  left: 50px;
+}
+
+::slotted(wx-button[slot='middle']) {
+  bottom: 60px;
+  left: 10px;
+}
+
+::slotted(wx-button[slot='bottom']) {
+  bottom: 0px;
+  left: 10px;
+}

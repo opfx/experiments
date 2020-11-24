@@ -6,6 +6,8 @@ import { RuntimeModule } from '@webkinz/runtime';
 import { LauncherModule } from './../launcher';
 
 import { ContentComponent } from './content.component';
+import { StartComponent } from './start/start.component';
+import { StartButtonComponent } from './start-button/start-button.component';
 
 const routes: Route[] = [
   {
@@ -33,7 +35,7 @@ const routes: Route[] = [
 
 @NgModule({
   imports: [RuntimeModule, RouterModule.forChild(routes), LauncherModule],
-  declarations: [ContentComponent],
+  declarations: [ContentComponent, StartComponent, StartButtonComponent],
 })
 export class ContentModule {
   constructor() {
