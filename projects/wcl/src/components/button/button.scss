@@ -1,7 +1,7 @@
 @import './button.vars';
 
 :host {
-  --height: 50px; // FIXME should be variable??
+  --height: 36px; // FIXME should be variable??
 
   --bevel-top: 3px;
   --bevel-end: 3px;
@@ -15,6 +15,7 @@
 
   // --border-color: initial;
   --border-color: #00003c;
+  // --border-color: #{color(primary, base)};
   --border-radius: 8px; //#{$button-border-radius};
   // --border-style: initial;
   --border-style: solid;
@@ -42,7 +43,7 @@
 
   letter-spacing: $button-letter-spacing;
 
-  pointer-events: none;
+  pointer-events: auto;
 
   text-align: center;
   text-decoration: none;
@@ -239,4 +240,13 @@
   // width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+// Button Hover
+@media (any-hover: hover) {
+  :host(:hover) {
+    transition: 0.1s ease-out;
+    transform: translateY(-0.025rem);
+    filter: brightness(1.075);
+  }
 }
