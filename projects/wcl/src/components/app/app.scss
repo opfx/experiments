@@ -1,0 +1,14 @@
+html.plt-mobile wx-app {
+  user-select: none;
+}
+
+// Workaround for Webkit issue where 'user-select:none' was
+// causing contenteditable to not be selectable, even though
+// input and textarea(s) are selectable
+html.plt-mobile wx-app [contenteditable] {
+  user-select: text;
+}
+
+wx-app.force-statusbar-padding {
+  --wx-safe-area-top: 20px;
+}

@@ -10,8 +10,26 @@ html {
   }
 }
 
-// View Container Structure
-// ---------------------------------------------------------
+/* Page Container Structure
+ * --------------------------------------------------------
+ */
+
+.wx-page {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  contain: layout size style;
+  overflow: hidden;
+  z-index: 0;
+}
+/* View Container Structure
+ * --------------------------------------------------------
+ */
+
 .wx-view {
   @include position(0, 0, 0, 0);
 

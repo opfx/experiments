@@ -11,6 +11,14 @@ export interface WxConfig {
    */
   mode?: Mode;
 
+  /**
+   * Wherever wcl will respond to hardware go back buttons in an Android device.
+   * Defaults to `true` when wcl runs in a mobile device.
+   */
+  hardwareBackButton?: boolean;
+
+  // PRIVATE configs
+  inputShims?: boolean;
   // INTERNAL configs
   persistConfig?: boolean;
   _forceStatusbarPadding?: boolean;
