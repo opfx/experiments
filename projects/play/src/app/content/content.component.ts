@@ -4,19 +4,18 @@ import { LauncherActivity } from './../launcher';
 @Component({
   selector: 'wx-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./start-button.scss'],
+  styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit, OnDestroy {
   @ViewChild(LauncherActivity) launcher: LauncherActivity;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     console.log('content init');
   }
 
-  ngOnDestroy(): void {
-  }
+  ngOnDestroy(): void {}
 
   public goHome(): void {
     // this.router.navigate(['/home']);

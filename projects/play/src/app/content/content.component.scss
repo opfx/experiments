@@ -1,0 +1,15 @@
+@import './../../theme/globals';
+:host {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+  //   background: url('/assets/background/paws.svg');
+  background: linear-gradient(#2bd5ff, #169ccc, #005e95);
+  //   background-repeat: repeat;
+}
+
+.background {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+  background: url('/assets/background/paws.svg');
+  background-repeat: repeat;
+}
