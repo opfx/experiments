@@ -68,6 +68,9 @@
  */
 
 :host(.button-clear) {
+  --border-width: 0px;
+  --background: transparent;
+  --color: #{color(primary, base)};
 }
 
 :host(.button-solid) {
