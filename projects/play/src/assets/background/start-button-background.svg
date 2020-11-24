@@ -1,13 +1,14 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512">
+
 <defs>
-<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="222.25" y1="14.324999999999989" x2="222.25" y2="505.075" spreadMethod="pad">
+<linearGradient id="background" gradientUnits="userSpaceOnUse" x1="222.25" y1="14.324999999999989" x2="222.25" y2="505.075" spreadMethod="pad">
 <stop  offset="0%" stop-color="#00B2FF"/>
 
 <stop  offset="100%" stop-color="#0086FF"/>
 </linearGradient>
 
-<g id="Layer7_0_FILL">
+<g id="border">
 <path fill="#00003C" stroke="none" d="
 M 476.6 12.65
 Q 454.35 0 428.85 0 392.7 0 364.65 23.4 336.85 46.65 330.85 81.05 226.2 85.4 153.1 161.05 80 236.95 80 342 80 389.1 96.2 432.6 112.4 476.35 143.1 512
@@ -15,8 +16,8 @@ L 511.9 512 511.9 46.45
 Q 498.6 25.1 476.6 12.65 Z"/>
 </g>
 
-<g id="Layer7_1_FILL">
-<path fill="url(#Gradient_1)" stroke="none" d="
+<g id="content">
+<path fill="url(#background)" stroke="none" d="
 M 402.5 31.3
 Q 379.05 12.45 348.95 12.45 314.45 12.45 289.15 35.85 263.6 59.5 261.95 93.3 158.95 93.3 85.85 166.25 12.55 239.2 12.55 342.05 12.55 390.35 30.6 434.9 48.05 478 80.05 512
 L 432 512 432 78.8
@@ -25,10 +26,10 @@ Q 425.55 50.15 402.5 31.3 Z"/>
 </defs>
 
 <g transform="matrix( 1, 0, 0, 1, 0,0) ">
-<use xlink:href="#Layer7_0_FILL"/>
+<use xlink:href="#border"/>
 </g>
 
 <g transform="matrix( 1, 0, 0, 1, 80,0) ">
-<use xlink:href="#Layer7_1_FILL"/>
+<use xlink:href="#content"/>
 </g>
 </svg>
