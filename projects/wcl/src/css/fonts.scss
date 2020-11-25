@@ -1,0 +1,45 @@
+@import './../theme/globals';
+
+@font-face {
+  font-family: 'Webkinz Book';
+  // prettier-ignore
+  src: url('#{$font-path}/webkinz-book.woff2') format('woff2'),
+        url('#{$font-path}/webkinz-book.woff') format('woff'),
+        url('#{$font-path}/webkinz-book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WebkinzOS Book';
+  // prettier-ignore
+  src:url('#{$font-path}/webkinz-os-book.woff2') format('woff2'),
+        url('#{$font-path}/webkinz-os-book.woff') format('woff'),
+        url('#{$font-path}/webkinz-os-book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Webkinz Medium';
+  // prettier-ignore
+  src: url('#{$font-path}/webkinz-medium.woff2') format('woff2'),
+        url('#{$font-path}/webkinz-medium.woff') format('woff'),
+        url('#{$font-path}/webkinz-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'WebkinzOS Medium';
+  // prettier-ignore
+  src: url('#{$font-path}/webkinz-os-medium.woff2') format('woff2'),
+        url('#{$font-path}/webkinz-os-medium.woff') format('woff'),
+        url('#{$font-path}/webkinz-os-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

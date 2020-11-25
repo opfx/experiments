@@ -1,3 +1,5 @@
+// @font-face rules should be added to the stylesheet before any styles.
+@import './fonts';
 @import './core';
 @import './main';
 

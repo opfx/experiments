@@ -1,6 +1,7 @@
 @import './../theme/globals';
 
-body.wx {
+html.wx {
+  --wx-default-font: 'Webkinz Medium';
   --wx-color-primary: linear-gradient(to top, #ffff00, #ffc100, #ff8000) content-box,
     linear-gradient(to top, #ff8000, #ffc100, #ffff00) border-box;
   --wx-color-primary-contrast: #fff;
