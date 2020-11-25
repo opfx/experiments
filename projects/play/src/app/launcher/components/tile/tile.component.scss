@@ -1,0 +1,54 @@
+@import './../../../../theme/globals';
+
+// Debug
+
+span {
+  //   border: 2px dotted;
+}
+
+/** Tile Component **/
+:host {
+  --font-size: 50px;
+}
+
+:host {
+  position: relative;
+  background: lawngreen;
+  border: 5px solid white;
+  //   contain: content;
+}
+
+span {
+  display: grid;
+  place-content: center;
+}
+
+.icon {
+  height: 100%;
+  border-radius: 10px;
+
+  background: #{color(primary, base)};
+  border: 3px solid yellow;
+  contain: content;
+  z-index: 0;
+}
+
+.label {
+  position: relative;
+  top: -10px;
+
+  z-index: 1;
+}
+
+.glow {
+  @include position(-125px, 0, null, -50px);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 512px;
+  height: 200%;
+  width: 200%;
+}
+
+wx-icon {
+  font-size: var(--font-size);
+}

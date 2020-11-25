@@ -11,10 +11,9 @@ import { Intent } from '@webkinz/runtime';
   selector: 'wx-launcher',
   template: `
     <div class="backdrop" (click)="dismiss()"></div>
-    <div class="tilegrid">
-      <button *ngFor="let activity of activities$ | async" (click)="launch(activity)">
-        {{ activity.name }}
-      </button>
+
+    <div class="grid">
+      <wx-tile *ngFor="let activity of activities$ | async" [activity]="activity" (click)="launch(activity)"></wx-tile>
     </div>
   `,
   styleUrls: [`./launcher.activity.scss`],
@@ -22,30 +21,30 @@ import { Intent } from '@webkinz/runtime';
 export class LauncherActivity extends Activity {
   public activities$: Observable<ActivityInfo[]>;
 
-  @HostBinding('class.hidden') isHidden = true;
+  @HostBinding('class.hidden') isHidden = false;
 
   protected onCreate(): void {
     console.log('launcher init');
     const filterIntent = new Intent();
     // this.activities$ = this.manager.queryActivities(filterIntent).pipe(filter());
-    // this.activities$ = of([
-    //   { name: 'arcade', label: 'Arcade' },
-    //   { name: 'kinzpost', label: 'Kinzpost' },
-    // ]);
-    this.activities$ = this.manager.getActivities().pipe(
-      map((ai: ActivityInfo[]) => {
-        const filter = (activityInfo: ActivityInfo) => {
-          const intentFlt = (activityInfo as any).intentFilter;
-          if (!intentFlt.category || !intentFlt.category.includes('LAUNCHER')) {
-            return false;
-          }
+    this.activities$ = of([
+      { name: 'arcade', path: '', label: 'Arcade' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+    ]);
+    // this.activities$ = this.manager.getActivities().pipe(
+    //   map((ai: ActivityInfo[]) => {
+    //     const filter = (activityInfo: ActivityInfo) => {
+    //       const intentFlt = (activityInfo as any).intentFilter;
+    //       if (!intentFlt.category || !intentFlt.category.includes('LAUNCHER')) {
+    //         return false;
+    //       }
 
-          return true;
-        };
-        const result = ai.filter(filter);
-        return result;
-      })
-    );
+    //       return true;
+    //     };
+    //     const result = ai.filter(filter);
+    //     return result;
+    //   })
+    // );
   }
 
   protected onDestroy(): void {
@@ -58,9 +57,11 @@ export class LauncherActivity extends Activity {
 
   public toggle(): void {
     this.isHidden = !this.isHidden;
+    console.log(this.isHidden);
   }
 
   public launch(activity): void {
+    console.log(`launching activity ${JSON.stringify(activity)}`);
     const intent = new Intent(Intent.ACTION.DEFAULT, `content://${activity.name}`);
     this.startActivity(intent);
     this.isHidden = true;

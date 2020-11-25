@@ -7,6 +7,7 @@ $launcher-translucent-filter: saturate(100%) blur(20px) !default;
 :host {
   position: absolute;
   @include position(0px, 0px, 0px, 0px);
+  --columns: 5;
 }
 
 :host(.hidden) {
@@ -20,12 +21,13 @@ $launcher-translucent-filter: saturate(100%) blur(20px) !default;
   z-index: 1001;
 }
 
-.tilegrid {
+.grid {
   display: grid;
   height: 100vh;
 
   position: fixed;
-  grid-template-columns: repeat(5, 100px);
+  padding: 50px;
+  grid-template-columns: repeat(var(--columns), 100px);
   grid-template-rows: repeat(5, 100px);
   grid-gap: 20px;
   z-index: 1002;
