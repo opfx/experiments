@@ -1,3 +1,6 @@
+/** @prop default-height */
+$default-height: 124; // for some reason can't use variable in calc()
+
 :host {
   --size: 150px;
 }
@@ -13,34 +16,39 @@
   background-image: url('/assets/background/start-button-background.svg');
 }
 
+/**
+ * 78/124 proportions from flash (default height 123.5, but while exporting was rounded to 124 before scaling to 512)
+ * 78 - radius of big button
+ */
 ::slotted(wx-button) {
-  --height: 100px;
+  --height: calc(78 * var(--size) / 124);
+
   position: absolute;
-  bottom: 0px;
-  left: 45px;
+  // bounding box of TTD circle in web-navigation-menu-assets is [(24.75,41.75),(102.75, 119.75)] = [(xTL,yTL), (xBR, yyBR)], height of blue thing is 124 (width=104, height = 124) => bottom = 123.5-119.75 = 2.75px, with scale factor = 2 * var(--size) / 123.5
+  bottom: calc(var(--size) * (-0.5) / 124); // could not set top - affects other slots
+  left: calc(var(--size) * 42 / 124);
 }
 
 ::slotted(wx-button[slot]) {
-  --height: 36px;
+  --height: calc(var(--size) * 38 / 124); // radius of small button = 38, for blue background height = 124 (from fla);
 }
 
 ::slotted(wx-button[slot='minimize']) {
-  bottom: 100px;
-  left: 105px;
+  bottom: calc(81 * var(--size) / 124);
+  left: calc(84 * var(--size) / 124);
 }
 
 ::slotted(wx-button[slot='top']) {
-  bottom: 100px;
-
-  left: 50px;
+  bottom: calc(83 * var(--size) / 124);
+  left: calc(34.5 * var(--size) / 124);
 }
 
 ::slotted(wx-button[slot='middle']) {
-  bottom: 60px;
-  left: 10px;
+  bottom: calc(49.5 * var(--size) / 124);
+  left: calc(3.5 * var(--size) / 124);
 }
 
 ::slotted(wx-button[slot='bottom']) {
-  bottom: 0px;
-  left: 10px;
+  bottom: calc(5 * var(--size) / 124);
+  left: calc(2.5 * var(--size) / 124);
 }
