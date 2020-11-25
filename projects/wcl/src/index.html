@@ -2,16 +2,20 @@
 <html dir="ltr" lang="en">
   <style type="text/css" media="screen, print">
     @font-face {
-      font-family: "webkinz-med";
-      src: url("assets/font/webkinz-medium.ttf") format("truetype");
+      font-family: 'webkinz-med';
+      src: url('assets/font/webkinz-medium.ttf') format('truetype');
     }
   </style>
   <style>
-    .green{
-      --background: /* linear-gradient(to top, #87EC00, #51B402) content-box,*/
-        linear-gradient(to top, #51B402, #87EC00) padding-box
+    .green {
+      --background: /* linear-gradient(to top, #87EC00, #51B402) content-box,*/ linear-gradient(
+          to top,
+          #51b402,
+          #87ec00
+        )
+        padding-box;
     }
-    .size-120{
+    .size-120 {
       --width: 120px;
       /* --height: 60px; */
     }
@@ -20,16 +24,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Webkinz Component Library</title>
-    <link href="/css/wcl.bundle.css" rel="stylesheet" />
-    <h1 style="font-family: webkinz-med;">Webkinz</h1>
+    <link href="/build/wcl.css" rel="stylesheet" />
 
     <script type="module" src="/build/wcl.esm.js"></script>
 
     <script nomodule src="/build/wcl.js"></script>
   </head>
-  <body>
-  
-    <wx-sample first="Stencil" last="'Don't call me a framework' JS"></wx-component>    
-  
+  <body class="wx">
+    
+          <wx-button shape="round">hello</wx-button>
+      <wx-button shape="round"></wx-button>
+      <wx-button><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
+      <wx-button color="primary" shape="round"><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
+      <wx-button color="primary" shape="round" size="large"
+        ><wx-icon name="close" slot="icon-only"></wx-icon
+      ></wx-button>
+      <wx-button color="primary" shape="round" size="x-large"
+        ><wx-icon name="close" slot="icon-only"></wx-icon
+      ></wx-button>
+      <p></p>
+      <wx-toolbar>
+        <wx-buttons>
+          <wx-button shape="round" fill="solid">
+            <wx-icon name="wx-close" slot="icon-only"></wx-icon>
+          </wx-button>
+          <wx-button shape="round" fill="solid">
+            <wx-icon name="wx-close" slot="icon-only"></wx-icon>
+          </wx-button>
+          <wx-button shape="round" fill="clear">
+            <wx-icon name="wx-close" slot="icon-only"></wx-icon>
+          </wx-button>
+          <wx-button shape="round" fill="clear">
+            sample
+          </wx-button>
+        </wx-buttons>
+      </wx-toolbar>
+    </wx-app>
+    
+    <!--
+    <wx-button color="primary" shape="round"><wx-icon name="square" slot="icon-only"></wx-icon></wx-button>
+    <p></p>
+    <wx-button color="secondary" shape="round">hello</wx-button>
+    <wx-button color="secondary" shape="round"><wx-icon name="square" slot="icon-only"></wx-icon></wx-button>
+    <wx-button color="secondary" shape="round"><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
+    <p></p>
+    <wx-button></wx-button>
+    -->
   </body>
 </html>

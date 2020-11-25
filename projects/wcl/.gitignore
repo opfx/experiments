@@ -6,7 +6,10 @@
 /tmp
 /out-tsc
 /www
+
+# generated sources/docs
 **/readme.md
+**/components.d.ts
 # dependencies
 /node_modules
 
