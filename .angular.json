@@ -99,7 +99,7 @@
               "projects/play/tsconfig.spec.json",
               "projects/play/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "**/runtime/**"]
           }
         },
         "test": {
