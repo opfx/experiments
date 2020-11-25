@@ -20,6 +20,7 @@ export class ContentComponent implements OnInit, OnDestroy {
   public goHome(): void {
     // this.router.navigate(['/home']);
   }
+
   public toggleLauncher(): void {
     this.launcher.toggle();
   }

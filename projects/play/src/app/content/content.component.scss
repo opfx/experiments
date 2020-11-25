@@ -1,7 +1,7 @@
 @import './../../theme/globals';
 :host {
   @include position(0, 0, 0, 0);
-  position: absolute;
+  position: fixed;
   //   background: url('/assets/background/paws.svg');
   background: linear-gradient(#2bd5ff, #169ccc, #005e95);
   //   background-repeat: repeat;
@@ -12,4 +12,18 @@
   position: absolute;
   background: url('/assets/background/paws.svg');
   background-repeat: repeat;
+}
+
+.toolbars {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: 100%;
+}
+
+.sidebars {
+  display: grid;
+  width: 100wh;
+  //   grid-template-rows: min-content auto min-content;
+  grid-template-columns: min-content auto min-content;
 }

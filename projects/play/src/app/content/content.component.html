@@ -1,32 +1,44 @@
 <div class="background"></div>
 <wx-router-outlet></wx-router-outlet>
-<wx-toolbar>
-  <wx-buttons slot="start">
-    <wx-button shape="round" fill="solid"></wx-button>
-    <wx-button shape="round" fill="solid"></wx-button>
-  </wx-buttons>
-  Some text lorem ipsum dolores asta la vista for several weeks i tried to write
-  <wx-buttons slot="end">
-    <wx-button shape="round" fill="solid"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
-    <wx-button shape="round" fill="solid"><wx-icon name="wx-close" slot="icon-only"></wx-icon></wx-button>
-  </wx-buttons>
-</wx-toolbar>
 <wx-launcher></wx-launcher>
-
-<wx-start-button>
+<div class="toolbars">
+  <div style="pointer-events: none">
+    <wx-toolbar>
+      <wx-buttons slot="start">
+        <wx-button shape="round" fill="solid"></wx-button>
+        <wx-button shape="round" fill="solid"></wx-button>
+      </wx-buttons>
+      Some text lorem ipsum dolores asta la vista for several weeks i tried to write
+      <wx-buttons slot="end">
+        <wx-button shape="round" fill="solid"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
+        <wx-button shape="round" fill="solid"><wx-icon name="wx-close" slot="icon-only"></wx-icon></wx-button>
+      </wx-buttons>
+    </wx-toolbar>
+  </div>
+  <div class="sidebars">
+    <div>start</div>
+    <div>main</div>
+    <div>end</div>
+  </div>
+  <div>
+    <wx-toolbar>
+      <wx-buttons slot="start">
+        <wx-button shape="round" fill="solid"></wx-button>
+        <wx-button shape="round" fill="solid"></wx-button>
+      </wx-buttons>
+      Some text lorem ipsum dolores asta la vista for several weeks i tried to write
+      <wx-buttons slot="end">
+        <wx-button shape="round" fill="solid"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
+        <wx-button shape="round" fill="solid"><wx-icon name="wx-close" slot="icon-only"></wx-icon></wx-button>
+      </wx-buttons>
+    </wx-toolbar>
+  </div>
+</div>
+<wx-start-button style="z-index: 2000">
   <wx-button shape="round" slot="top"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
 
   <wx-button shape="round" slot="middle"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
   <wx-button shape="round" slot="bottom"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
   <wx-button shape="round" fill="clear" slot="minimize"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
-  <wx-button shape="round"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
+  <wx-button shape="round" (click)="toggleLauncher()"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
 </wx-start-button>
-
-<!-- background-color: linear-gradient(#2bd5ff, #169ccc, #005e95); -->
-<!--
-
-
-
-
-
--->
