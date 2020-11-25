@@ -5,11 +5,16 @@ import { Activity } from '@webkinz/runtime';
 @Component({
   selector: 'wx-kinzpost',
   template: `
-    <p>kinzpost works!</p>
+    <wx-backdrop (wxBackdropTap)="dismiss()"></wx-backdrop>
+
     <div style="position:absolute; top:0px; right:0px">
-      <button name="close" (click)="finish()">X</button>
+      <wx-button name="close" (click)="finish()"><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
     </div>
   `,
   styleUrls: ['./kinzpost.activity.scss'],
 })
-export class KinzpostActivity extends Activity {}
+export class KinzpostActivity extends Activity {
+  dismiss(): void {
+    console.log('dissmissed');
+  }
+}
