@@ -25,22 +25,22 @@ export class ActivityManager {
     this.mActivities$ = new BehaviorSubject<ActivityInfo[]>([]);
 
     this.mRouter.events.subscribe((routerEvent: RouterEvent) => {
-      if (routerEvent instanceof ChildActivationEnd) {
-        if (routerEvent.snapshot.routeConfig.path === 'content') {
-          const activitiesInfo: ActivityInfo[] = [];
-          const loadedConfig = (routerEvent.snapshot.routeConfig as any)._loadedConfig;
-          const childrenRoutes = loadedConfig.routes[0].children;
-          for (const route of childrenRoutes) {
-            let intentFilter = {};
-            if (route.data && route.data.intentFilter) {
-              intentFilter = route.data.intentFilter;
-            }
-            const activityInfo = { name: route.path, label: route.path, intentFilter };
-            activitiesInfo.push(activityInfo);
-          }
-          this.mActivities$.next(activitiesInfo);
-        }
-      }
+      // if (routerEvent instanceof ChildActivationEnd) {
+      //   if (routerEvent.snapshot.routeConfig.path === 'content') {
+      //     const activitiesInfo: ActivityInfo[] = [];
+      //     const loadedConfig = (routerEvent.snapshot.routeConfig as any)._loadedConfig;
+      //     const childrenRoutes = loadedConfig.routes[0].children;
+      //     for (const route of childrenRoutes) {
+      //       let intentFilter = {};
+      //       if (route.data && route.data.intentFilter) {
+      //         intentFilter = route.data.intentFilter;
+      //       }
+      //       const activityInfo = { name: route.path, label: route.path, intentFilter };
+      //       activitiesInfo.push(activityInfo);
+      //     }
+      //     this.mActivities$.next(activitiesInfo);
+      //   }
+      // }
     });
   }
 
