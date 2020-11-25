@@ -9,7 +9,11 @@
 
 # generated sources/docs
 **/readme.md
-**/components.d.ts
+
+# cannot ignore componets.d.ts for now
+# see https://github.com/ionic-team/stencil/issues/1776
+# **/components.d.ts
+
 # dependencies
 /node_modules
 
