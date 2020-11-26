@@ -21,4 +21,8 @@ export class TileComponent {
   get activity(): ActivityInfo {
     return this.mActivity;
   }
+
+  @Input() set index(index: number) {
+    console.log(`${index}`);
+  }
 }

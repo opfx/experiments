@@ -7,13 +7,20 @@ import { filter, map } from 'rxjs/operators';
 import { Activity, ActivityInfo } from '@webkinz/runtime';
 import { Intent } from '@webkinz/runtime';
 
+const COLUMNS_COUNT = 7;
+const ROW_COUNT = 4;
 @Component({
   selector: 'wx-launcher',
   template: `
     <div class="backdrop" (click)="dismiss()"></div>
 
     <div class="grid">
-      <wx-tile *ngFor="let activity of activities$ | async" [activity]="activity" (click)="launch(activity)"></wx-tile>
+      <wx-tile
+        *ngFor="let activity of activities$ | async; index as i"
+        [index]="i"
+        [activity]="activity"
+        (click)="launch(activity)"
+      ></wx-tile>
     </div>
   `,
   styleUrls: [`./launcher.activity.scss`],
@@ -29,6 +36,30 @@ export class LauncherActivity extends Activity {
     // this.activities$ = this.manager.queryActivities(filterIntent).pipe(filter());
     this.activities$ = of([
       { name: 'arcade', path: '', label: 'Arcade' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'arcade', path: '', label: 'Arcade' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'arcade', path: '', label: 'Arcade' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'kinzpost', path: '', label: 'Kinzpost' },
       { name: 'kinzpost', path: '', label: 'Kinzpost' },
     ]);
     // this.activities$ = this.manager.getActivities().pipe(
