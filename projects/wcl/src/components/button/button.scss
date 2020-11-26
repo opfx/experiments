@@ -252,4 +252,9 @@
     transform: translateY(-0.025rem);
     filter: brightness(1.075);
   }
+
+  :host(:active) {
+    transition: 0.2s ease-out;
+    transform: translateY(0.1rem);
+  }
 }
