@@ -1,4 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { openClose, openCloseStagger, staggerEnter } from '../animations';
 
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
@@ -9,6 +11,12 @@ import { Intent } from '@webkinz/runtime';
 
 const COLUMNS_COUNT = 7;
 const ROW_COUNT = 4;
+
+/*
+ * not working yet:
+ * [@openCloseStagger]="!isHidden ? 'open' : 'closed'"
+ * @staggerEnter
+ */
 @Component({
   selector: 'wx-launcher',
   template: `
@@ -16,6 +24,7 @@ const ROW_COUNT = 4;
 
     <div class="grid">
       <wx-tile
+        [@openClose]="!isHidden ? 'open' : 'closed'"
         *ngFor="let activity of activities$ | async; index as i"
         [index]="i"
         [activity]="activity"
@@ -24,12 +33,16 @@ const ROW_COUNT = 4;
     </div>
   `,
   styleUrls: [`./launcher.activity.scss`],
+  animations: [
+    openClose
+  ]
 })
 export class LauncherActivity extends Activity {
   public activities$: Observable<ActivityInfo[]>;
 
   @HostBinding('class.hidden') isHidden = false;
 
+  // see for async stagger: https://itnext.io/angular-animations-stagger-over-static-and-async-data-3907c4889479
   protected onCreate(): void {
     console.log('launcher init');
     const filterIntent = new Intent();
@@ -88,7 +101,7 @@ export class LauncherActivity extends Activity {
 
   public toggle(): void {
     this.isHidden = !this.isHidden;
-    console.log(this.isHidden);
+    // console.log(this.isHidden);
   }
 
   public launch(activity): void {

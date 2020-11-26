@@ -2,9 +2,9 @@
 :host {
   @include position(0, 0, 0, 0);
   position: fixed;
-  //   background: url('/assets/background/paws.svg');
+  // background-repeat: no-repeat, repeat;
+  // background: linear-gradient(#2bd5ff, #169ccc, #005e95), url('/assets/background/paws.svg');
   background: linear-gradient(#2bd5ff, #169ccc, #005e95);
-  //   background-repeat: repeat;
 }
 
 .background {
@@ -26,4 +26,11 @@
   width: 100wh;
   //   grid-template-rows: min-content auto min-content;
   grid-template-columns: min-content auto min-content;
+}
+
+.maximize-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // outline: none;
 }

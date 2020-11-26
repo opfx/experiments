@@ -20,7 +20,7 @@
     <div>main</div>
     <div>end</div>
   </div>
-  <div>
+  <div [@hideDown]="bottomUiIsVisible ? 'open' : 'closed'">
     <wx-toolbar>
       <wx-buttons slot="start">
         <wx-button shape="round" fill="solid"></wx-button>
@@ -34,11 +34,14 @@
     </wx-toolbar>
   </div>
 </div>
-<wx-start-button style="z-index: 2000">
+<wx-start-button [@hideDown]="bottomUiIsVisible ? 'open' : 'closed'" style="z-index: 2000">
   <wx-button shape="round" slot="top"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
 
   <wx-button shape="round" slot="middle"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
   <wx-button shape="round" slot="bottom"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
-  <wx-button shape="round" fill="clear" slot="minimize"><wx-icon name="minimize" slot="icon-only"></wx-icon></wx-button>
+  <wx-button shape="round" (click)="collapseStart()" fill="clear" slot="minimize"
+    ><wx-icon name="minimize" slot="icon-only"></wx-icon
+  ></wx-button>
   <wx-button shape="round" (click)="toggleLauncher()"><wx-icon name="kinzpost" slot="icon-only"></wx-icon></wx-button>
 </wx-start-button>
+<button class="maximize-button" (click)="collapseStart()">Collapse-Expand</button>
