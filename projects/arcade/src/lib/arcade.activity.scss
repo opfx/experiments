@@ -1,3 +1,8 @@
 :host {
-  background: url('./../assets/background/arcade.svg');
+  // --ratio: 1.33;
+  // background-color: #006ab5; // #036fbf; // #193580;
+  background: url('./../assets/background/arcade.svg'); // viewBox="0 0 1920 1080" of arcade.svg
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; // calc(100vw * var(--ratio)) calc(100vh * var(--ratio)); // cover; // 100vw 100vh;
 }
