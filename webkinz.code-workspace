@@ -44,7 +44,11 @@
       "**/.*rc": true,
       "**/test-setup.ts": true
     },
-    "cSpell.words": ["Kinzpost", "webkinz"],
+    "cSpell.words": [
+      "Kinzpost",
+      "pixi",
+      "webkinz"
+    ],
     "jest.pathToJest": "yarn test",
     "jest.disabledWorkspaceFolders": ["Docs"],
     "editor.formatOnSave": true
