@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="wx">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Webkinz Component Library</title>
+    <!-- this is valid if we use globalStyle in stencil  
+    <link href="/build/wcl.css" rel="stylesheet" />
+    -->
+    <link href="/css/wcl.bundle.css" rel="stylesheet"/>
+
+    <script type="module" src="/build/wcl.esm.js"></script>
+
+    <script nomodule src="/build/wcl.js"></script>
+  </head>
+  <body class="wx">
+    
+          <wx-button shape="round">hello</wx-button>
+      <wx-button shape="round"></wx-button>
+      <wx-button><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
+      <wx-button color="primary" shape="round"><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
+      <wx-button color="primary" shape="round" size="large"
+        ><wx-icon name="close" slot="icon-only"></wx-icon
+      ></wx-button>
+      <wx-button color="primary" shape="round" size="x-large"
+        ><wx-icon name="close" slot="icon-only"></wx-icon
+      ></wx-button>
+      <p></p>
+      <wx-toolbar>
+        <wx-buttons>
+          <wx-button shape="round" fill="solid">
+            <wx-icon name="wx-close" slot="icon-only"></wx-icon>
+          </wx-button>
+          <wx-button shape="round" fill="solid">
+            <wx-icon name="wx-close" slot="icon-only"></wx-icon>
+          </wx-button>
+          <wx-button shape="round" fill="clear">
+            <wx-icon name="wx-close" slot="icon-only"></wx-icon>
+          </wx-button>
+          <wx-button shape="round" fill="clear">
+            sample
+          </wx-button>
+        </wx-buttons>
+      </wx-toolbar>
+    </wx-app>
+    
+    <!--
+    <wx-button color="primary" shape="round"><wx-icon name="square" slot="icon-only"></wx-icon></wx-button>
+    <p></p>
+    <wx-button color="secondary" shape="round">hello</wx-button>
+    <wx-button color="secondary" shape="round"><wx-icon name="square" slot="icon-only"></wx-icon></wx-button>
+    <wx-button color="secondary" shape="round"><wx-icon name="close" slot="icon-only"></wx-icon></wx-button>
+    <p></p>
+    <wx-button></wx-button>
+    -->
+  </body>
+</html>
