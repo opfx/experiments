@@ -3,10 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'wx-cash-cow',
-  template: `
-    <p>cash-cow works!</p>
-    <p><button (click)="close()">Close</button></p>
-  `,
+  template: `<wx-pixi></wx-pixi> `,
   styles: [],
 })
 export class CashCowComponent implements OnInit, OnDestroy {
