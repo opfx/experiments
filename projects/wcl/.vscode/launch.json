@@ -14,6 +14,14 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch wcl",
+      "url": "http://localhost:3333",
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}/www"
     }
   ]
 }
