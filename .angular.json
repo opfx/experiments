@@ -596,6 +596,113 @@
           }
         }
       }
+    },
+    "grand-grotto": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/grand-grotto",
+      "sourceRoot": "projects/grand-grotto/src",
+      "prefix": "wx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/grand-grotto",
+            "index": "projects/grand-grotto/src/index.html",
+            "main": "projects/grand-grotto/src/main.ts",
+            "polyfills": "projects/grand-grotto/src/polyfills.ts",
+            "tsConfig": "projects/grand-grotto/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/grand-grotto/src/favicon.ico", "projects/grand-grotto/src/assets"],
+            "styles": ["projects/grand-grotto/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/grand-grotto/src/environments/environment.ts",
+                  "with": "projects/grand-grotto/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "grand-grotto:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "grand-grotto:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "grand-grotto:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/grand-grotto/tsconfig.app.json",
+              "projects/grand-grotto/tsconfig.spec.json",
+              "projects/grand-grotto/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@wdtk/jest:jest",
+          "options": {
+            "jestConfig": "projects/grand-grotto/jest.config.js",
+            "tsConfig": "projects/grand-grotto/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "projects/grand-grotto/src/test-setup.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@wdtk/cypress:cypress",
+          "options": {
+            "cypressConfig": "projects/grand-grotto/cypress.json",
+            "tsConfig": "projects/grand-grotto/e2e/tsconfig.json",
+            "devServerTarget": "grand-grotto:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "grand-grotto:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "newProjectRoot": "projects",

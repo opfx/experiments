@@ -22,6 +22,10 @@
       "path": "projects/cash-cow"
     },
     {
+      "name": "Grand Grotto (game)",
+      "path": "projects/grand-grotto"
+    },
+    {
       "name": "Webkinz Component Library",
       "path": "projects/wcl"
     },
@@ -44,11 +48,7 @@
       "**/.*rc": true,
       "**/test-setup.ts": true
     },
-    "cSpell.words": [
-      "Kinzpost",
-      "pixi",
-      "webkinz"
-    ],
+    "cSpell.words": ["Kinzpost", "pixi", "webkinz"],
     "jest.pathToJest": "yarn test",
     "jest.disabledWorkspaceFolders": ["Docs"],
     "editor.formatOnSave": true

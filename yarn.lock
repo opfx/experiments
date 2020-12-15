@@ -3025,6 +3025,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@webkinz/grand-grotto@workspace:projects/grand-grotto":
+  version: 0.0.0-use.local
+  resolution: "@webkinz/grand-grotto@workspace:projects/grand-grotto"
+  dependencies:
+    jest: "*"
+    tslib: ^2.0.0
+  peerDependencies:
+    "@angular/common": ^10.1.3
+    "@angular/core": ^10.1.3
+  languageName: unknown
+  linkType: soft
+
 "@webkinz/kinzpost@workspace:projects/kinzpost":
   version: 0.0.0-use.local
   resolution: "@webkinz/kinzpost@workspace:projects/kinzpost"
