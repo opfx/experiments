@@ -20,7 +20,7 @@ export let openClose = trigger('openClose', [
     // Initially the all tiles are not visible
     state('closed', style({
         opacity: 0.0,
-        transform: 'translateY(300%)'
+        transform: 'translateY(500%)'
     })),
 
     state('open', style({
@@ -29,7 +29,7 @@ export let openClose = trigger('openClose', [
 
     // Transition from any state to any state
     transition('closed <=> open', [
-        animate('60ms ease-out') // or '0.5s' or 500
+        animate('100ms ease-out') // or '0.5s' or 500
     ]),
 ]);
 

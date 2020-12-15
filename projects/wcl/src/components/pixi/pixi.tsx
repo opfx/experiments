@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Host, h } from '@stencil/core';
+import { Component, ComponentInterface, Element, Host, Prop, h } from '@stencil/core';
 // import { autoDetectRenderer } from '@pixi/core';
 // import { Renderer } from '@pixi/core';
 import { autoDetectRenderer } from 'pixi.js';
@@ -12,9 +12,13 @@ import { Container, Renderer, Text, Ticker } from 'pixi.js';
 })
 export class PixiComponent implements ComponentInterface {
   private mRenderer: Renderer;
-  private mStage: Container;
   private mTicker: Ticker;
+
   @Element() el!: HTMLElement;
+
+  @Prop() stage: Container;
+
+  @Prop() loop: (delta: number) => void;
 
   /**
    * The component is about to load and it has not
@@ -32,21 +36,22 @@ export class PixiComponent implements ComponentInterface {
       antialias: true,
       resolution: window.devicePixelRatio, // Math.min(window.devicePixelRatio, 3)
     });
-    this.mStage = new Container();
-    const defaultText = new Text('Pixi', { fontFamily: 'Webkinz Medium', fontSize: 50 });
-    defaultText.position.set(50, 50);
-    this.mStage.addChild(defaultText);
+
+    if (!this.stage) {
+      this.stage = new Container();
+      const defaultText = new Text('Pixi', { fontFamily: 'Webkinz Medium', fontSize: 50 });
+      defaultText.position.set(50, 50);
+      this.stage.addChild(defaultText);
+    }
 
     this.mTicker = new Ticker();
-    // this.mTicker.autoStart = false;
-    // this.mTicker.stop();
-    this.mTicker.add((/*delta: number*/) => {
-      this.loop(/*delta*/);
+    this.mTicker.add((delta: number) => {
+      this.doLoop(delta);
     });
-
     this.el.shadowRoot.appendChild(this.mRenderer.view);
+
     setTimeout(() => {
-      this.mRenderer.render(this.mStage);
+      this.mRenderer.render(this.stage);
       this.mTicker.start();
     }, 3000);
   }
@@ -61,8 +66,12 @@ export class PixiComponent implements ComponentInterface {
 
   // }
 
-  private loop(/*delta: number*/) {
-    this.mRenderer.render(this.mStage);
+  doLoop(delta: number) {
+    // console.log('[pixi.tsx], delta: ' + delta);
+    if (this.loop) {
+      this.loop(delta);
+    }
+    this.mRenderer.render(this.stage);
   }
 
   render() {
