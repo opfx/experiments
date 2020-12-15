@@ -1,0 +1,13 @@
+@import './tab-bar.scss';
+@import './tab-bar.md.vars.scss';
+
+:host {
+  // default color / background
+  --background: #{$tab-bar-md-background};
+  --background-focused: #{$tab-bar-md-background-focused};
+  --border: #{1px solid $tab-bar-md-border-color};
+  --color: #{$tab-bar-md-color};
+  --color-selected: #{$tab-bar-md-color-selected};
+
+  height: 56px;
+}

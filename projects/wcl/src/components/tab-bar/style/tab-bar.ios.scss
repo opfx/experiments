@@ -1,0 +1,13 @@
+@import './tab-bar.scss';
+@import './tab-bar.ios.vars.scss';
+
+:host {
+  // default color / background
+  --background: #{$tab-bar-ios-background};
+  --background-focused: #{$tab-bar-ios-background-focused};
+  --border: #{$hairlines-width solid $tab-bar-ios-border-color};
+  --color: #{$tab-bar-ios-color};
+  --color-selected: #{$tab-bar-ios-color-selected};
+
+  height: 50px;
+}

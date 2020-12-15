@@ -1,0 +1,36 @@
+// ///////////////////////////////////////////////////////////////////////////////////////////
+// Theme defaults for iOS
+// -------------------------------------------------------------------------------------------
+// This should only include variables used to theme the application colors for iOS.
+
+// iOS General Colors
+// --------------------------------------------------
+$backdrop-ios-color: var(--wx-backdrop-color, #000) !default;
+$border-ios-color: var(--wx-border-color, var(--wx-color-step-150, #dedede)) !default;
+$box-shadow-ios-color: var(--wx-box-shadow-color, #000) !default;
+$overlay-ios-background-color: var(--wx-overlay-background-color, var(--wx-color-step-100, #f9f9f9)) !default;
+
+// iOS Tabs & Tab bar
+// --------------------------------------------------
+$tab-bar-ios-background: var(--wx-tab-bar-background, $background-color) !default;
+$tab-bar-ios-background-focused: var(--wx-tab-bar-background-focused, get-color-shade(#fff)) !default;
+$tab-bar-ios-border-color: var(--wx-tab-bar-border-color, var(--wx-border-color, var(--wx-color-step-150, rgba(0, 0, 0, 0.2)))) !default;
+$tab-bar-ios-color: var(--wx-tab-bar-color, $text-color-step-600) !default;
+$tab-bar-ios-color-selected: var(--wx-tab-bar-color-selected, color(primary, base)) !default;
+
+// iOS Toolbar
+// --------------------------------------------------
+$toolbar-ios-background: var(--wx-toolbar-background, var(--wx-color-step-50, #fff)) !default;
+$toolbar-ios-border-color: var(--wx-toolbar-border-color, var(--wx-border-color, var(--wx-color-step-150, rgba(0, 0, 0, 0.2)))) !default;
+$toolbar-ios-color: var(--wx-toolbar-color, $text-color) !default;
+
+// iOS List & List Items
+// --------------------------------------------------
+$item-ios-background: var(--wx-item-background, $background-color) !default;
+$item-ios-border-color: var(--wx-item-border-color, var(--wx-border-color, var(--wx-color-step-250, #c8c7cc))) !default;
+$item-ios-color: var(--wx-item-color, $text-color) !default;
+
+// iOS Card
+// --------------------------------------------------
+$card-ios-background: var(--wx-card-background, $item-ios-background) !default;
+$card-ios-color: var(--wx-card-color, var(--wx-item-color, $text-color-step-400)) !default;

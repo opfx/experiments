@@ -1,0 +1,36 @@
+// ///////////////////////////////////////////////////////////////////////////////////////////
+// Theme defaults for Material Design
+// -------------------------------------------------------------------------------------------
+// This should only include variables used to theme the application colors for Material Design.
+
+// Material Design General Colors
+// --------------------------------------------------
+$backdrop-md-color: var(--wx-backdrop-color, #000) !default;
+$border-md-color: var(--wx-border-color, var(--wx-color-step-150, #c1c4cd)) !default;
+$box-shadow-md-color: var(--wx-box-shadow-color, #000) !default;
+$overlay-md-background-color: var(--wx-overlay-background-color, var(--wx-background-color, #fff)) !default;
+
+// Material Design Tabs & Tab bar
+// --------------------------------------------------
+$tab-bar-md-background: var(--wx-tab-bar-background, $background-color) !default;
+$tab-bar-md-background-focused: var(--wx-tab-bar-background-focused, get-color-shade(#fff)) !default;
+$tab-bar-md-border-color: var(--wx-tab-bar-border-color, var(--wx-border-color, var(--wx-color-step-150, rgba(0, 0, 0, 0.07)))) !default;
+$tab-bar-md-color: var(--wx-tab-bar-color, $text-color-step-400) !default;
+$tab-bar-md-color-selected: var(--wx-tab-bar-color-selected, color(primary, base)) !default;
+
+// Material Design Toolbar
+// --------------------------------------------------
+$toolbar-md-background: var(--wx-toolbar-background, $background-color) !default;
+$toolbar-md-border-color: var(--wx-toolbar-border-color, $border-md-color) !default;
+$toolbar-md-color: var(--wx-toolbar-color, var(--wx-text-color, #424242)) !default;
+
+// Material Design List & List Items
+// --------------------------------------------------
+$item-md-background: var(--wx-item-background, $background-color) !default;
+$item-md-border-color: var(--wx-item-border-color, var(--wx-border-color, var(--wx-color-step-150, rgba(0, 0, 0, 0.13)))) !default;
+$item-md-color: var(--wx-item-color, $text-color) !default;
+
+// Material Design Card
+// --------------------------------------------------
+$card-md-background: var(--wx-card-background, $item-md-background) !default;
+$card-md-color: var(--wx-card-color, var(--wx-item-color, $text-color-step-450)) !default;
