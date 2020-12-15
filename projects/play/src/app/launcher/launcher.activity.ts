@@ -32,7 +32,17 @@ const ROW_COUNT = 4;
  * *ngFor="let activity of activities$ | async; index as i"
  * [index]="i"
  *
- * Switch animation between @listEaseBounce and @listSmooth in <div class="grid">
+ * Switch animation between @listEaseBounce and @listSmooth in <div class="grid">;
+ *     <div class="grid" [@listEaseBounce]='rows.length'> // rows.length value change triggers @[animation]
+ *     OR
+ *     <div class="grid" [@listEaseBounce]='rowsLength'> // rowsLength value change triggers @[animation]
+ *
+ * I've switch to rows from activities$ in ngFor, as we play animation on item entering or leaving DOM.
+ *   As I can't change activities$ => there is rows
+ * But angular animation's :enter, :leave can't animate array from end by it's nature.
+ * Could I create other states open, closed and query by rowIndex or class?
+ *     But still I can't write correct function for easeBounceOut, easeBounceIn in angular.
+ * Other option is - JS animation
  */
 @Component({
   selector: 'wx-launcher',
@@ -41,7 +51,8 @@ const ROW_COUNT = 4;
 
     <div class="grid" [@listEaseBounce]='rows.length'>
       <wx-tile
-        *ngFor="let activity of rows"
+        *ngFor="let activity of rows; index as i"
+        [index]="i"
         [activity]="activity"
         (click)="launch(activity)"
       ></wx-tile>
@@ -71,7 +82,7 @@ const ROW_COUNT = 4;
         query(
           ':enter',
           [
-            style({ opacity: 0, transform: 'translateY(25%)' }),
+            style({ opacity: 0, transform: 'translateY(-25%)' }),
 
             // see https://angular.io/api/animations/keyframes
             // see https://easings.net/#easeOutBounce
@@ -79,11 +90,11 @@ const ROW_COUNT = 4;
               '400ms ease-out', // ease-in // ease-out
               keyframes([
                 style({ opacity: 1, transform: 'translateY(0)', offset: 1 / 2.75 }),
-                style({ opacity: 0.75, transform: 'translateY(6%)', offset: 1.5 / 2.75 }),
+                style({ opacity: 0.75, transform: 'translateY(-6%)', offset: 1.5 / 2.75 }),
                 style({ opacity: 1, transform: 'translateY(0)', offset: 2 / 2.75 }),
-                style({ opacity: 0.9375, transform: 'translateY(2%)', offset: 2.25 / 2.75 }),
+                style({ opacity: 0.9375, transform: 'translateY(-2%)', offset: 2.25 / 2.75 }),
                 style({ opacity: 1, transform: 'translateY(0)', offset: 2.5 / 2.75 }),
-                style({ opacity: 0.984375, transform: 'translateY(0.5%)', offset: 2.625 / 2.75 }),
+                style({ opacity: 0.984375, transform: 'translateY(-0.5%)', offset: 2.625 / 2.75 }),
                 style({ opacity: 1, transform: 'translateY(0)', offset: 1 }),
               ])
             )
@@ -98,13 +109,13 @@ const ROW_COUNT = 4;
             '400ms',
             keyframes([
               style({ opacity: 1, transform: 'translateY(0)', offset: 0 }),
-              style({ opacity: 0.984375, transform: 'translateY(0.5%)', offset: 1 - 2.625 / 2.75 }),
+              style({ opacity: 0.984375, transform: 'translateY(-0.5%)', offset: 1 - 2.625 / 2.75 }),
               style({ opacity: 1, transform: 'translateY(0)', offset: 1 - 2.5 / 2.75 }),
-              style({ opacity: 0.9375, transform: 'translateY(2%)', offset: 1 - 2.25 / 2.75 }),
+              style({ opacity: 0.9375, transform: 'translateY(-2%)', offset: 1 - 2.25 / 2.75 }),
               style({ opacity: 1, transform: 'translateY(0)', offset: 1 - 2 / 2.75 }),
-              style({ opacity: 0.75, transform: 'translateY(6%)', offset: 1 - 1.5 / 2.75 }),
+              style({ opacity: 0.75, transform: 'translateY(-6%)', offset: 1 - 1.5 / 2.75 }),
               style({ opacity: 1, transform: 'translateY(0)', offset: 1 - 1 / 2.75 }),
-              style({ opacity: 0, transform: 'translateY(25%)', offset: 1 }),
+              style({ opacity: 0, transform: 'translateY(-25%)', offset: 1 }),
             ])
           ),
           { optional: true }
