@@ -1,0 +1,46 @@
+{
+	"assetMap":
+	{
+		"skin":
+		[
+			{ "assetName": "assets", "source": "assets/png/background.png" }
+			,{ "assetName": "end-game-background", "source": "assets/png/end_game.png" }
+			,{ "assetName": "instructions-1", "source": "assets/png/i1.png" }
+			,{ "assetName": "instructions-2", "source": "assets/png/.png" }
+			,{ "assetName": "loading", "source": "assets/png/background.png" }
+			,{ "assetName": "game-logo", "source": "assets/png/logo.png" }
+			,{ "assetName": "menu-field-background", "source": "assets/png/menu_back.png" }
+			,{ "assetName": "webkinz-logo", "source": "assets/png/webkinz-logo.png" }
+		],
+		"sound":
+		[
+			{
+				"assetName": "backgroundMusic", "source": "assets/mp3/theme.mp3"
+			}
+			,{ "assetName": "atlantiles_music_a", "source": "assets/mp3/atlantiles_music_a.mp3"}
+			,{ "assetName": "atlantiles_music_b", "source": "assets/mp3/atlantiles_music_b.mp3"}
+			,{ "assetName": "atlantiles_music_c", "source": "assets/mp3/atlantiles_music_c.mp3"}
+			,{ "assetName": "atlantiles_softer_no_main", "source": "assets/mp3/atlantiles_softer_no_main.mp3"}
+			,{ "assetName": "button", "source": "assets/mp3/button.mp3"}
+			,{ "assetName": "deselect", "source": "assets/mp3/deselect.mp3"}
+			,{ "assetName": "error", "source": "assets/mp3/error.mp3"}
+			,{ "assetName": "Game_lost_break_crashing", "source": "assets/mp3/Game_lost_break_crashing.mp3"}
+			,{ "assetName": "green_line_bing_1", "source": "assets/mp3/green_line_bing_1.mp3"}
+			,{ "assetName": "green_line_bing_2", "source": "assets/mp3/green_line_bing_2.mp3"}
+			,{ "assetName": "green_line_bing_3", "source": "assets/mp3/green_line_bing_3.mp3"}
+			,{ "assetName": "green_line_bing_4", "source": "assets/mp3/green_line_bing_4.mp3"}
+			,{ "assetName": "hint", "source": "assets/mp3/hint.mp3"}
+			,{ "assetName": "select", "source": "assets/mp3/select.mp3"}
+			,{ "assetName": "triumphant", "source": "assets/mp3/triumphant.mp3"}
+			,{ "assetName": "underwater", "source": "assets/mp3/underwater.mp3"}
+		],
+		"spritesheet":
+		[
+			{ "assetName": "tiles", "source": "assets/spritesheet/tiles.json" }
+		],
+		"text":
+		[
+			{ "assetName": "levels-data", "source": "assets/json/levels.json" }
+		]
+	}
+}
