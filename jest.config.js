@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/projects/kinzpost',
     '<rootDir>/projects/arcade',
     '<rootDir>/projects/grand-grotto',
+    '<rootDir>/projects/atlantiles',
   ],
 };
