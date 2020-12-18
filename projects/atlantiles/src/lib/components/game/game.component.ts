@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { AfterViewInit, OnInit, OnDestroy } from '@angular/core';
-import { AtlantilesGame } from '../../atlantiles.game';
+import { AtlantilesActivity } from '../../atlantiles.activity';
 
 @Component({
   selector: 'wx-game',
@@ -16,7 +16,7 @@ export class GameComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('renderer', { static: false }) private mRendererElRef: ElementRef;
 
   private mView: string;
-  constructor(private mGame: AtlantilesGame, private mElementRef: ElementRef) {
+  constructor(private mGame: AtlantilesActivity, private mElementRef: ElementRef) {
     // console.log(JSON.stringify(game));
   }
 

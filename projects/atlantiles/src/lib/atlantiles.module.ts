@@ -3,18 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { RuntimeModule } from '@webkinz/runtime';
 
-import { AtlantilesComponent } from './atlantiles.component';
-
 import { GameComponent } from './components';
-import { AtlantilesGame } from './atlantiles.game';
+import { AtlantilesActivity } from './atlantiles.activity';
 import { AssetLoader } from './providers';
 
-const routes: Routes = [{ path: '', component: AtlantilesComponent }];
+const routes: Routes = [{ path: '', component: AtlantilesActivity }];
 
 @NgModule({
-  declarations: [AtlantilesComponent, GameComponent],
-  providers: [AtlantilesGame, AssetLoader],
+  declarations: [AtlantilesActivity, GameComponent],
+  providers: [AssetLoader],
   imports: [RuntimeModule, RouterModule.forChild(routes)],
-  exports: [AtlantilesComponent],
+  exports: [],
 })
 export class AtlantilesModule {}

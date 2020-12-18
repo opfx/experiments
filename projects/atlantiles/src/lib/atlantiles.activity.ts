@@ -1,13 +1,17 @@
-import { Injectable, Injector } from '@angular/core';
-import { AbstractGame } from './abstract-game';
+import { Component, Injector } from '@angular/core';
+import { GameActivity } from './game.activity';
 import { Text } from 'pixi.js';
-import { AtlantilesFundemic } from './atlantiles/atlantiles-fundemic';
+import { AtlantilesGame } from './atlantiles/atlantiles.game';
 import { Assets } from './atlantiles/data/assets';
 import { SoundController } from './lq/sound-controller';
 
-@Injectable()
-export class AtlantilesGame extends AbstractGame {
-  private gamePlay: AtlantilesFundemic;
+@Component({
+  selector: 'wx-atlantiles',
+  template: `<wx-game></wx-game>`,
+  styles: [],
+})
+export class AtlantilesActivity extends GameActivity {
+  private gamePlay: AtlantilesGame;
   constructor(injector: Injector) {
     super('Atlantiles Game', injector);
   }
@@ -77,7 +81,7 @@ export class AtlantilesGame extends AbstractGame {
     // const text = new Text('Atlantiles Game');
     // this.mStage.addChild(text);
 
-    this.gamePlay = new AtlantilesFundemic();
+    this.gamePlay = new AtlantilesGame();
     this.gamePlay.start(new Assets().init(), 800, 600, 800, 600);
     this.mStage.addChild(this.gamePlay);
   }

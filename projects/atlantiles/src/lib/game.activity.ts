@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { AssetLoader } from './providers';
 
-export abstract class AbstractGame {
+export abstract class GameActivity {
   private mName: string;
 
   private mInjector: Injector;
