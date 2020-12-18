@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { AbstractGame } from './abstract-game';
-import { Text }  from 'pixi.js';
+import { Text } from 'pixi.js';
 import { AtlantilesFundemic } from './atlantiles/atlantiles-fundemic';
 import { Assets } from './atlantiles/data/assets';
 import { SoundController } from './lq/sound-controller';
@@ -14,7 +14,6 @@ export class AtlantilesGame extends AbstractGame {
 
   /** const assetMap: Map<string, string> = new Map<string, string>(); */
   protected onLoad(assetMap: Map<string, string>) {
-
     // fonts
     assetMap.set('font1', 'assets/fonts/font1.fnt');
     assetMap.set('font2', 'assets/fonts/font2.fnt');
@@ -85,6 +84,11 @@ export class AtlantilesGame extends AbstractGame {
 
   protected onLoop(delta: number): void {
     this.gamePlay.update(delta);
+  }
+
+  public resize(w: number, h: number): void {
+    super.resize(w, h);
+    this.gamePlay.resize(w, h, w, h);
   }
 
   public exit(): void {

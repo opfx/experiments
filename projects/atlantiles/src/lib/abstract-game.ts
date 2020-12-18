@@ -78,7 +78,9 @@ export abstract class AbstractGame {
 
   protected onLoop(delta: number): void {}
 
-  public resize() {}
+  public resize(w: number, h: number) {
+    this.mRenderer.resize(w, h);
+  }
 
   public start() {
     this.mActiveView$.next('play');

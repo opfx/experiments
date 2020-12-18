@@ -1,0 +1,11 @@
+@import './../../../theme/globals';
+
+:host {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+}
+
+.renderer {
+  @include position(0, 0, 0, 0);
+  position: absolute;
+}
