@@ -468,7 +468,7 @@ export class Field extends CellField {
 
     public randomizeOnce(): void {
         let elem: Element;
-        let r = Math.random() * this.cells.length;
+        let r = Math.floor(Math.random() * this.cells.length);
         let e1: Element = null;
         let e2: Element = null;
 
@@ -492,7 +492,7 @@ export class Field extends CellField {
                 }
             }
 
-            r = Math.random() * this.cells.length;
+            r = Math.floor(Math.random() * this.cells.length);
             while (e2 === null) {
                 elem = (this.cells[r] as GameCell).getElement();
                 if (elem) {
