@@ -67,14 +67,18 @@ export class StartMenu extends Loop {
     }
     /** override */
     public set Scale(v: number) {
+        // this.background.Scale = this.game.MW / this.background.texture.width / this.game.scale.x;
+        const scaleX = this.game.MW / this.background.texture.width / this.game.scale.x;
+        const scaleY = this.game.MH / this.background.texture.height / this.game.scale.y;
+        this.background.Scale = Math.max(scaleX, scaleY); // scaleX;
+        this.background.x = (this.game.RW - this.background.width) / 2;
+        this.background.y = (this.game.RH - this.background.height) / 2;
+        
+        this.logo.Scale = Math.min(scaleX, scaleY);
         this.logo.x = (this.game.RW - this.logo.width) / 2;
         this.logo.y = this.game.RH * Constants.STARTMENU_LOGO_DH - this.logo.height / 2;
 
         this.buttonPlay.y = this.buttonClassic.y = this.game.RH * Constants.STARTMENU_BUTTONS_1.y;
-
-        this.background.Scale = this.game.MW / this.background.texture.width / this.game.scale.x;
-        this.background.x = (this.game.RW - this.background.width) / 2;
-        this.background.y = (this.game.RH - this.background.height) / 2;
 
         this.buttonPlay.x =  this.game.RW * Constants.STARTMENU_BUTTONS_2.x;
         this.buttonClassic.x =  this.game.RW * Constants.STARTMENU_BUTTONS_1.x;

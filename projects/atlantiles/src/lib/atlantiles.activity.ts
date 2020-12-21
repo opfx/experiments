@@ -12,6 +12,9 @@ import { SoundController } from './lq/sound-controller';
 })
 export class AtlantilesActivity extends GameActivity {
   private gamePlay: AtlantilesGame;
+  private startScreenWidth = 800; // will be set and keep value until this.gamePlay is created
+  private startScreenHeight = 600; // will be set and keep value until this.gamePlay is created
+
   constructor(injector: Injector) {
     super('Atlantiles Game', injector);
   }
@@ -82,7 +85,7 @@ export class AtlantilesActivity extends GameActivity {
     // this.mStage.addChild(text);
 
     this.gamePlay = new AtlantilesGame();
-    this.gamePlay.start(new Assets().init(), 800, 600, 800, 600);
+    this.gamePlay.start(new Assets().init(), 800, 600, this.startScreenWidth, this.startScreenHeight);
     this.mStage.addChild(this.gamePlay);
   }
 
@@ -92,7 +95,12 @@ export class AtlantilesActivity extends GameActivity {
 
   public resize(w: number, h: number): void {
     super.resize(w, h);
-    this.gamePlay.resize(w, h, w, h);
+    if (this.gamePlay) {
+      this.gamePlay.resize(w, h, w, h);
+    } else {
+      this.startScreenWidth = w;
+      this.startScreenHeight = h;
+    }
   }
 
   public exit(): void {
