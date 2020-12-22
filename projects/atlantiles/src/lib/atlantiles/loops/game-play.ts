@@ -586,7 +586,11 @@ export class GamePlay extends Loop {
 
     /** override */
     public set Scale(v: number) {
-        this.backgroundImage.Scale = this.game.MW / this.backgroundImage.texture.width / this.game.scale.x;
+        
+        const scaleX = this.game.MW / this.backgroundImage.texture.width / this.game.scale.x;
+        const scaleY = this.game.MH / this.backgroundImage.texture.height / this.game.scale.y;
+        this.backgroundImage.Scale = Math.max(scaleX, scaleY); // scaleX;
+
         this.backgroundImage.x = (this.game.RW - this.backgroundImage.width) / 2;
         this.backgroundImage.y = (this.game.RH - this.backgroundImage.height) / 2;
 
