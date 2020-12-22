@@ -12,25 +12,29 @@ import { AtlantilesGame } from '../atlantiles.game';
 
 export class Victory extends Loop {
   private background: LImage;
-  private nextbutton: JButton;
+  private closeButton: JButton;
 
   constructor(g: Game) {
     super(g, 'Victory');
     const hw = this.game.RW * 0.5;
     this.addChild(
-      (this.background = new LImage(this.game, 'end_game', hw, this.game.RH * 0.5, LImage.FIT_HEIGHT, null))
+      (this.background = new LImage(this.game, 'end-game-background', hw, this.game.RH * 0.5, LImage.FIT_HEIGHT, null))
     );
+
+    // s value is taken from game-play constructor 
+    const s = this.game.RH / Constants.UI_HEIGHT_SCALING_FACTOR * Constants.GAMEPLAY_SCALE;
+    
     this.addChild(
-      (this.nextbutton = new JButton(
+      (this.closeButton = new JButton(
         this.game,
         'btnClose',
-        0.6,
+        s * Constants.GAMEPLAY_CLOSE_SCALE, // 0.6,
         this.game.RW * 0.92,
         this.game.RW * Constants.VICTORY_BUTTON_Y
       ))
     );
 
-    this.nextbutton.addEventListener(LEvent.DEV_BUTTON, this.h_buttons.bind(this));
+    this.closeButton.addEventListener(LEvent.DEV_BUTTON, this.h_buttons.bind(this));
   }
 
   /** override */
@@ -39,10 +43,10 @@ export class Victory extends Loop {
       this.background.destroy();
     }
     this.background = null;
-    if (this.nextbutton) {
-      this.nextbutton.removeEventListener(LEvent.DEV_BUTTON, this.h_buttons.bind(this));
+    if (this.closeButton) {
+      this.closeButton.removeEventListener(LEvent.DEV_BUTTON, this.h_buttons.bind(this));
     }
-    this.nextbutton = null;
+    this.closeButton = null;
     this.removeChildren();
     return super.destroy();
   }
@@ -55,11 +59,12 @@ export class Victory extends Loop {
   }
 
   // listeners
-  private h_buttons(e: LEvent): void {
-    const target: JButton = (e.target as unknown) as JButton;
-    switch (target) {
-      case this.nextbutton:
-        this.dispatch(LEvent.GO_SCREEN, 'close');
+  // private h_buttons(e: LEvent): void { // doesn't work - target as undefined
+  private h_buttons(type: string, currentTarget: JButton): void {
+    // const target: JButton = (e.target as unknown) as JButton;
+    switch (currentTarget) {
+      case this.closeButton:
+        this.dispatchEvent(LEvent.GO_SCREEN, 'close', this); // doesn't work- will not have target
         break;
     }
   }

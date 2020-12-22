@@ -112,6 +112,7 @@ export class AtlantilesGame extends Game {
 
             // const closeGameEndEvent: GameEvent = new GameEvent( GameEvent.GAME_END, false, false, this.gameplay.gameScore);
             // Constants.EVENT_DISPATCHER.dispatchEvent(closeGameEndEvent);
+            this.screenTo([this.startmenu], [this.gameplay]);
             break;
         }
         break;
@@ -129,7 +130,7 @@ export class AtlantilesGame extends Game {
             // const gameOverGameEndEvent: GameEvent = new GameEvent(GameEvent.GAME_END, false, false, this.gameplay.gameScore);
             // Constants.EVENT_DISPATCHER.dispatchEvent(gameOverGameEndEvent);
 
-            // screenTo([startmenu], [gameplay]);
+            this.screenTo([this.startmenu], [this.gameplay]);
             break;
 
           case 'finishedClassic':

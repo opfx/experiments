@@ -288,7 +288,7 @@ export class GamePlay extends Loop {
             } else if (this.isEnd) {
                 this.labelOutOfTime.alpha += (1 - this.labelOutOfTime.alpha) * Constants.GAMEPLAY_POINTS_CONGRATULTIONS_SPEED_ALPHA;
                 if (this.endTimer-- === 0) {
-                    this.dispatchEvent(LEvent.GO_SCREEN, 'this.gameOver', this); // (LEvent.GO_SCREEN, 'this.gameOver');
+                    this.dispatchEvent(LEvent.GO_SCREEN, 'gameOver', this); // (LEvent.GO_SCREEN, 'this.gameOver');
                 }
             }
         }
