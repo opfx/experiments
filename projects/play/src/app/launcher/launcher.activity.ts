@@ -167,7 +167,7 @@ export class LauncherActivity extends Activity {
     this.activities$ = of([
       { name: 'arcade', path: '', label: 'Arcade' },
       { name: 'cash-cow', path: '', label: 'Cash Cow' },
-      { name: 'kinzpost', path: '', label: 'Kinzpost' },
+      { name: 'atlantiles', path: '', label: 'Atlantiles' },
       { name: 'kinzpost', path: '', label: 'Kinzpost' },
       { name: 'kinzpost', path: '', label: 'Kinzpost' },
       { name: 'kinzpost', path: '', label: 'Kinzpost' },

@@ -703,6 +703,113 @@
           }
         }
       }
+    },
+    "atlantiles": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/atlantiles",
+      "sourceRoot": "projects/atlantiles/src",
+      "prefix": "wx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/atlantiles",
+            "index": "projects/atlantiles/src/index.html",
+            "main": "projects/atlantiles/src/main.ts",
+            "polyfills": "projects/atlantiles/src/polyfills.ts",
+            "tsConfig": "projects/atlantiles/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/atlantiles/src/favicon.ico", "projects/atlantiles/src/assets"],
+            "styles": ["projects/atlantiles/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/atlantiles/src/environments/environment.ts",
+                  "with": "projects/atlantiles/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "atlantiles:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "atlantiles:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "atlantiles:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/atlantiles/tsconfig.app.json",
+              "projects/atlantiles/tsconfig.spec.json",
+              "projects/atlantiles/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@wdtk/jest:jest",
+          "options": {
+            "jestConfig": "projects/atlantiles/jest.config.js",
+            "tsConfig": "projects/atlantiles/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "projects/atlantiles/src/test-setup.ts"
+          }
+        },
+        "e2e": {
+          "builder": "@wdtk/cypress:cypress",
+          "options": {
+            "cypressConfig": "projects/atlantiles/cypress.json",
+            "tsConfig": "projects/atlantiles/e2e/tsconfig.json",
+            "devServerTarget": "atlantiles:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "atlantiles:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "newProjectRoot": "projects",

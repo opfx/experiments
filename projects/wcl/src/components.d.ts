@@ -6,7 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AnimationBuilder, Color, Size } from "./api";
+import { Container } from "pixi.js";
 import { SwipeGestureHandler } from "./util/gesture";
+import { TabBarChangedEventDetail } from "./components/tab-bar/types";
+import { TabButtonClickEventDetail, TabButtonLayout } from "./components/tab-button/types";
 export namespace Components {
     interface WxApp {
     }
@@ -163,6 +166,22 @@ export namespace Components {
          */
         "src"?: string;
     }
+    interface WxPixi {
+        "loop": (delta: number) => void;
+        "stage": Container;
+    }
+    interface WxRippleEffect {
+        /**
+          * Adds the ripple effect to the parent element.
+          * @param x The horizontal coordinate of where the ripple should start.
+          * @param y The vertical coordinate of where the ripple should start.
+         */
+        "addRipple": (x: number, y: number) => Promise<() => void>;
+        /**
+          * Sets the type of ripple-effect:  - `bounded`: the ripple effect expands from the user's click position - `unbounded`: the ripple effect expands from the center of the button and overflows the container.  NOTE: Surfaces for bounded ripples should have the overflow property set to hidden, while surfaces for unbounded ripples should have it set to visible.
+         */
+        "type": 'bounded' | 'unbounded';
+    }
     interface WxRouterOutlet {
         /**
           * If `true`, the router-outlet will animate the transition of components.
@@ -192,6 +211,58 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+    }
+    interface WxTabBar {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        /**
+          * The selected tab component
+         */
+        "selectedTab"?: string;
+        /**
+          * If `true`, the tab bar will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
+         */
+        "translucent": boolean;
+    }
+    interface WxTabButton {
+        /**
+          * If `true`, the user cannot interact with the tab button.
+         */
+        "disabled": boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download": string | undefined;
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href": string | undefined;
+        /**
+          * Set the layout of the text and icon in the tab bar. It defaults to `'icon-top'`.
+         */
+        "layout"?: TabButtonLayout;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel": string | undefined;
+        /**
+          * The selected tab component
+         */
+        "selected": boolean;
+        /**
+          * A tab id must be provided for each `wx-tab`. It's used internally to reference the selected tab or by the router to switch between them.
+         */
+        "tab"?: string;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target": string | undefined;
     }
     interface WxToolbar {
     }
@@ -233,6 +304,18 @@ declare global {
         prototype: HTMLWxIconElement;
         new (): HTMLWxIconElement;
     };
+    interface HTMLWxPixiElement extends Components.WxPixi, HTMLStencilElement {
+    }
+    var HTMLWxPixiElement: {
+        prototype: HTMLWxPixiElement;
+        new (): HTMLWxPixiElement;
+    };
+    interface HTMLWxRippleEffectElement extends Components.WxRippleEffect, HTMLStencilElement {
+    }
+    var HTMLWxRippleEffectElement: {
+        prototype: HTMLWxRippleEffectElement;
+        new (): HTMLWxRippleEffectElement;
+    };
     interface HTMLWxRouterOutletElement extends Components.WxRouterOutlet, HTMLStencilElement {
     }
     var HTMLWxRouterOutletElement: {
@@ -244,6 +327,18 @@ declare global {
     var HTMLWxSampleElement: {
         prototype: HTMLWxSampleElement;
         new (): HTMLWxSampleElement;
+    };
+    interface HTMLWxTabBarElement extends Components.WxTabBar, HTMLStencilElement {
+    }
+    var HTMLWxTabBarElement: {
+        prototype: HTMLWxTabBarElement;
+        new (): HTMLWxTabBarElement;
+    };
+    interface HTMLWxTabButtonElement extends Components.WxTabButton, HTMLStencilElement {
+    }
+    var HTMLWxTabButtonElement: {
+        prototype: HTMLWxTabButtonElement;
+        new (): HTMLWxTabButtonElement;
     };
     interface HTMLWxToolbarElement extends Components.WxToolbar, HTMLStencilElement {
     }
@@ -258,8 +353,12 @@ declare global {
         "wx-button": HTMLWxButtonElement;
         "wx-buttons": HTMLWxButtonsElement;
         "wx-icon": HTMLWxIconElement;
+        "wx-pixi": HTMLWxPixiElement;
+        "wx-ripple-effect": HTMLWxRippleEffectElement;
         "wx-router-outlet": HTMLWxRouterOutletElement;
         "wx-sample": HTMLWxSampleElement;
+        "wx-tab-bar": HTMLWxTabBarElement;
+        "wx-tab-button": HTMLWxTabButtonElement;
         "wx-toolbar": HTMLWxToolbarElement;
     }
 }
@@ -431,6 +530,16 @@ declare namespace LocalJSX {
          */
         "src"?: string;
     }
+    interface WxPixi {
+        "loop"?: (delta: number) => void;
+        "stage"?: Container;
+    }
+    interface WxRippleEffect {
+        /**
+          * Sets the type of ripple-effect:  - `bounded`: the ripple effect expands from the user's click position - `unbounded`: the ripple effect expands from the center of the button and overflows the container.  NOTE: Surfaces for bounded ripples should have the overflow property set to hidden, while surfaces for unbounded ripples should have it set to visible.
+         */
+        "type"?: 'bounded' | 'unbounded';
+    }
     interface WxRouterOutlet {
         /**
           * If `true`, the router-outlet will animate the transition of components.
@@ -463,6 +572,63 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface WxTabBar {
+        /**
+          * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
+         */
+        "color"?: Color;
+        "onWxTabBarChanged"?: (event: CustomEvent<TabBarChangedEventDetail>) => void;
+        /**
+          * The selected tab component
+         */
+        "selectedTab"?: string;
+        /**
+          * If `true`, the tab bar will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).
+         */
+        "translucent"?: boolean;
+    }
+    interface WxTabButton {
+        /**
+          * If `true`, the user cannot interact with the tab button.
+         */
+        "disabled"?: boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download"?: string | undefined;
+        /**
+          * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
+         */
+        "href"?: string | undefined;
+        /**
+          * Set the layout of the text and icon in the tab bar. It defaults to `'icon-top'`.
+         */
+        "layout"?: TabButtonLayout;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: "ios" | "md";
+        /**
+          * Emitted when the tab bar is clicked
+         */
+        "onWxTabButtonClick"?: (event: CustomEvent<TabButtonClickEventDetail>) => void;
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+         */
+        "rel"?: string | undefined;
+        /**
+          * The selected tab component
+         */
+        "selected"?: boolean;
+        /**
+          * A tab id must be provided for each `wx-tab`. It's used internally to reference the selected tab or by the router to switch between them.
+         */
+        "tab"?: string;
+        /**
+          * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+         */
+        "target"?: string | undefined;
+    }
     interface WxToolbar {
     }
     interface IntrinsicElements {
@@ -472,8 +638,12 @@ declare namespace LocalJSX {
         "wx-button": WxButton;
         "wx-buttons": WxButtons;
         "wx-icon": WxIcon;
+        "wx-pixi": WxPixi;
+        "wx-ripple-effect": WxRippleEffect;
         "wx-router-outlet": WxRouterOutlet;
         "wx-sample": WxSample;
+        "wx-tab-bar": WxTabBar;
+        "wx-tab-button": WxTabButton;
         "wx-toolbar": WxToolbar;
     }
 }
@@ -487,8 +657,12 @@ declare module "@stencil/core" {
             "wx-button": LocalJSX.WxButton & JSXBase.HTMLAttributes<HTMLWxButtonElement>;
             "wx-buttons": LocalJSX.WxButtons & JSXBase.HTMLAttributes<HTMLWxButtonsElement>;
             "wx-icon": LocalJSX.WxIcon & JSXBase.HTMLAttributes<HTMLWxIconElement>;
+            "wx-pixi": LocalJSX.WxPixi & JSXBase.HTMLAttributes<HTMLWxPixiElement>;
+            "wx-ripple-effect": LocalJSX.WxRippleEffect & JSXBase.HTMLAttributes<HTMLWxRippleEffectElement>;
             "wx-router-outlet": LocalJSX.WxRouterOutlet & JSXBase.HTMLAttributes<HTMLWxRouterOutletElement>;
             "wx-sample": LocalJSX.WxSample & JSXBase.HTMLAttributes<HTMLWxSampleElement>;
+            "wx-tab-bar": LocalJSX.WxTabBar & JSXBase.HTMLAttributes<HTMLWxTabBarElement>;
+            "wx-tab-button": LocalJSX.WxTabButton & JSXBase.HTMLAttributes<HTMLWxTabButtonElement>;
             "wx-toolbar": LocalJSX.WxToolbar & JSXBase.HTMLAttributes<HTMLWxToolbarElement>;
         }
     }

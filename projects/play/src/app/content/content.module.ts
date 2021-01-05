@@ -20,6 +20,11 @@ const routes: Route[] = [
         data: { intentFilter: { category: ['GAMES', 'ARCADE'] } },
       },
       {
+        path: 'atlantiles',
+        loadChildren: () => import('@webkinz/atlantiles').then((m) => m.AtlantilesModule),
+        data: { intentFilter: { category: ['GAMES', 'ARCADE'] } },
+      },
+      {
         path: 'arcade',
         loadChildren: () => import('@webkinz/arcade').then((m) => m.ArcadeModule),
         data: { intentFilter: { category: ['LAUNCHER'] } },

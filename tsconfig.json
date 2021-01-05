@@ -21,7 +21,8 @@
       "@webkinz/cash-cow": ["projects/cash-cow/src/public-api.ts"],
       "@webkinz/kinzpost": ["projects/kinzpost/src/public-api.ts"],
       "@webkinz/arcade": ["projects/arcade/src/public-api.ts"],
-      "@webkinz/grand-grotto": ["projects/grand-grotto/src/public-api.ts"]
+      "@webkinz/grand-grotto": ["projects/grand-grotto/src/public-api.ts"],
+      "@webkinz/atlantiles": ["projects/atlantiles/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
